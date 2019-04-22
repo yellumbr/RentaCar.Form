@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5BF8DFEE-73EF-40C6-836C-462E9AC86A6B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RentACarForm</RootNamespace>
+    <AssemblyName>RentACarForm</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.9.0.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Drawer">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.Drawer.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.ToggleSwitch">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AracEkleForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AracEkleForm.Designer.cs">
+      <DependentUpon>AracEkleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AracGuncelleSilForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AracGuncelleSilForm.Designer.cs">
+      <DependentUpon>AracGuncelleSilForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GirisForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GirisForm.Designer.cs">
+      <DependentUpon>GirisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IslemlerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IslemlerForm.Designer.cs">
+      <DependentUpon>IslemlerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KiralamaForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KiralamaForm.Designer.cs">
+      <DependentUpon>KiralamaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaporForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RaporForm.Designer.cs">
+      <DependentUpon>RaporForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RezervasyonForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RezervasyonForm.Designer.cs">
+      <DependentUpon>RezervasyonForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AracEkleForm.resx">
+      <DependentUpon>AracEkleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AracGuncelleSilForm.resx">
+      <DependentUpon>AracGuncelleSilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GirisForm.resx">
+      <DependentUpon>GirisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IslemlerForm.resx">
+      <DependentUpon>IslemlerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KiralamaForm.resx">
+      <DependentUpon>KiralamaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RaporForm.resx">
+      <DependentUpon>RaporForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RezervasyonForm.resx">
+      <DependentUpon>RezervasyonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bot-day-background-700x600-ce7fb2df41cfbf6c827cf229da02882a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_00-ELASTOFONT-STORE-READY_user_2703063.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_General_-_Office_38_1471114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_key_309058.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_cancel_1894664.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_close2_1814078.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_revisi_04_2191538.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_24_icons_2191530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_tourer_2714748.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_icon-148-tag-add_314742.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_plus_1282963.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_close_1282956.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_plus_12829631.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Pinterest_UI-16_2540579.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_plus_add_blue_61657.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_plus_add_minus_61659.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_tourer_27147481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Streamline-70_185090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_ic_system_update_alt_48px_3669205.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_44.refresh_4201253.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_update_64935.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_minus_1814110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark-background-6118.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geometric.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_buy_103428.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_aiga_taxi_134116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ColorfulBackground_01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-d-geometric-colorful-background-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorful-background-8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\116730261-ottoman-turkish-marbling-art-patterns-as-abstract-colorful-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositphotos_79604996-stock-illustration-abstract-triangles-with-earth-tone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\posterler-ozet-renkli-yamalar-background-vektor-eps10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-3104413_640.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\triangles-1430105_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesh-1430108_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_12_-_Invoice_2102048.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_key_298808.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesh-1430108_12801.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texture-2659241_1280.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
