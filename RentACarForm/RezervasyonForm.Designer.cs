@@ -28,23 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblRezervasyon = new System.Windows.Forms.Label();
             this.lstboxRezervasyon = new DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl();
             this.btnRezerveKirala = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRezerveSil = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.lstboxRezervasyon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRezervasyon
             // 
-            this.lblRezervasyon.AutoSize = true;
             this.lblRezervasyon.BackColor = System.Drawing.Color.Transparent;
-            this.lblRezervasyon.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRezervasyon.Location = new System.Drawing.Point(45, 19);
+            this.lblRezervasyon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRezervasyon.Image = global::RentACarForm.Properties.Resources.iconfinder_reservation_4172165;
+            this.lblRezervasyon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblRezervasyon.Location = new System.Drawing.Point(37, 9);
             this.lblRezervasyon.Name = "lblRezervasyon";
-            this.lblRezervasyon.Size = new System.Drawing.Size(320, 23);
+            this.lblRezervasyon.Size = new System.Drawing.Size(310, 29);
             this.lblRezervasyon.TabIndex = 0;
             this.lblRezervasyon.Text = "Rezervasyon İşlemi Olan Araçlar";
+            this.lblRezervasyon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lstboxRezervasyon
             // 
@@ -58,22 +63,40 @@
             // btnRezerveKirala
             // 
             this.btnRezerveKirala.BackColor = System.Drawing.Color.Plum;
-            this.btnRezerveKirala.Location = new System.Drawing.Point(318, 300);
+            this.btnRezerveKirala.Image = global::RentACarForm.Properties.Resources.iconfinder_reservation_41721651;
+            this.btnRezerveKirala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRezerveKirala.Location = new System.Drawing.Point(299, 300);
             this.btnRezerveKirala.Name = "btnRezerveKirala";
-            this.btnRezerveKirala.Size = new System.Drawing.Size(143, 23);
+            this.btnRezerveKirala.Size = new System.Drawing.Size(163, 31);
             this.btnRezerveKirala.TabIndex = 2;
             this.btnRezerveKirala.Text = "Seçili Rezervasyonu Kirala";
+            this.btnRezerveKirala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRezerveKirala.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnRezerveSil
             // 
-            this.button2.BackColor = System.Drawing.Color.Plum;
-            this.button2.Location = new System.Drawing.Point(483, 300);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Seçili Rezervasyonu Sil";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRezerveSil.BackColor = System.Drawing.Color.Plum;
+            this.btnRezerveSil.Image = global::RentACarForm.Properties.Resources.iconfinder_basket_1814090;
+            this.btnRezerveSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRezerveSil.Location = new System.Drawing.Point(468, 300);
+            this.btnRezerveSil.Name = "btnRezerveSil";
+            this.btnRezerveSil.Size = new System.Drawing.Size(144, 31);
+            this.btnRezerveSil.TabIndex = 3;
+            this.btnRezerveSil.Text = "Seçili Rezervasyonu Sil";
+            this.btnRezerveSil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRezerveSil.UseVisualStyleBackColor = false;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // RezervasyonForm
             // 
@@ -81,7 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RentACarForm.Properties.Resources.triangles_1430105_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRezerveSil);
             this.Controls.Add(this.btnRezerveKirala);
             this.Controls.Add(this.lstboxRezervasyon);
             this.Controls.Add(this.lblRezervasyon);
@@ -90,7 +113,6 @@
             this.Size = new System.Drawing.Size(732, 363);
             ((System.ComponentModel.ISupportInitialize)(this.lstboxRezervasyon)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -99,6 +121,8 @@
         private System.Windows.Forms.Label lblRezervasyon;
         private DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl lstboxRezervasyon;
         private System.Windows.Forms.Button btnRezerveKirala;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRezerveSil;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

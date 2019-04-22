@@ -30,22 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuTextBox2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
-            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.btnGirisYap = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtGirisSifre = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.txtGirisKimlikNo = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // panel1
             // 
@@ -59,6 +66,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(602, 414);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // bunifuImageButton2
             // 
@@ -91,134 +99,134 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.bunifuButton1);
-            this.panel2.Controls.Add(this.bunifuTextBox2);
-            this.panel2.Controls.Add(this.bunifuTextBox1);
+            this.panel2.Controls.Add(this.btnGirisYap);
+            this.panel2.Controls.Add(this.txtGirisSifre);
+            this.panel2.Controls.Add(this.txtGirisKimlikNo);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(189, 91);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(259, 227);
             this.panel2.TabIndex = 0;
             // 
-            // bunifuButton1
+            // btnGirisYap
             // 
-            this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
-            this.bunifuButton1.ButtonText = "GİRİŞ";
-            this.bunifuButton1.ButtonTextMarginLeft = 0;
-            this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.DimGray;
-            this.bunifuButton1.DisabledFillColor = System.Drawing.SystemColors.AppWorkspace;
-            this.bunifuButton1.DisabledForecolor = System.Drawing.Color.White;
-            this.bunifuButton1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IconPadding = 10;
-            this.bunifuButton1.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IdleBorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.bunifuButton1.IdleBorderRadius = 1;
-            this.bunifuButton1.IdleBorderThickness = 0;
-            this.bunifuButton1.IdleFillColor = System.Drawing.SystemColors.WindowFrame;
-            this.bunifuButton1.IdleIconLeftImage = null;
-            this.bunifuButton1.IdleIconRightImage = null;
-            this.bunifuButton1.Location = new System.Drawing.Point(34, 175);
-            this.bunifuButton1.Name = "bunifuButton1";
-            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties5.BorderRadius = 1;
-            stateProperties5.BorderThickness = 1;
-            stateProperties5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties5.IconLeftImage = null;
-            stateProperties5.IconRightImage = null;
-            this.bunifuButton1.onHoverState = stateProperties5;
-            this.bunifuButton1.Size = new System.Drawing.Size(200, 30);
-            this.bunifuButton1.TabIndex = 3;
-            this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGirisYap.BackColor = System.Drawing.Color.Transparent;
+            this.btnGirisYap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGirisYap.BackgroundImage")));
+            this.btnGirisYap.ButtonText = "GİRİŞ";
+            this.btnGirisYap.ButtonTextMarginLeft = 0;
+            this.btnGirisYap.DisabledBorderColor = System.Drawing.Color.DimGray;
+            this.btnGirisYap.DisabledFillColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnGirisYap.DisabledForecolor = System.Drawing.Color.White;
+            this.btnGirisYap.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGirisYap.ForeColor = System.Drawing.Color.White;
+            this.btnGirisYap.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnGirisYap.IconPadding = 10;
+            this.btnGirisYap.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnGirisYap.IdleBorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnGirisYap.IdleBorderRadius = 1;
+            this.btnGirisYap.IdleBorderThickness = 0;
+            this.btnGirisYap.IdleFillColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnGirisYap.IdleIconLeftImage = null;
+            this.btnGirisYap.IdleIconRightImage = null;
+            this.btnGirisYap.Location = new System.Drawing.Point(34, 175);
+            this.btnGirisYap.Name = "btnGirisYap";
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties1.BorderRadius = 1;
+            stateProperties1.BorderThickness = 1;
+            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties1.IconLeftImage = null;
+            stateProperties1.IconRightImage = null;
+            this.btnGirisYap.onHoverState = stateProperties1;
+            this.btnGirisYap.Size = new System.Drawing.Size(200, 30);
+            this.btnGirisYap.TabIndex = 3;
+            this.btnGirisYap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuTextBox2
+            // txtGirisSifre
             // 
-            this.bunifuTextBox2.AcceptsReturn = false;
-            this.bunifuTextBox2.AcceptsTab = false;
-            this.bunifuTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTextBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox2.BackgroundImage")));
-            this.bunifuTextBox2.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            this.bunifuTextBox2.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.bunifuTextBox2.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(38)))), ((int)(((byte)(157)))));
-            this.bunifuTextBox2.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
-            this.bunifuTextBox2.BorderRadius = 1;
-            this.bunifuTextBox2.BorderThickness = 2;
-            this.bunifuTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuTextBox2.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuTextBox2.DefaultText = "";
-            this.bunifuTextBox2.FillColor = System.Drawing.Color.White;
-            this.bunifuTextBox2.HideSelection = false;
-            this.bunifuTextBox2.IconLeft = null;
-            this.bunifuTextBox2.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuTextBox2.IconPadding = 10;
-            this.bunifuTextBox2.IconRight = global::RentACarForm.Properties.Resources.iconfinder_key_309058;
-            this.bunifuTextBox2.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuTextBox2.Location = new System.Drawing.Point(34, 113);
-            this.bunifuTextBox2.MaxLength = 32767;
-            this.bunifuTextBox2.MinimumSize = new System.Drawing.Size(100, 35);
-            this.bunifuTextBox2.Modified = false;
-            this.bunifuTextBox2.Name = "bunifuTextBox2";
-            this.bunifuTextBox2.PasswordChar = '*';
-            this.bunifuTextBox2.ReadOnly = false;
-            this.bunifuTextBox2.SelectedText = "";
-            this.bunifuTextBox2.SelectionLength = 0;
-            this.bunifuTextBox2.SelectionStart = 0;
-            this.bunifuTextBox2.ShortcutsEnabled = true;
-            this.bunifuTextBox2.Size = new System.Drawing.Size(200, 35);
-            this.bunifuTextBox2.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.bunifuTextBox2.TabIndex = 2;
-            this.bunifuTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuTextBox2.TextMarginLeft = 5;
-            this.bunifuTextBox2.TextPlaceholder = "Şifre";
-            this.bunifuTextBox2.UseSystemPasswordChar = false;
+            this.txtGirisSifre.AcceptsReturn = false;
+            this.txtGirisSifre.AcceptsTab = false;
+            this.txtGirisSifre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtGirisSifre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtGirisSifre.BackColor = System.Drawing.Color.Transparent;
+            this.txtGirisSifre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtGirisSifre.BackgroundImage")));
+            this.txtGirisSifre.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
+            this.txtGirisSifre.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.txtGirisSifre.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(38)))), ((int)(((byte)(157)))));
+            this.txtGirisSifre.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
+            this.txtGirisSifre.BorderRadius = 1;
+            this.txtGirisSifre.BorderThickness = 2;
+            this.txtGirisSifre.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtGirisSifre.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtGirisSifre.DefaultText = "";
+            this.txtGirisSifre.FillColor = System.Drawing.Color.White;
+            this.txtGirisSifre.HideSelection = false;
+            this.txtGirisSifre.IconLeft = null;
+            this.txtGirisSifre.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.txtGirisSifre.IconPadding = 10;
+            this.txtGirisSifre.IconRight = global::RentACarForm.Properties.Resources.iconfinder_key_309058;
+            this.txtGirisSifre.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.txtGirisSifre.Location = new System.Drawing.Point(34, 113);
+            this.txtGirisSifre.MaxLength = 32767;
+            this.txtGirisSifre.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txtGirisSifre.Modified = false;
+            this.txtGirisSifre.Name = "txtGirisSifre";
+            this.txtGirisSifre.PasswordChar = '*';
+            this.txtGirisSifre.ReadOnly = false;
+            this.txtGirisSifre.SelectedText = "";
+            this.txtGirisSifre.SelectionLength = 0;
+            this.txtGirisSifre.SelectionStart = 0;
+            this.txtGirisSifre.ShortcutsEnabled = true;
+            this.txtGirisSifre.Size = new System.Drawing.Size(200, 35);
+            this.txtGirisSifre.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+            this.txtGirisSifre.TabIndex = 2;
+            this.txtGirisSifre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtGirisSifre.TextMarginLeft = 5;
+            this.txtGirisSifre.TextPlaceholder = "Şifre";
+            this.txtGirisSifre.UseSystemPasswordChar = false;
             // 
-            // bunifuTextBox1
+            // txtGirisKimlikNo
             // 
-            this.bunifuTextBox1.AcceptsReturn = false;
-            this.bunifuTextBox1.AcceptsTab = false;
-            this.bunifuTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTextBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox1.BackgroundImage")));
-            this.bunifuTextBox1.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            this.bunifuTextBox1.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.bunifuTextBox1.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(38)))), ((int)(((byte)(157)))));
-            this.bunifuTextBox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
-            this.bunifuTextBox1.BorderRadius = 1;
-            this.bunifuTextBox1.BorderThickness = 2;
-            this.bunifuTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuTextBox1.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuTextBox1.DefaultText = "";
-            this.bunifuTextBox1.FillColor = System.Drawing.Color.White;
-            this.bunifuTextBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bunifuTextBox1.HideSelection = true;
-            this.bunifuTextBox1.IconLeft = null;
-            this.bunifuTextBox1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuTextBox1.IconPadding = 10;
-            this.bunifuTextBox1.IconRight = global::RentACarForm.Properties.Resources.iconfinder_00_ELASTOFONT_STORE_READY_user_2703063;
-            this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuTextBox1.Location = new System.Drawing.Point(34, 48);
-            this.bunifuTextBox1.MaxLength = 32767;
-            this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(100, 35);
-            this.bunifuTextBox1.Modified = false;
-            this.bunifuTextBox1.Name = "bunifuTextBox1";
-            this.bunifuTextBox1.PasswordChar = '\0';
-            this.bunifuTextBox1.ReadOnly = false;
-            this.bunifuTextBox1.SelectedText = "";
-            this.bunifuTextBox1.SelectionLength = 0;
-            this.bunifuTextBox1.SelectionStart = 0;
-            this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(200, 35);
-            this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.bunifuTextBox1.TabIndex = 1;
-            this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuTextBox1.TextMarginLeft = 5;
-            this.bunifuTextBox1.TextPlaceholder = "Kimlik Numarası";
-            this.bunifuTextBox1.UseSystemPasswordChar = false;
+            this.txtGirisKimlikNo.AcceptsReturn = false;
+            this.txtGirisKimlikNo.AcceptsTab = false;
+            this.txtGirisKimlikNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtGirisKimlikNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtGirisKimlikNo.BackColor = System.Drawing.Color.Transparent;
+            this.txtGirisKimlikNo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtGirisKimlikNo.BackgroundImage")));
+            this.txtGirisKimlikNo.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
+            this.txtGirisKimlikNo.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.txtGirisKimlikNo.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(38)))), ((int)(((byte)(157)))));
+            this.txtGirisKimlikNo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
+            this.txtGirisKimlikNo.BorderRadius = 1;
+            this.txtGirisKimlikNo.BorderThickness = 2;
+            this.txtGirisKimlikNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtGirisKimlikNo.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtGirisKimlikNo.DefaultText = "";
+            this.txtGirisKimlikNo.FillColor = System.Drawing.Color.White;
+            this.txtGirisKimlikNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtGirisKimlikNo.HideSelection = true;
+            this.txtGirisKimlikNo.IconLeft = null;
+            this.txtGirisKimlikNo.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.txtGirisKimlikNo.IconPadding = 10;
+            this.txtGirisKimlikNo.IconRight = global::RentACarForm.Properties.Resources.iconfinder_00_ELASTOFONT_STORE_READY_user_2703063;
+            this.txtGirisKimlikNo.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.txtGirisKimlikNo.Location = new System.Drawing.Point(34, 48);
+            this.txtGirisKimlikNo.MaxLength = 32767;
+            this.txtGirisKimlikNo.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txtGirisKimlikNo.Modified = false;
+            this.txtGirisKimlikNo.Name = "txtGirisKimlikNo";
+            this.txtGirisKimlikNo.PasswordChar = '\0';
+            this.txtGirisKimlikNo.ReadOnly = false;
+            this.txtGirisKimlikNo.SelectedText = "";
+            this.txtGirisKimlikNo.SelectionLength = 0;
+            this.txtGirisKimlikNo.SelectionStart = 0;
+            this.txtGirisKimlikNo.ShortcutsEnabled = true;
+            this.txtGirisKimlikNo.Size = new System.Drawing.Size(200, 35);
+            this.txtGirisKimlikNo.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+            this.txtGirisKimlikNo.TabIndex = 1;
+            this.txtGirisKimlikNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtGirisKimlikNo.TextMarginLeft = 5;
+            this.txtGirisKimlikNo.TextPlaceholder = "Kimlik Numarası";
+            this.txtGirisKimlikNo.UseSystemPasswordChar = false;
             // 
             // label1
             // 
@@ -230,13 +238,6 @@
             this.label1.Size = new System.Drawing.Size(92, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "GİRİŞ YAP";
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
             // 
             // bunifuElipse1
             // 
@@ -265,10 +266,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox bunifuTextBox1;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtGirisKimlikNo;
         private System.Windows.Forms.Label label1;
-        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox bunifuTextBox2;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtGirisSifre;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnGirisYap;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;

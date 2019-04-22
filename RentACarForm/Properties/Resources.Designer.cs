@@ -73,6 +73,16 @@ namespace RentACarForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _20920221 {
+            get {
+                object obj = ResourceManager.GetObject("20920221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap abstract_d_geometric_colorful_background_vector {
             get {
                 object obj = ResourceManager.GetObject("abstract-d-geometric-colorful-background-vector", resourceCulture);
@@ -193,9 +203,49 @@ namespace RentACarForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_add_user_3802 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_add_user_3802", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_aiga_taxi_134116 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_aiga_taxi_134116", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_aiga_taxi_1341161 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_aiga_taxi_1341161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_Apply_105210 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_Apply_105210", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_basket_1814090 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_basket_1814090", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +293,26 @@ namespace RentACarForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_delete_user_18618 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_delete_user_18618", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_engagement_customer_user_interaction_branding_3209311 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_engagement-customer-user-interaction-branding_3209311", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_General___Office_38_1471114 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_General_-_Office_38_1471114", resourceCulture);
@@ -273,6 +343,16 @@ namespace RentACarForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_icons_exit_1564505 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_icons_exit_1564505", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_key_298808 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_key_298808", resourceCulture);
@@ -293,9 +373,29 @@ namespace RentACarForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_mail_24_103176 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_mail-24_103176", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_minus_1814110 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_minus_1814110", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_office_19_809604 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_office-19_809604", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +453,39 @@ namespace RentACarForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_reservation_4172165 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_reservation_4172165", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_reservation_41721651 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_reservation_41721651", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_revisi_04_2191538 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_revisi_04_2191538", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_seo_report_2944876 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_seo-report_2944876", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,6 +526,36 @@ namespace RentACarForm.Properties {
         internal static System.Drawing.Bitmap iconfinder_update_64935 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_update_64935", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_user_add_216490 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_user-add_216490", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_User_Card_22169 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_User Card_22169", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_user_delete_216494 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_user-delete_216494", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +626,16 @@ namespace RentACarForm.Properties {
         internal static System.Drawing.Bitmap triangles_1430105_1280 {
             get {
                 object obj = ResourceManager.GetObject("triangles-1430105_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wall_1851061_1280 {
+            get {
+                object obj = ResourceManager.GetObject("wall-1851061_1280", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -163,6 +163,12 @@
     <Compile Include="KiralamaForm.Designer.cs">
       <DependentUpon>KiralamaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MusteriIslemForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MusteriIslemForm.Designer.cs">
+      <DependentUpon>MusteriIslemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaporForm.cs">
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KiralamaForm.resx">
       <DependentUpon>KiralamaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MusteriIslemForm.resx">
+      <DependentUpon>MusteriIslemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -347,6 +356,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\texture-2659241_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_mail-24_103176.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_office-19_809604.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_engagement-customer-user-interaction-branding_3209311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall-1851061_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_user-add_216490.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_user-delete_216494.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_add_user_3802.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_delete_user_18618.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_aiga_taxi_1341161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_User Card_22169.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Apply_105210.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_seo-report_2944876.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_reservation_4172165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_reservation_41721651.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_basket_1814090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20920221.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_icons_exit_1564505.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

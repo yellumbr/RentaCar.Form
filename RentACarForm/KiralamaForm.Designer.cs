@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.lblAracBilgi = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbAracPlakalar = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMusteriBilgi = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbKayitliMusteri = new System.Windows.Forms.ComboBox();
             this.lblAd = new System.Windows.Forms.Label();
             this.lblSoyad = new System.Windows.Forms.Label();
             this.lblTC = new System.Windows.Forms.Label();
             this.lblTelNo = new System.Windows.Forms.Label();
             this.lblAdres = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtAd = new System.Windows.Forms.TextBox();
+            this.txtSoyad = new System.Windows.Forms.TextBox();
+            this.txtKimlikNo = new System.Windows.Forms.TextBox();
+            this.txtTelNo = new System.Windows.Forms.TextBox();
             this.lblDogumTarihi = new System.Windows.Forms.Label();
             this.lblEhliyetTarihi = new System.Windows.Forms.Label();
             this.lblEhliyetTipi = new System.Windows.Forms.Label();
@@ -50,21 +51,25 @@
             this.txtEhliyetTipi = new System.Windows.Forms.MaskedTextBox();
             this.dtpEhliyetTarihi = new System.Windows.Forms.DateTimePicker();
             this.dtpDogumTarihi = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAracKirala = new System.Windows.Forms.Button();
             this.pbFirmaLogo = new System.Windows.Forms.PictureBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbFirmaLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblAracBilgi
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(57, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Araç Bilgi";
+            this.lblAracBilgi.BackColor = System.Drawing.Color.Transparent;
+            this.lblAracBilgi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAracBilgi.Image = global::RentACarForm.Properties.Resources.iconfinder_aiga_taxi_1341161;
+            this.lblAracBilgi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAracBilgi.Location = new System.Drawing.Point(57, 27);
+            this.lblAracBilgi.Name = "lblAracBilgi";
+            this.lblAracBilgi.Size = new System.Drawing.Size(119, 23);
+            this.lblAracBilgi.TabIndex = 0;
+            this.lblAracBilgi.Text = "Araç Bilgi";
+            this.lblAracBilgi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -85,16 +90,18 @@
             this.cmbAracPlakalar.Size = new System.Drawing.Size(121, 21);
             this.cmbAracPlakalar.TabIndex = 2;
             // 
-            // label3
+            // lblMusteriBilgi
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(57, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 19);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Müşteri Bilgi";
+            this.lblMusteriBilgi.BackColor = System.Drawing.Color.Transparent;
+            this.lblMusteriBilgi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMusteriBilgi.Image = global::RentACarForm.Properties.Resources.iconfinder_User_Card_22169;
+            this.lblMusteriBilgi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMusteriBilgi.Location = new System.Drawing.Point(57, 121);
+            this.lblMusteriBilgi.Name = "lblMusteriBilgi";
+            this.lblMusteriBilgi.Size = new System.Drawing.Size(143, 25);
+            this.lblMusteriBilgi.TabIndex = 3;
+            this.lblMusteriBilgi.Text = "Müşteri Bilgi";
+            this.lblMusteriBilgi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -107,13 +114,13 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Kayıtlı Müşteri";
             // 
-            // comboBox1
+            // cmbKayitliMusteri
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(152, 160);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cmbKayitliMusteri.FormattingEnabled = true;
+            this.cmbKayitliMusteri.Location = new System.Drawing.Point(152, 160);
+            this.cmbKayitliMusteri.Name = "cmbKayitliMusteri";
+            this.cmbKayitliMusteri.Size = new System.Drawing.Size(121, 21);
+            this.cmbKayitliMusteri.TabIndex = 5;
             // 
             // lblAd
             // 
@@ -170,33 +177,33 @@
             this.lblAdres.TabIndex = 10;
             this.lblAdres.Text = "Adres";
             // 
-            // textBox1
+            // txtAd
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 206);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtAd.Location = new System.Drawing.Point(152, 206);
+            this.txtAd.Name = "txtAd";
+            this.txtAd.Size = new System.Drawing.Size(100, 20);
+            this.txtAd.TabIndex = 11;
             // 
-            // textBox2
+            // txtSoyad
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 233);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtSoyad.Location = new System.Drawing.Point(152, 233);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(100, 20);
+            this.txtSoyad.TabIndex = 12;
             // 
-            // textBox3
+            // txtKimlikNo
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 261);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 13;
+            this.txtKimlikNo.Location = new System.Drawing.Point(152, 261);
+            this.txtKimlikNo.Name = "txtKimlikNo";
+            this.txtKimlikNo.Size = new System.Drawing.Size(100, 20);
+            this.txtKimlikNo.TabIndex = 13;
             // 
-            // textBox4
+            // txtTelNo
             // 
-            this.textBox4.Location = new System.Drawing.Point(152, 287);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 14;
+            this.txtTelNo.Location = new System.Drawing.Point(152, 287);
+            this.txtTelNo.Name = "txtTelNo";
+            this.txtTelNo.Size = new System.Drawing.Size(100, 20);
+            this.txtTelNo.TabIndex = 14;
             // 
             // lblDogumTarihi
             // 
@@ -259,16 +266,19 @@
             this.dtpDogumTarihi.Size = new System.Drawing.Size(200, 20);
             this.dtpDogumTarihi.TabIndex = 22;
             // 
-            // button1
+            // btnAracKirala
             // 
-            this.button1.BackColor = System.Drawing.Color.Bisque;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(553, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Kirala";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAracKirala.BackColor = System.Drawing.Color.Bisque;
+            this.btnAracKirala.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAracKirala.Image = global::RentACarForm.Properties.Resources.iconfinder_Apply_105210;
+            this.btnAracKirala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAracKirala.Location = new System.Drawing.Point(553, 316);
+            this.btnAracKirala.Name = "btnAracKirala";
+            this.btnAracKirala.Size = new System.Drawing.Size(80, 26);
+            this.btnAracKirala.TabIndex = 23;
+            this.btnAracKirala.Text = "Kirala";
+            this.btnAracKirala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAracKirala.UseVisualStyleBackColor = false;
             // 
             // pbFirmaLogo
             // 
@@ -278,6 +288,18 @@
             this.pbFirmaLogo.TabIndex = 24;
             this.pbFirmaLogo.TabStop = false;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // KiralamaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,7 +307,7 @@
             this.BackgroundImage = global::RentACarForm.Properties.Resources.geometric;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.pbFirmaLogo);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAracKirala);
             this.Controls.Add(this.dtpDogumTarihi);
             this.Controls.Add(this.dtpEhliyetTarihi);
             this.Controls.Add(this.txtEhliyetTipi);
@@ -293,21 +315,21 @@
             this.Controls.Add(this.lblEhliyetTipi);
             this.Controls.Add(this.lblEhliyetTarihi);
             this.Controls.Add(this.lblDogumTarihi);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTelNo);
+            this.Controls.Add(this.txtKimlikNo);
+            this.Controls.Add(this.txtSoyad);
+            this.Controls.Add(this.txtAd);
             this.Controls.Add(this.lblAdres);
             this.Controls.Add(this.lblTelNo);
             this.Controls.Add(this.lblTC);
             this.Controls.Add(this.lblSoyad);
             this.Controls.Add(this.lblAd);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbKayitliMusteri);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblMusteriBilgi);
             this.Controls.Add(this.cmbAracPlakalar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAracBilgi);
             this.Name = "KiralamaForm";
             this.Size = new System.Drawing.Size(703, 357);
             ((System.ComponentModel.ISupportInitialize)(this.pbFirmaLogo)).EndInit();
@@ -318,21 +340,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAracBilgi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbAracPlakalar;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMusteriBilgi;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbKayitliMusteri;
         private System.Windows.Forms.Label lblAd;
         private System.Windows.Forms.Label lblSoyad;
         private System.Windows.Forms.Label lblTC;
         private System.Windows.Forms.Label lblTelNo;
         private System.Windows.Forms.Label lblAdres;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtAd;
+        private System.Windows.Forms.TextBox txtSoyad;
+        private System.Windows.Forms.TextBox txtKimlikNo;
+        private System.Windows.Forms.TextBox txtTelNo;
         private System.Windows.Forms.Label lblDogumTarihi;
         private System.Windows.Forms.Label lblEhliyetTarihi;
         private System.Windows.Forms.Label lblEhliyetTipi;
@@ -340,7 +362,9 @@
         private System.Windows.Forms.MaskedTextBox txtEhliyetTipi;
         private System.Windows.Forms.DateTimePicker dtpEhliyetTarihi;
         private System.Windows.Forms.DateTimePicker dtpDogumTarihi;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAracKirala;
         private System.Windows.Forms.PictureBox pbFirmaLogo;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

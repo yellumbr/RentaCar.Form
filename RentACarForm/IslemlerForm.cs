@@ -24,6 +24,11 @@ namespace RentACarForm
             girisForm1.Hide();
             kiralamaForm1.Hide();
             rezervasyonForm1.Hide();
+            musteriIslemForm1.Hide();
+            raporForm1.Hide();
+            menuStrip1.BackgroundImage = RentACarForm.Properties.Resources._20920221;
+            imgbtnMin.BackColor = Color.Goldenrod;
+            imgbtnExit.BackColor = Color.Goldenrod;
         }
 
         private void aracSilToolStripMenuItem_Click(object sender, EventArgs e)
@@ -33,8 +38,12 @@ namespace RentACarForm
             girisForm1.Hide();
             kiralamaForm1.Hide();
             rezervasyonForm1.Hide();
+            musteriIslemForm1.Hide();
+            raporForm1.Hide();
+            menuStrip1.BackgroundImage = RentACarForm.Properties.Resources.abstract_d_geometric_colorful_background_vector;
+            imgbtnMin.BackColor = Color.Khaki;
+            imgbtnExit.BackColor = Color.Khaki;
         }
-
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -57,6 +66,13 @@ namespace RentACarForm
             aracGuncelleSilForm1.Hide();
             kiralamaForm1.Hide();
             rezervasyonForm1.Hide();
+            musteriIslemForm1.Hide();
+            raporForm1.Hide();
+            menuStrip1.BackgroundImage= RentACarForm.Properties.Resources.mesh_1430108_1280;
+            imgbtnMin.BackColor = Color.MediumVioletRed;
+            imgbtnExit.BackColor = Color.MediumVioletRed;
+
+
         }
 
         private void KiralamaIslemleriToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,6 +82,11 @@ namespace RentACarForm
             aracGuncelleSilForm1.Hide();
             aracEkleForm1.Hide();
             rezervasyonForm1.Hide();
+            musteriIslemForm1.Hide();
+            raporForm1.Hide();
+            menuStrip1.BackgroundImage = RentACarForm.Properties.Resources.geometric;
+            imgbtnMin.BackColor = Color.DarkOrange;
+            imgbtnExit.BackColor = Color.DarkOrange;
         }
 
         private void RezervelerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +96,39 @@ namespace RentACarForm
             aracGuncelleSilForm1.Hide();
             girisForm1.Hide();
             kiralamaForm1.Hide();
+            musteriIslemForm1.Hide();
+            raporForm1.Hide();
+            menuStrip1.BackgroundImage = RentACarForm.Properties.Resources.triangles_1430105_1280;
+            imgbtnMin.BackColor = Color.Navy;
+            imgbtnExit.BackColor = Color.Navy;
+        }
+
+        private void RaporToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            raporForm1.Show();
+            rezervasyonForm1.Hide();
+            aracEkleForm1.Hide();
+            aracGuncelleSilForm1.Hide();
+            kiralamaForm1.Hide();
+            girisForm1.Hide();
+            musteriIslemForm1.Hide();
+            menuStrip1.BackgroundImage = RentACarForm.Properties.Resources.texture_2659241_1280;
+            imgbtnMin.BackColor = Color.SeaGreen;
+            imgbtnExit.BackColor = Color.SeaGreen;
+        }
+
+        private void MusteriIslemleriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            musteriIslemForm1.Show();
+            rezervasyonForm1.Hide();
+            aracEkleForm1.Hide();
+            aracGuncelleSilForm1.Hide();
+            kiralamaForm1.Hide();
+            girisForm1.Hide();
+            raporForm1.Hide();
+            menuStrip1.BackgroundImage = RentACarForm.Properties.Resources.wall_1851061_1280;
+            imgbtnMin.BackColor = Color.Salmon;
+            imgbtnExit.BackColor = Color.Salmon;
         }
     }
 }

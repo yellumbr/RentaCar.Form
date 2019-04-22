@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemlerForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.imgbtnMin = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.imgbtnExit = new Bunifu.UI.WinForms.BunifuImageButton();
             this.aracIslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yeniAracEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aracSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MusteriIslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.KiralamaIslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RezervelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rAPORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RaporToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imgbtnMin = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.imgbtnExit = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.musteriIslemForm1 = new RentACarForm.MusteriIslemForm();
+            this.raporForm1 = new RentACarForm.RaporForm();
             this.rezervasyonForm1 = new RentACarForm.RezervasyonForm();
             this.kiralamaForm1 = new RentACarForm.KiralamaForm();
             this.girisForm1 = new RentACarForm.GirisForm();
@@ -51,78 +57,15 @@
             this.menuStrip1.BackColor = System.Drawing.Color.Firebrick;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aracIslemleriToolStripMenuItem,
+            this.MusteriIslemleriToolStripMenuItem,
             this.KiralamaIslemleriToolStripMenuItem,
             this.RezervelerToolStripMenuItem,
-            this.rAPORToolStripMenuItem});
+            this.RaporToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(783, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // imgbtnMin
-            // 
-            this.imgbtnMin.ActiveImage = null;
-            this.imgbtnMin.AllowAnimations = true;
-            this.imgbtnMin.AllowZooming = true;
-            this.imgbtnMin.BackColor = System.Drawing.Color.Firebrick;
-            this.imgbtnMin.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgbtnMin.ErrorImage")));
-            this.imgbtnMin.FadeWhenInactive = false;
-            this.imgbtnMin.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.imgbtnMin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.imgbtnMin.Image = global::RentACarForm.Properties.Resources.iconfinder_minus_1814110;
-            this.imgbtnMin.ImageActive = null;
-            this.imgbtnMin.ImageLocation = null;
-            this.imgbtnMin.ImageMargin = 40;
-            this.imgbtnMin.ImageSize = new System.Drawing.Size(-19, -20);
-            this.imgbtnMin.ImageZoomSize = new System.Drawing.Size(21, 20);
-            this.imgbtnMin.InitialImage = ((System.Drawing.Image)(resources.GetObject("imgbtnMin.InitialImage")));
-            this.imgbtnMin.Location = new System.Drawing.Point(735, 0);
-            this.imgbtnMin.Name = "imgbtnMin";
-            this.imgbtnMin.Rotation = 0;
-            this.imgbtnMin.ShowActiveImage = true;
-            this.imgbtnMin.ShowCursorChanges = true;
-            this.imgbtnMin.ShowImageBorders = true;
-            this.imgbtnMin.ShowSizeMarkers = false;
-            this.imgbtnMin.Size = new System.Drawing.Size(21, 20);
-            this.imgbtnMin.TabIndex = 4;
-            this.imgbtnMin.ToolTipText = "";
-            this.imgbtnMin.WaitOnLoad = false;
-            this.imgbtnMin.Zoom = 40;
-            this.imgbtnMin.ZoomSpeed = 10;
-            this.imgbtnMin.Click += new System.EventHandler(this.imgbtnMin_Click);
-            // 
-            // imgbtnExit
-            // 
-            this.imgbtnExit.ActiveImage = null;
-            this.imgbtnExit.AllowAnimations = true;
-            this.imgbtnExit.AllowZooming = true;
-            this.imgbtnExit.BackColor = System.Drawing.Color.Firebrick;
-            this.imgbtnExit.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgbtnExit.ErrorImage")));
-            this.imgbtnExit.FadeWhenInactive = false;
-            this.imgbtnExit.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.imgbtnExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.imgbtnExit.Image = global::RentACarForm.Properties.Resources.iconfinder_close2_1814078;
-            this.imgbtnExit.ImageActive = null;
-            this.imgbtnExit.ImageLocation = null;
-            this.imgbtnExit.ImageMargin = 40;
-            this.imgbtnExit.ImageSize = new System.Drawing.Size(-19, -20);
-            this.imgbtnExit.ImageZoomSize = new System.Drawing.Size(21, 20);
-            this.imgbtnExit.InitialImage = ((System.Drawing.Image)(resources.GetObject("imgbtnExit.InitialImage")));
-            this.imgbtnExit.Location = new System.Drawing.Point(762, 0);
-            this.imgbtnExit.Name = "imgbtnExit";
-            this.imgbtnExit.Rotation = 0;
-            this.imgbtnExit.ShowActiveImage = true;
-            this.imgbtnExit.ShowCursorChanges = true;
-            this.imgbtnExit.ShowImageBorders = true;
-            this.imgbtnExit.ShowSizeMarkers = false;
-            this.imgbtnExit.Size = new System.Drawing.Size(21, 20);
-            this.imgbtnExit.TabIndex = 3;
-            this.imgbtnExit.ToolTipText = "";
-            this.imgbtnExit.WaitOnLoad = false;
-            this.imgbtnExit.Zoom = 40;
-            this.imgbtnExit.ZoomSpeed = 10;
-            this.imgbtnExit.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // aracIslemleriToolStripMenuItem
             // 
@@ -151,6 +94,14 @@
             this.aracSilToolStripMenuItem.Text = "Araç Bilgi Güncelleme ve Silme";
             this.aracSilToolStripMenuItem.Click += new System.EventHandler(this.aracSilToolStripMenuItem_Click);
             // 
+            // MusteriIslemleriToolStripMenuItem
+            // 
+            this.MusteriIslemleriToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_engagement_customer_user_interaction_branding_3209311;
+            this.MusteriIslemleriToolStripMenuItem.Name = "MusteriIslemleriToolStripMenuItem";
+            this.MusteriIslemleriToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
+            this.MusteriIslemleriToolStripMenuItem.Text = "MÜŞTERİ İŞLEMLERİ";
+            this.MusteriIslemleriToolStripMenuItem.Click += new System.EventHandler(this.MusteriIslemleriToolStripMenuItem_Click);
+            // 
             // KiralamaIslemleriToolStripMenuItem
             // 
             this.KiralamaIslemleriToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -169,12 +120,110 @@
             this.RezervelerToolStripMenuItem.Text = "REZERVASYON İŞLEMLERİ";
             this.RezervelerToolStripMenuItem.Click += new System.EventHandler(this.RezervelerToolStripMenuItem_Click);
             // 
-            // rAPORToolStripMenuItem
+            // RaporToolStripMenuItem
             // 
-            this.rAPORToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_12___Invoice_2102048;
-            this.rAPORToolStripMenuItem.Name = "rAPORToolStripMenuItem";
-            this.rAPORToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.rAPORToolStripMenuItem.Text = "RAPOR";
+            this.RaporToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_12___Invoice_2102048;
+            this.RaporToolStripMenuItem.Name = "RaporToolStripMenuItem";
+            this.RaporToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.RaporToolStripMenuItem.Text = "RAPOR";
+            this.RaporToolStripMenuItem.Click += new System.EventHandler(this.RaporToolStripMenuItem_Click);
+            // 
+            // imgbtnMin
+            // 
+            this.imgbtnMin.ActiveImage = null;
+            this.imgbtnMin.AllowAnimations = true;
+            this.imgbtnMin.AllowZooming = true;
+            this.imgbtnMin.BackColor = System.Drawing.Color.Transparent;
+            this.imgbtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.imgbtnMin.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgbtnMin.ErrorImage")));
+            this.imgbtnMin.FadeWhenInactive = false;
+            this.imgbtnMin.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.imgbtnMin.ForeColor = System.Drawing.Color.Transparent;
+            this.imgbtnMin.Image = global::RentACarForm.Properties.Resources.iconfinder_minus_1814110;
+            this.imgbtnMin.ImageActive = null;
+            this.imgbtnMin.ImageLocation = null;
+            this.imgbtnMin.ImageMargin = 40;
+            this.imgbtnMin.ImageSize = new System.Drawing.Size(-19, -20);
+            this.imgbtnMin.ImageZoomSize = new System.Drawing.Size(21, 20);
+            this.imgbtnMin.InitialImage = ((System.Drawing.Image)(resources.GetObject("imgbtnMin.InitialImage")));
+            this.imgbtnMin.Location = new System.Drawing.Point(735, 0);
+            this.imgbtnMin.Name = "imgbtnMin";
+            this.imgbtnMin.Rotation = 0;
+            this.imgbtnMin.ShowActiveImage = true;
+            this.imgbtnMin.ShowCursorChanges = true;
+            this.imgbtnMin.ShowImageBorders = true;
+            this.imgbtnMin.ShowSizeMarkers = false;
+            this.imgbtnMin.Size = new System.Drawing.Size(21, 20);
+            this.imgbtnMin.TabIndex = 4;
+            this.imgbtnMin.ToolTipText = "";
+            this.imgbtnMin.WaitOnLoad = false;
+            this.imgbtnMin.Zoom = 40;
+            this.imgbtnMin.ZoomSpeed = 10;
+            this.imgbtnMin.Click += new System.EventHandler(this.imgbtnMin_Click);
+            // 
+            // imgbtnExit
+            // 
+            this.imgbtnExit.ActiveImage = null;
+            this.imgbtnExit.AllowAnimations = true;
+            this.imgbtnExit.AllowZooming = true;
+            this.imgbtnExit.BackColor = System.Drawing.Color.Transparent;
+            this.imgbtnExit.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgbtnExit.ErrorImage")));
+            this.imgbtnExit.FadeWhenInactive = false;
+            this.imgbtnExit.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.imgbtnExit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.imgbtnExit.Image = global::RentACarForm.Properties.Resources.iconfinder_close2_1814078;
+            this.imgbtnExit.ImageActive = null;
+            this.imgbtnExit.ImageLocation = null;
+            this.imgbtnExit.ImageMargin = 40;
+            this.imgbtnExit.ImageSize = new System.Drawing.Size(-19, -20);
+            this.imgbtnExit.ImageZoomSize = new System.Drawing.Size(21, 20);
+            this.imgbtnExit.InitialImage = ((System.Drawing.Image)(resources.GetObject("imgbtnExit.InitialImage")));
+            this.imgbtnExit.Location = new System.Drawing.Point(762, 0);
+            this.imgbtnExit.Name = "imgbtnExit";
+            this.imgbtnExit.Rotation = 0;
+            this.imgbtnExit.ShowActiveImage = true;
+            this.imgbtnExit.ShowCursorChanges = true;
+            this.imgbtnExit.ShowImageBorders = true;
+            this.imgbtnExit.ShowSizeMarkers = false;
+            this.imgbtnExit.Size = new System.Drawing.Size(21, 20);
+            this.imgbtnExit.TabIndex = 3;
+            this.imgbtnExit.ToolTipText = "";
+            this.imgbtnExit.WaitOnLoad = false;
+            this.imgbtnExit.Zoom = 40;
+            this.imgbtnExit.ZoomSpeed = 10;
+            this.imgbtnExit.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // musteriIslemForm1
+            // 
+            this.musteriIslemForm1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("musteriIslemForm1.BackgroundImage")));
+            this.musteriIslemForm1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.musteriIslemForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.musteriIslemForm1.Location = new System.Drawing.Point(0, 24);
+            this.musteriIslemForm1.Name = "musteriIslemForm1";
+            this.musteriIslemForm1.Size = new System.Drawing.Size(783, 378);
+            this.musteriIslemForm1.TabIndex = 9;
+            // 
+            // raporForm1
+            // 
+            this.raporForm1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("raporForm1.BackgroundImage")));
+            this.raporForm1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.raporForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.raporForm1.Location = new System.Drawing.Point(0, 24);
+            this.raporForm1.Name = "raporForm1";
+            this.raporForm1.Size = new System.Drawing.Size(783, 378);
+            this.raporForm1.TabIndex = 8;
             // 
             // rezervasyonForm1
             // 
@@ -228,10 +277,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 402);
+            this.Controls.Add(this.imgbtnMin);
+            this.Controls.Add(this.musteriIslemForm1);
+            this.Controls.Add(this.raporForm1);
             this.Controls.Add(this.rezervasyonForm1);
             this.Controls.Add(this.kiralamaForm1);
             this.Controls.Add(this.girisForm1);
-            this.Controls.Add(this.imgbtnMin);
             this.Controls.Add(this.imgbtnExit);
             this.Controls.Add(this.aracGuncelleSilForm1);
             this.Controls.Add(this.aracEkleForm1);
@@ -261,7 +312,12 @@
         private System.Windows.Forms.ToolStripMenuItem KiralamaIslemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RezervelerToolStripMenuItem;
         private KiralamaForm kiralamaForm1;
-        private System.Windows.Forms.ToolStripMenuItem rAPORToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RaporToolStripMenuItem;
         private RezervasyonForm rezervasyonForm1;
+        private System.Windows.Forms.ToolStripMenuItem MusteriIslemleriToolStripMenuItem;
+        private RaporForm raporForm1;
+        private MusteriIslemForm musteriIslemForm1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracEkleForm));
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPlaka = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblAracBilgileri = new DevExpress.XtraEditors.LabelControl();
             this.btnAracKaydet = new System.Windows.Forms.Button();
             this.rbtnYok = new System.Windows.Forms.RadioButton();
-            this.rbtVar = new System.Windows.Forms.RadioButton();
+            this.rbtnVar = new System.Windows.Forms.RadioButton();
             this.cmbVites = new System.Windows.Forms.ComboBox();
             this.cmbYakıt = new System.Windows.Forms.ComboBox();
             this.txtKoltukSayisi = new System.Windows.Forms.MaskedTextBox();
@@ -65,16 +68,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.picboxAraba)).BeginInit();
             this.SuspendLayout();
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::RentACarForm.Properties.Resources._20920221;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.Controls.Add(this.txtPlaka);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Controls.Add(this.lblAracBilgileri);
             this.panel1.Controls.Add(this.btnAracKaydet);
             this.panel1.Controls.Add(this.rbtnYok);
-            this.panel1.Controls.Add(this.rbtVar);
+            this.panel1.Controls.Add(this.rbtnVar);
             this.panel1.Controls.Add(this.cmbVites);
             this.panel1.Controls.Add(this.cmbYakıt);
             this.panel1.Controls.Add(this.txtKoltukSayisi);
@@ -124,17 +139,17 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Plaka";
             // 
-            // labelControl1
+            // lblAracBilgileri
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            this.labelControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
-            this.labelControl1.Location = new System.Drawing.Point(40, 34);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(103, 28);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Araç Bilgileri";
+            this.lblAracBilgileri.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAracBilgileri.Appearance.Options.UseFont = true;
+            this.lblAracBilgileri.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
+            this.lblAracBilgileri.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblAracBilgileri.ImageOptions.Image")));
+            this.lblAracBilgileri.Location = new System.Drawing.Point(40, 34);
+            this.lblAracBilgileri.Name = "lblAracBilgileri";
+            this.lblAracBilgileri.Size = new System.Drawing.Size(134, 28);
+            this.lblAracBilgileri.TabIndex = 1;
+            this.lblAracBilgileri.Text = "Araç Bilgileri";
             // 
             // btnAracKaydet
             // 
@@ -142,11 +157,12 @@
             this.btnAracKaydet.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAracKaydet.Image = ((System.Drawing.Image)(resources.GetObject("btnAracKaydet.Image")));
             this.btnAracKaydet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAracKaydet.Location = new System.Drawing.Point(605, 292);
+            this.btnAracKaydet.Location = new System.Drawing.Point(636, 303);
             this.btnAracKaydet.Name = "btnAracKaydet";
-            this.btnAracKaydet.Size = new System.Drawing.Size(115, 30);
+            this.btnAracKaydet.Size = new System.Drawing.Size(84, 30);
             this.btnAracKaydet.TabIndex = 31;
             this.btnAracKaydet.Text = "Kaydet";
+            this.btnAracKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAracKaydet.UseVisualStyleBackColor = false;
             // 
             // rbtnYok
@@ -161,17 +177,17 @@
             this.rbtnYok.Text = "Yok";
             this.rbtnYok.UseVisualStyleBackColor = false;
             // 
-            // rbtVar
+            // rbtnVar
             // 
-            this.rbtVar.AutoSize = true;
-            this.rbtVar.BackColor = System.Drawing.Color.Transparent;
-            this.rbtVar.Location = new System.Drawing.Point(620, 123);
-            this.rbtVar.Name = "rbtVar";
-            this.rbtVar.Size = new System.Drawing.Size(41, 17);
-            this.rbtVar.TabIndex = 9;
-            this.rbtVar.TabStop = true;
-            this.rbtVar.Text = "Var";
-            this.rbtVar.UseVisualStyleBackColor = false;
+            this.rbtnVar.AutoSize = true;
+            this.rbtnVar.BackColor = System.Drawing.Color.Transparent;
+            this.rbtnVar.Location = new System.Drawing.Point(620, 123);
+            this.rbtnVar.Name = "rbtnVar";
+            this.rbtnVar.Size = new System.Drawing.Size(41, 17);
+            this.rbtnVar.TabIndex = 9;
+            this.rbtnVar.TabStop = true;
+            this.rbtnVar.Text = "Var";
+            this.rbtnVar.UseVisualStyleBackColor = false;
             // 
             // cmbVites
             // 
@@ -425,10 +441,10 @@
         private System.Windows.Forms.PictureBox picboxAraba;
         private System.Windows.Forms.Button btnResimSec;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblAracBilgileri;
         private System.Windows.Forms.Button btnAracKaydet;
         private System.Windows.Forms.RadioButton rbtnYok;
-        private System.Windows.Forms.RadioButton rbtVar;
+        private System.Windows.Forms.RadioButton rbtnVar;
         private System.Windows.Forms.ComboBox cmbVites;
         private System.Windows.Forms.ComboBox cmbYakıt;
         private System.Windows.Forms.MaskedTextBox txtKoltukSayisi;
@@ -454,5 +470,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtPlaka;
         private System.Windows.Forms.Label label7;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
