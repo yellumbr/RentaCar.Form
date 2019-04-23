@@ -118,11 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="iconfinder_plus_add_blue_61657" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_plus_add_blue_61657.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_seo-report_2944876" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_seo-report_2944876.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="geometric" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\geometric.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_ic_system_update_alt_48px_3669205" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_ic_system_update_alt_48px_3669205.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColorfulBackground_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColorfulBackground_01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_00-ELASTOFONT-STORE-READY_user_2703063" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_00-ELASTOFONT-STORE-READY_user_2703063.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="triangles-1430105_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangles-1430105_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,14 +142,11 @@
   <data name="iconfinder_minus_1814110" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_minus_1814110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="posterler-ozet-renkli-yamalar-background-vektor-eps10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\posterler-ozet-renkli-yamalar-background-vektor-eps10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconfinder_update_64935" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_update_64935.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mesh-1430108_12801" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mesh-1430108_12801.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="20920221" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\20920221.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_aiga_taxi_134116" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_aiga_taxi_134116.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,14 +181,11 @@
   <data name="iconfinder_reservation_41721651" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_reservation_41721651.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wall-1851061_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wall-1851061_1280.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="20920221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20920221.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background-3104413_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-3104413_640.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_General_-_Office_38_1471114" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_General_-_Office_38_1471114.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_add_user_3802" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_add_user_3802.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,20 +193,17 @@
   <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconfinder_icons_exit_1564505" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_icons_exit_1564505.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconfinder_icon-148-tag-add_314742" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_icon-148-tag-add_314742.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_tourer_27147481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_tourer_27147481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_key_298808" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_key_298808.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_User Card_22169" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_User Card_22169.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_Streamline-70_185090" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_Streamline-70_185090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +220,8 @@
   <data name="iconfinder_aiga_taxi_1341161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_aiga_taxi_1341161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bot-day-background-700x600-ce7fb2df41cfbf6c827cf229da02882a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bot-day-background-700x600-ce7fb2df41cfbf6c827cf229da02882a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_buy_103428" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_buy_103428.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +232,8 @@
   <data name="iconfinder_Pinterest_UI-16_2540579" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_Pinterest_UI-16_2540579.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="116730261-ottoman-turkish-marbling-art-patterns-as-abstract-colorful-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\116730261-ottoman-turkish-marbling-art-patterns-as-abstract-colorful-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="posterler-ozet-renkli-yamalar-background-vektor-eps10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\posterler-ozet-renkli-yamalar-background-vektor-eps10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_close_1282956" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_close_1282956.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,11 +247,11 @@
   <data name="mesh-1430108_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mesh-1430108_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconfinder_00-ELASTOFONT-STORE-READY_user_2703063" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_00-ELASTOFONT-STORE-READY_user_2703063.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconfinder_tourer_27147481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_tourer_27147481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ColorfulBackground_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColorfulBackground_01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bot-day-background-700x600-ce7fb2df41cfbf6c827cf229da02882a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bot-day-background-700x600-ce7fb2df41cfbf6c827cf229da02882a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_engagement-customer-user-interaction-branding_3209311" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_engagement-customer-user-interaction-branding_3209311.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,14 +268,14 @@
   <data name="iconfinder_office-19_809604" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_office-19_809604.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconfinder_seo-report_2944876" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_seo-report_2944876.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wall-1851061_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wall-1851061_1280.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_user-delete_216494" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_user-delete_216494.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconfinder_plus_add_blue_61657" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_plus_add_blue_61657.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="116730261-ottoman-turkish-marbling-art-patterns-as-abstract-colorful-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\116730261-ottoman-turkish-marbling-art-patterns-as-abstract-colorful-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_24_icons_2191530" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_24_icons_2191530.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,10 +289,10 @@
   <data name="iconfinder_12_-_Invoice_2102048" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_12_-_Invoice_2102048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconfinder_update_64935" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_update_64935.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconfinder_General_-_Office_38_1471114" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_General_-_Office_38_1471114.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconfinder_icons_exit_1564505" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_icons_exit_1564505.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="steel-3419985_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\steel-3419985_1280.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

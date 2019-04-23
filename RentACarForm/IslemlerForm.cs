@@ -112,9 +112,9 @@ namespace RentACarForm
             kiralamaForm1.Hide();
             girisForm1.Hide();
             musteriIslemForm1.Hide();
-            menuStrip1.BackgroundImage = RentACarForm.Properties.Resources.texture_2659241_1280;
-            imgbtnMin.BackColor = Color.SeaGreen;
-            imgbtnExit.BackColor = Color.SeaGreen;
+            menuStrip1.BackgroundImage = RentACarForm.Properties.Resources.steel_3419985_1280;
+            imgbtnMin.BackColor = Color.Chocolate;
+            imgbtnExit.BackColor = Color.Chocolate;
         }
 
         private void MusteriIslemleriToolStripMenuItem_Click(object sender, EventArgs e)

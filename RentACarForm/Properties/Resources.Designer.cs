@@ -613,6 +613,16 @@ namespace RentACarForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap steel_3419985_1280 {
+            get {
+                object obj = ResourceManager.GetObject("steel-3419985_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap texture_2659241_1280 {
             get {
                 object obj = ResourceManager.GetObject("texture-2659241_1280", resourceCulture);

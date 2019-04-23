@@ -408,5 +408,8 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_icons_exit_1564505.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steel-3419985_1280.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

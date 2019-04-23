@@ -73,6 +73,7 @@
             this.yeniAracEkleToolStripMenuItem,
             this.aracSilToolStripMenuItem});
             this.aracIslemleriToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.aracIslemleriToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.aracIslemleriToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_aiga_taxi_134116;
             this.aracIslemleriToolStripMenuItem.Name = "aracIslemleriToolStripMenuItem";
             this.aracIslemleriToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
@@ -96,15 +97,18 @@
             // 
             // MusteriIslemleriToolStripMenuItem
             // 
+            this.MusteriIslemleriToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MusteriIslemleriToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.MusteriIslemleriToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_engagement_customer_user_interaction_branding_3209311;
             this.MusteriIslemleriToolStripMenuItem.Name = "MusteriIslemleriToolStripMenuItem";
-            this.MusteriIslemleriToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
+            this.MusteriIslemleriToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
             this.MusteriIslemleriToolStripMenuItem.Text = "MÜŞTERİ İŞLEMLERİ";
             this.MusteriIslemleriToolStripMenuItem.Click += new System.EventHandler(this.MusteriIslemleriToolStripMenuItem_Click);
             // 
             // KiralamaIslemleriToolStripMenuItem
             // 
             this.KiralamaIslemleriToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KiralamaIslemleriToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.KiralamaIslemleriToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_buy_103428;
             this.KiralamaIslemleriToolStripMenuItem.Name = "KiralamaIslemleriToolStripMenuItem";
             this.KiralamaIslemleriToolStripMenuItem.Size = new System.Drawing.Size(153, 20);
@@ -114,6 +118,7 @@
             // RezervelerToolStripMenuItem
             // 
             this.RezervelerToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.RezervelerToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.RezervelerToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_key_298808;
             this.RezervelerToolStripMenuItem.Name = "RezervelerToolStripMenuItem";
             this.RezervelerToolStripMenuItem.Size = new System.Drawing.Size(179, 20);
@@ -122,6 +127,8 @@
             // 
             // RaporToolStripMenuItem
             // 
+            this.RaporToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.RaporToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.RaporToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_12___Invoice_2102048;
             this.RaporToolStripMenuItem.Name = "RaporToolStripMenuItem";
             this.RaporToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
@@ -217,7 +224,7 @@
             // 
             // raporForm1
             // 
-            this.raporForm1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("raporForm1.BackgroundImage")));
+            this.raporForm1.BackgroundImage = global::RentACarForm.Properties.Resources.steel_3419985_1280;
             this.raporForm1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.raporForm1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.raporForm1.Location = new System.Drawing.Point(0, 24);
