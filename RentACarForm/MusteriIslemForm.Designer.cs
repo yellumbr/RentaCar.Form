@@ -59,6 +59,8 @@
             this.txtSifre = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnMusteriGuncelle = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblMusteriEkle
@@ -69,9 +71,9 @@
             this.lblMusteriEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblMusteriEkle.Location = new System.Drawing.Point(45, 26);
             this.lblMusteriEkle.Name = "lblMusteriEkle";
-            this.lblMusteriEkle.Size = new System.Drawing.Size(135, 26);
+            this.lblMusteriEkle.Size = new System.Drawing.Size(303, 26);
             this.lblMusteriEkle.TabIndex = 0;
-            this.lblMusteriEkle.Text = "Müşteri Ekle";
+            this.lblMusteriEkle.Text = "Müşteri Ekle ve Müşteri Güncelle";
             this.lblMusteriEkle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblMusteriSil
@@ -158,21 +160,21 @@
             // 
             // txtMusteriTc
             // 
-            this.txtMusteriTc.Location = new System.Drawing.Point(140, 125);
+            this.txtMusteriTc.Location = new System.Drawing.Point(140, 74);
             this.txtMusteriTc.Name = "txtMusteriTc";
             this.txtMusteriTc.Size = new System.Drawing.Size(100, 20);
             this.txtMusteriTc.TabIndex = 30;
             // 
             // txtMusteriSoyad
             // 
-            this.txtMusteriSoyad.Location = new System.Drawing.Point(140, 97);
+            this.txtMusteriSoyad.Location = new System.Drawing.Point(140, 125);
             this.txtMusteriSoyad.Name = "txtMusteriSoyad";
             this.txtMusteriSoyad.Size = new System.Drawing.Size(100, 20);
             this.txtMusteriSoyad.TabIndex = 29;
             // 
             // txtMusteriAd
             // 
-            this.txtMusteriAd.Location = new System.Drawing.Point(140, 70);
+            this.txtMusteriAd.Location = new System.Drawing.Point(140, 99);
             this.txtMusteriAd.Name = "txtMusteriAd";
             this.txtMusteriAd.Size = new System.Drawing.Size(100, 20);
             this.txtMusteriAd.TabIndex = 28;
@@ -204,7 +206,7 @@
             this.lblTC.AutoSize = true;
             this.lblTC.BackColor = System.Drawing.Color.Transparent;
             this.lblTC.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTC.Location = new System.Drawing.Point(46, 129);
+            this.lblTC.Location = new System.Drawing.Point(46, 74);
             this.lblTC.Name = "lblTC";
             this.lblTC.Size = new System.Drawing.Size(60, 16);
             this.lblTC.TabIndex = 25;
@@ -215,7 +217,7 @@
             this.lblSoyad.AutoSize = true;
             this.lblSoyad.BackColor = System.Drawing.Color.Transparent;
             this.lblSoyad.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSoyad.Location = new System.Drawing.Point(46, 101);
+            this.lblSoyad.Location = new System.Drawing.Point(46, 126);
             this.lblSoyad.Name = "lblSoyad";
             this.lblSoyad.Size = new System.Drawing.Size(43, 16);
             this.lblSoyad.TabIndex = 24;
@@ -226,7 +228,7 @@
             this.lblAd.AutoSize = true;
             this.lblAd.BackColor = System.Drawing.Color.Transparent;
             this.lblAd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAd.Location = new System.Drawing.Point(46, 74);
+            this.lblAd.Location = new System.Drawing.Point(46, 100);
             this.lblAd.Name = "lblAd";
             this.lblAd.Size = new System.Drawing.Size(23, 16);
             this.lblAd.TabIndex = 23;
@@ -239,6 +241,7 @@
             this.cmbKayitliMusteriSil.Name = "cmbKayitliMusteriSil";
             this.cmbKayitliMusteriSil.Size = new System.Drawing.Size(121, 21);
             this.cmbKayitliMusteriSil.TabIndex = 40;
+            this.cmbKayitliMusteriSil.SelectedIndexChanged += new System.EventHandler(this.CmbKayitliMusteriSil_SelectedIndexChanged);
             // 
             // lblKayitliMusteriler
             // 
@@ -257,9 +260,9 @@
             this.btnMusteriEkle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMusteriEkle.Image = global::RentACarForm.Properties.Resources.iconfinder_user_add_216490;
             this.btnMusteriEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusteriEkle.Location = new System.Drawing.Point(539, 244);
+            this.btnMusteriEkle.Location = new System.Drawing.Point(539, 231);
             this.btnMusteriEkle.Name = "btnMusteriEkle";
-            this.btnMusteriEkle.Size = new System.Drawing.Size(109, 23);
+            this.btnMusteriEkle.Size = new System.Drawing.Size(109, 33);
             this.btnMusteriEkle.TabIndex = 41;
             this.btnMusteriEkle.Text = "Müşteri Ekle";
             this.btnMusteriEkle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -272,13 +275,14 @@
             this.btnMusteriSil.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMusteriSil.Image = global::RentACarForm.Properties.Resources.iconfinder_user_delete_216494;
             this.btnMusteriSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusteriSil.Location = new System.Drawing.Point(176, 365);
+            this.btnMusteriSil.Location = new System.Drawing.Point(176, 362);
             this.btnMusteriSil.Name = "btnMusteriSil";
-            this.btnMusteriSil.Size = new System.Drawing.Size(94, 23);
+            this.btnMusteriSil.Size = new System.Drawing.Size(94, 32);
             this.btnMusteriSil.TabIndex = 42;
             this.btnMusteriSil.Text = "Müşteri Sil";
             this.btnMusteriSil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMusteriSil.UseVisualStyleBackColor = false;
+            this.btnMusteriSil.Click += new System.EventHandler(this.btnMusteriSil_Click);
             // 
             // bunifuElipse1
             // 
@@ -346,12 +350,40 @@
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 48;
             // 
+            // btnMusteriGuncelle
+            // 
+            this.btnMusteriGuncelle.BackColor = System.Drawing.Color.Bisque;
+            this.btnMusteriGuncelle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMusteriGuncelle.Image = global::RentACarForm.Properties.Resources.iconfinder_44_refresh_4201253;
+            this.btnMusteriGuncelle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMusteriGuncelle.Location = new System.Drawing.Point(391, 231);
+            this.btnMusteriGuncelle.Name = "btnMusteriGuncelle";
+            this.btnMusteriGuncelle.Size = new System.Drawing.Size(129, 33);
+            this.btnMusteriGuncelle.TabIndex = 49;
+            this.btnMusteriGuncelle.Text = "Müşteri Güncelle";
+            this.btnMusteriGuncelle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMusteriGuncelle.UseVisualStyleBackColor = false;
+            this.btnMusteriGuncelle.Click += new System.EventHandler(this.BtnMusteriGuncelle_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(276, 318);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(236, 13);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Müşteri bilgilerini güncellemek için müşteri seçiniz";
+            // 
             // MusteriIslemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RentACarForm.Properties.Resources.wall_1851061_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnMusteriGuncelle);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtSifre);
@@ -419,5 +451,7 @@
         private System.Windows.Forms.Label lblKullaniciAdi;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button btnMusteriGuncelle;
+        private System.Windows.Forms.Label label2;
     }
 }

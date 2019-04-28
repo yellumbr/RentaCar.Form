@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Commons.Concretes;
+using BankAppForm.Soap.BankAppCustomerService;
+using BankAppForm.Soap.BankAppTransactionService;
+using Customers = Bank.Models.Concretes.Customers;
+using Transactions = Bank.Models.Concretes.Transactions;
 
 namespace RentACarForm
 {

@@ -92,6 +92,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.9.0.1\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="Business">
+      <HintPath>..\..\RentaCarApp\Business\bin\Debug\Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Commons">
+      <HintPath>..\..\RentaCarApp\Business\bin\Debug\Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAccesLayer">
+      <HintPath>..\..\RentaCarApp\Business\bin\Debug\DataAccesLayer.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -104,7 +113,16 @@
     <Reference Include="DevExpress.XtraScheduler.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\RentaCar.WebServis\RentaCarWebServis\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Models">
+      <HintPath>..\..\RentaCarApp\Business\bin\Debug\Models.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="RentaCarWebServis">
+      <HintPath>..\..\RentaCar.WebServis\RentaCarWebServis\bin\RentaCarWebServis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -113,7 +131,9 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -138,6 +158,11 @@
     </Compile>
     <Compile Include="AracGuncelleSilForm.Designer.cs">
       <DependentUpon>AracGuncelleSilForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\MusterilerWebServis\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -221,6 +246,22 @@
     <EmbeddedResource Include="RezervasyonForm.resx">
       <DependentUpon>RezervasyonForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\MusterilerWebServis\MusterilerWebServis.wsdl" />
+    <None Include="Connected Services\MusterilerWebServis\RentACarForm.MusterilerWebServis.MusteriEkleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusterilerWebServis\RentACarForm.MusterilerWebServis.MusteriGuncelleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusterilerWebServis\RentACarForm.MusterilerWebServis.MusteriHepsiniSecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusterilerWebServis\RentACarForm.MusterilerWebServis.MusteriIdSecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusterilerWebServis\RentACarForm.MusterilerWebServis.Musteriler.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -410,6 +451,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\steel-3419985_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MusterilerWebServis\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusterilerWebServis\MusterilerWebServis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusterilerWebServis\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusterilerWebServis\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusterilerWebServis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
