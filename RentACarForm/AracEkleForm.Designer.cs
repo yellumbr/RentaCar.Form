@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracEkleForm));
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbAirBag = new System.Windows.Forms.ComboBox();
+            this.txtYasSiniri = new System.Windows.Forms.MaskedTextBox();
+            this.lblYasSiniri = new System.Windows.Forms.Label();
             this.txtPlaka = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblAracBilgileri = new DevExpress.XtraEditors.LabelControl();
             this.btnAracKaydet = new System.Windows.Forms.Button();
-            this.rbtnYok = new System.Windows.Forms.RadioButton();
-            this.rbtnVar = new System.Windows.Forms.RadioButton();
             this.cmbVites = new System.Windows.Forms.ComboBox();
             this.cmbYakıt = new System.Windows.Forms.ComboBox();
             this.txtKoltukSayisi = new System.Windows.Forms.MaskedTextBox();
@@ -55,7 +55,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblBagajHacmi = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnResimSec = new System.Windows.Forms.Button();
             this.picboxAraba = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAraba)).BeginInit();
             this.SuspendLayout();
@@ -75,21 +76,17 @@
             this.bunifuDragControl1.TargetControl = this.panel1;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::RentACarForm.Properties.Resources._20920221;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.cmbAirBag);
+            this.panel1.Controls.Add(this.txtYasSiniri);
+            this.panel1.Controls.Add(this.lblYasSiniri);
             this.panel1.Controls.Add(this.txtPlaka);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lblAracBilgileri);
             this.panel1.Controls.Add(this.btnAracKaydet);
-            this.panel1.Controls.Add(this.rbtnYok);
-            this.panel1.Controls.Add(this.rbtnVar);
             this.panel1.Controls.Add(this.cmbVites);
             this.panel1.Controls.Add(this.cmbYakıt);
             this.panel1.Controls.Add(this.txtKoltukSayisi);
@@ -106,7 +103,7 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblBagajHacmi);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -120,6 +117,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(767, 375);
             this.panel1.TabIndex = 0;
+            // 
+            // cmbAirBag
+            // 
+            this.cmbAirBag.FormattingEnabled = true;
+            this.cmbAirBag.Location = new System.Drawing.Point(620, 124);
+            this.cmbAirBag.Name = "cmbAirBag";
+            this.cmbAirBag.Size = new System.Drawing.Size(100, 21);
+            this.cmbAirBag.TabIndex = 35;
+            // 
+            // txtYasSiniri
+            // 
+            this.txtYasSiniri.Location = new System.Drawing.Point(620, 279);
+            this.txtYasSiniri.Name = "txtYasSiniri";
+            this.txtYasSiniri.Size = new System.Drawing.Size(100, 20);
+            this.txtYasSiniri.TabIndex = 34;
+            // 
+            // lblYasSiniri
+            // 
+            this.lblYasSiniri.AutoSize = true;
+            this.lblYasSiniri.BackColor = System.Drawing.Color.Transparent;
+            this.lblYasSiniri.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYasSiniri.Location = new System.Drawing.Point(495, 281);
+            this.lblYasSiniri.Name = "lblYasSiniri";
+            this.lblYasSiniri.Size = new System.Drawing.Size(105, 14);
+            this.lblYasSiniri.TabIndex = 33;
+            this.lblYasSiniri.Text = "Minimum Yaş Sınırı";
             // 
             // txtPlaka
             // 
@@ -157,37 +180,14 @@
             this.btnAracKaydet.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAracKaydet.Image = ((System.Drawing.Image)(resources.GetObject("btnAracKaydet.Image")));
             this.btnAracKaydet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAracKaydet.Location = new System.Drawing.Point(636, 303);
+            this.btnAracKaydet.Location = new System.Drawing.Point(636, 320);
             this.btnAracKaydet.Name = "btnAracKaydet";
             this.btnAracKaydet.Size = new System.Drawing.Size(84, 30);
             this.btnAracKaydet.TabIndex = 31;
             this.btnAracKaydet.Text = "Kaydet";
             this.btnAracKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAracKaydet.UseVisualStyleBackColor = false;
-            // 
-            // rbtnYok
-            // 
-            this.rbtnYok.AutoSize = true;
-            this.rbtnYok.BackColor = System.Drawing.Color.Transparent;
-            this.rbtnYok.Location = new System.Drawing.Point(676, 123);
-            this.rbtnYok.Name = "rbtnYok";
-            this.rbtnYok.Size = new System.Drawing.Size(44, 17);
-            this.rbtnYok.TabIndex = 10;
-            this.rbtnYok.TabStop = true;
-            this.rbtnYok.Text = "Yok";
-            this.rbtnYok.UseVisualStyleBackColor = false;
-            // 
-            // rbtnVar
-            // 
-            this.rbtnVar.AutoSize = true;
-            this.rbtnVar.BackColor = System.Drawing.Color.Transparent;
-            this.rbtnVar.Location = new System.Drawing.Point(620, 123);
-            this.rbtnVar.Name = "rbtnVar";
-            this.rbtnVar.Size = new System.Drawing.Size(41, 17);
-            this.rbtnVar.TabIndex = 9;
-            this.rbtnVar.TabStop = true;
-            this.rbtnVar.Text = "Var";
-            this.rbtnVar.UseVisualStyleBackColor = false;
+            this.btnAracKaydet.Click += new System.EventHandler(this.btnAracKaydet_Click);
             // 
             // cmbVites
             // 
@@ -214,11 +214,10 @@
             // 
             // txtBagajHacmi
             // 
-            this.txtBagajHacmi.Location = new System.Drawing.Point(620, 151);
+            this.txtBagajHacmi.Location = new System.Drawing.Point(620, 155);
             this.txtBagajHacmi.Name = "txtBagajHacmi";
             this.txtBagajHacmi.Size = new System.Drawing.Size(100, 20);
             this.txtBagajHacmi.TabIndex = 11;
-            this.txtBagajHacmi.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtBagajHacmi_MaskInputRejected);
             // 
             // txtKmSinir
             // 
@@ -324,16 +323,16 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Air Bag";
             // 
-            // label8
+            // lblBagajHacmi
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(495, 157);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 14);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Bagaj Hacmi";
+            this.lblBagajHacmi.AutoSize = true;
+            this.lblBagajHacmi.BackColor = System.Drawing.Color.Transparent;
+            this.lblBagajHacmi.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBagajHacmi.Location = new System.Drawing.Point(495, 157);
+            this.lblBagajHacmi.Name = "lblBagajHacmi";
+            this.lblBagajHacmi.Size = new System.Drawing.Size(72, 14);
+            this.lblBagajHacmi.TabIndex = 9;
+            this.lblBagajHacmi.Text = "Bagaj Hacmi";
             // 
             // label6
             // 
@@ -422,6 +421,11 @@
             this.picboxAraba.TabIndex = 0;
             this.picboxAraba.TabStop = false;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // AracEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,8 +447,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.LabelControl lblAracBilgileri;
         private System.Windows.Forms.Button btnAracKaydet;
-        private System.Windows.Forms.RadioButton rbtnYok;
-        private System.Windows.Forms.RadioButton rbtnVar;
         private System.Windows.Forms.ComboBox cmbVites;
         private System.Windows.Forms.ComboBox cmbYakıt;
         private System.Windows.Forms.MaskedTextBox txtKoltukSayisi;
@@ -461,7 +463,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblBagajHacmi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -472,5 +474,8 @@
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.MaskedTextBox txtYasSiniri;
+        private System.Windows.Forms.Label lblYasSiniri;
+        private System.Windows.Forms.ComboBox cmbAirBag;
     }
 }

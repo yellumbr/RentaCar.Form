@@ -33,11 +33,10 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbAirBag = new System.Windows.Forms.ComboBox();
             this.btnAracDuzenle = new System.Windows.Forms.Button();
             this.btnAracSil = new System.Windows.Forms.Button();
             this.btnAracBilgiGetir = new System.Windows.Forms.Button();
-            this.rbtnYok = new System.Windows.Forms.RadioButton();
-            this.rbtVar = new System.Windows.Forms.RadioButton();
             this.txtKoltukSayisi = new System.Windows.Forms.MaskedTextBox();
             this.txtBagajHacmi = new System.Windows.Forms.MaskedTextBox();
             this.txtKmSinir = new System.Windows.Forms.MaskedTextBox();
@@ -52,15 +51,15 @@
             this.txtPlaka = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbVites = new System.Windows.Forms.ComboBox();
-            this.cmbYakıt = new System.Windows.Forms.ComboBox();
+            this.cmbYakit = new System.Windows.Forms.ComboBox();
             this.txtAracKm = new System.Windows.Forms.MaskedTextBox();
-            this.txtYıl = new System.Windows.Forms.MaskedTextBox();
+            this.txtYasSiniri = new System.Windows.Forms.MaskedTextBox();
             this.txtModel = new System.Windows.Forms.MaskedTextBox();
             this.txtMarka = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblGerekliYas = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAracinBilgileri = new DevExpress.XtraEditors.LabelControl();
@@ -87,11 +86,10 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.BackgroundImage = global::RentACarForm.Properties.Resources.abstract_d_geometric_colorful_background_vector;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.cmbAirBag);
             this.panel1.Controls.Add(this.btnAracDuzenle);
             this.panel1.Controls.Add(this.btnAracSil);
             this.panel1.Controls.Add(this.btnAracBilgiGetir);
-            this.panel1.Controls.Add(this.rbtnYok);
-            this.panel1.Controls.Add(this.rbtVar);
             this.panel1.Controls.Add(this.txtKoltukSayisi);
             this.panel1.Controls.Add(this.txtBagajHacmi);
             this.panel1.Controls.Add(this.txtKmSinir);
@@ -106,15 +104,15 @@
             this.panel1.Controls.Add(this.txtPlaka);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cmbVites);
-            this.panel1.Controls.Add(this.cmbYakıt);
+            this.panel1.Controls.Add(this.cmbYakit);
             this.panel1.Controls.Add(this.txtAracKm);
-            this.panel1.Controls.Add(this.txtYıl);
+            this.panel1.Controls.Add(this.txtYasSiniri);
             this.panel1.Controls.Add(this.txtModel);
             this.panel1.Controls.Add(this.txtMarka);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblGerekliYas);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblAracinBilgileri);
@@ -127,6 +125,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(745, 370);
             this.panel1.TabIndex = 0;
+            // 
+            // cmbAirBag
+            // 
+            this.cmbAirBag.FormattingEnabled = true;
+            this.cmbAirBag.Location = new System.Drawing.Point(580, 164);
+            this.cmbAirBag.Name = "cmbAirBag";
+            this.cmbAirBag.Size = new System.Drawing.Size(98, 22);
+            this.cmbAirBag.TabIndex = 63;
             // 
             // btnAracDuzenle
             // 
@@ -145,6 +151,7 @@
             this.btnAracDuzenle.Text = "Araç Bilgi Güncelle";
             this.btnAracDuzenle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAracDuzenle.UseVisualStyleBackColor = false;
+            this.btnAracDuzenle.Click += new System.EventHandler(this.btnAracDuzenle_Click);
             // 
             // btnAracSil
             // 
@@ -179,30 +186,7 @@
             this.btnAracBilgiGetir.Text = "Araç Bilgilerini Getir";
             this.btnAracBilgiGetir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAracBilgiGetir.UseVisualStyleBackColor = false;
-            // 
-            // rbtnYok
-            // 
-            this.rbtnYok.AutoSize = true;
-            this.rbtnYok.BackColor = System.Drawing.Color.Transparent;
-            this.rbtnYok.Location = new System.Drawing.Point(636, 164);
-            this.rbtnYok.Name = "rbtnYok";
-            this.rbtnYok.Size = new System.Drawing.Size(46, 18);
-            this.rbtnYok.TabIndex = 51;
-            this.rbtnYok.TabStop = true;
-            this.rbtnYok.Text = "Yok";
-            this.rbtnYok.UseVisualStyleBackColor = false;
-            // 
-            // rbtVar
-            // 
-            this.rbtVar.AutoSize = true;
-            this.rbtVar.BackColor = System.Drawing.Color.Transparent;
-            this.rbtVar.Location = new System.Drawing.Point(580, 164);
-            this.rbtVar.Name = "rbtVar";
-            this.rbtVar.Size = new System.Drawing.Size(43, 18);
-            this.rbtVar.TabIndex = 49;
-            this.rbtVar.TabStop = true;
-            this.rbtVar.Text = "Var";
-            this.rbtVar.UseVisualStyleBackColor = false;
+            this.btnAracBilgiGetir.Click += new System.EventHandler(this.btnAracBilgiGetir_Click);
             // 
             // txtKoltukSayisi
             // 
@@ -317,7 +301,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(98, 290);
+            this.label7.Location = new System.Drawing.Point(86, 290);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 14);
             this.label7.TabIndex = 46;
@@ -331,13 +315,13 @@
             this.cmbVites.Size = new System.Drawing.Size(100, 22);
             this.cmbVites.TabIndex = 40;
             // 
-            // cmbYakıt
+            // cmbYakit
             // 
-            this.cmbYakıt.FormattingEnabled = true;
-            this.cmbYakıt.Location = new System.Drawing.Point(208, 226);
-            this.cmbYakıt.Name = "cmbYakıt";
-            this.cmbYakıt.Size = new System.Drawing.Size(100, 22);
-            this.cmbYakıt.TabIndex = 38;
+            this.cmbYakit.FormattingEnabled = true;
+            this.cmbYakit.Location = new System.Drawing.Point(208, 226);
+            this.cmbYakit.Name = "cmbYakit";
+            this.cmbYakit.Size = new System.Drawing.Size(100, 22);
+            this.cmbYakit.TabIndex = 38;
             // 
             // txtAracKm
             // 
@@ -346,12 +330,12 @@
             this.txtAracKm.Size = new System.Drawing.Size(100, 22);
             this.txtAracKm.TabIndex = 44;
             // 
-            // txtYıl
+            // txtYasSiniri
             // 
-            this.txtYıl.Location = new System.Drawing.Point(208, 195);
-            this.txtYıl.Name = "txtYıl";
-            this.txtYıl.Size = new System.Drawing.Size(100, 22);
-            this.txtYıl.TabIndex = 36;
+            this.txtYasSiniri.Location = new System.Drawing.Point(208, 195);
+            this.txtYasSiniri.Name = "txtYasSiniri";
+            this.txtYasSiniri.Size = new System.Drawing.Size(100, 22);
+            this.txtYasSiniri.TabIndex = 36;
             // 
             // txtModel
             // 
@@ -372,7 +356,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(98, 322);
+            this.label11.Location = new System.Drawing.Point(86, 322);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 14);
             this.label11.TabIndex = 45;
@@ -383,7 +367,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(98, 260);
+            this.label5.Location = new System.Drawing.Point(86, 260);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 14);
             this.label5.TabIndex = 43;
@@ -394,29 +378,29 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(98, 229);
+            this.label4.Location = new System.Drawing.Point(86, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 14);
             this.label4.TabIndex = 41;
             this.label4.Text = "Yakıt";
             // 
-            // label3
+            // lblGerekliYas
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(98, 198);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 14);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Yıl";
+            this.lblGerekliYas.AutoSize = true;
+            this.lblGerekliYas.BackColor = System.Drawing.Color.Transparent;
+            this.lblGerekliYas.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGerekliYas.Location = new System.Drawing.Point(86, 198);
+            this.lblGerekliYas.Name = "lblGerekliYas";
+            this.lblGerekliYas.Size = new System.Drawing.Size(105, 14);
+            this.lblGerekliYas.TabIndex = 39;
+            this.lblGerekliYas.Text = "Minimum Yaş Sınırı";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(98, 167);
+            this.label2.Location = new System.Drawing.Point(86, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 14);
             this.label2.TabIndex = 37;
@@ -428,7 +412,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(98, 136);
+            this.label1.Location = new System.Drawing.Point(87, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 14);
             this.label1.TabIndex = 35;
@@ -454,6 +438,7 @@
             this.cmbPlaka.Name = "cmbPlaka";
             this.cmbPlaka.Size = new System.Drawing.Size(121, 22);
             this.cmbPlaka.TabIndex = 2;
+            this.cmbPlaka.SelectedIndexChanged += new System.EventHandler(this.cmbPlaka_SelectedIndexChanged);
             // 
             // lblPlakaSec
             // 
@@ -500,21 +485,19 @@
         private System.Windows.Forms.MaskedTextBox txtPlaka;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbVites;
-        private System.Windows.Forms.ComboBox cmbYakıt;
+        private System.Windows.Forms.ComboBox cmbYakit;
         private System.Windows.Forms.MaskedTextBox txtAracKm;
-        private System.Windows.Forms.MaskedTextBox txtYıl;
+        private System.Windows.Forms.MaskedTextBox txtYasSiniri;
         private System.Windows.Forms.MaskedTextBox txtModel;
         private System.Windows.Forms.TextBox txtMarka;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblGerekliYas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAracSil;
         private System.Windows.Forms.Button btnAracBilgiGetir;
-        private System.Windows.Forms.RadioButton rbtnYok;
-        private System.Windows.Forms.RadioButton rbtVar;
         private System.Windows.Forms.MaskedTextBox txtKoltukSayisi;
         private System.Windows.Forms.MaskedTextBox txtBagajHacmi;
         private System.Windows.Forms.MaskedTextBox txtKmSinir;
@@ -529,5 +512,6 @@
         private System.Windows.Forms.Button btnAracDuzenle;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.ComboBox cmbAirBag;
     }
 }

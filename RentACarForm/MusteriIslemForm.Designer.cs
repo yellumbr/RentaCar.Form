@@ -53,6 +53,12 @@
             this.btnMusteriSil = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.lblKullaniciAdi = new System.Windows.Forms.Label();
+            this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.lblSifre = new System.Windows.Forms.Label();
+            this.txtSifre = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblMusteriEkle
@@ -83,30 +89,31 @@
             // 
             // dtpMusteriDogumTarihi
             // 
-            this.dtpMusteriDogumTarihi.Location = new System.Drawing.Point(454, 99);
+            this.dtpMusteriDogumTarihi.Location = new System.Drawing.Point(448, 151);
             this.dtpMusteriDogumTarihi.Name = "dtpMusteriDogumTarihi";
             this.dtpMusteriDogumTarihi.Size = new System.Drawing.Size(200, 20);
             this.dtpMusteriDogumTarihi.TabIndex = 38;
             // 
             // dtMusteriEhliyetTarihi
             // 
-            this.dtMusteriEhliyetTarihi.Location = new System.Drawing.Point(454, 154);
+            this.dtMusteriEhliyetTarihi.Location = new System.Drawing.Point(448, 205);
             this.dtMusteriEhliyetTarihi.Name = "dtMusteriEhliyetTarihi";
             this.dtMusteriEhliyetTarihi.Size = new System.Drawing.Size(200, 20);
             this.dtMusteriEhliyetTarihi.TabIndex = 37;
             // 
             // txtMusteriEhliyetTipi
             // 
-            this.txtMusteriEhliyetTipi.Location = new System.Drawing.Point(454, 128);
+            this.txtMusteriEhliyetTipi.Location = new System.Drawing.Point(448, 177);
             this.txtMusteriEhliyetTipi.Name = "txtMusteriEhliyetTipi";
             this.txtMusteriEhliyetTipi.Size = new System.Drawing.Size(100, 20);
             this.txtMusteriEhliyetTipi.TabIndex = 36;
             // 
             // txtMusteriAdres
             // 
-            this.txtMusteriAdres.Location = new System.Drawing.Point(454, 73);
+            this.txtMusteriAdres.Location = new System.Drawing.Point(448, 70);
+            this.txtMusteriAdres.Multiline = true;
             this.txtMusteriAdres.Name = "txtMusteriAdres";
-            this.txtMusteriAdres.Size = new System.Drawing.Size(100, 20);
+            this.txtMusteriAdres.Size = new System.Drawing.Size(200, 47);
             this.txtMusteriAdres.TabIndex = 35;
             // 
             // lblEhliyetTipi
@@ -114,7 +121,7 @@
             this.lblEhliyetTipi.AutoSize = true;
             this.lblEhliyetTipi.BackColor = System.Drawing.Color.Transparent;
             this.lblEhliyetTipi.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEhliyetTipi.Location = new System.Drawing.Point(337, 129);
+            this.lblEhliyetTipi.Location = new System.Drawing.Point(341, 181);
             this.lblEhliyetTipi.Name = "lblEhliyetTipi";
             this.lblEhliyetTipi.Size = new System.Drawing.Size(70, 16);
             this.lblEhliyetTipi.TabIndex = 34;
@@ -125,7 +132,7 @@
             this.lblEhliyetTarihi.AutoSize = true;
             this.lblEhliyetTarihi.BackColor = System.Drawing.Color.Transparent;
             this.lblEhliyetTarihi.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEhliyetTarihi.Location = new System.Drawing.Point(337, 155);
+            this.lblEhliyetTarihi.Location = new System.Drawing.Point(340, 207);
             this.lblEhliyetTarihi.Name = "lblEhliyetTarihi";
             this.lblEhliyetTarihi.Size = new System.Drawing.Size(82, 16);
             this.lblEhliyetTarihi.TabIndex = 33;
@@ -136,7 +143,7 @@
             this.lblDogumTarihi.AutoSize = true;
             this.lblDogumTarihi.BackColor = System.Drawing.Color.Transparent;
             this.lblDogumTarihi.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDogumTarihi.Location = new System.Drawing.Point(337, 101);
+            this.lblDogumTarihi.Location = new System.Drawing.Point(340, 155);
             this.lblDogumTarihi.Name = "lblDogumTarihi";
             this.lblDogumTarihi.Size = new System.Drawing.Size(85, 16);
             this.lblDogumTarihi.TabIndex = 32;
@@ -175,7 +182,7 @@
             this.lblAdres.AutoSize = true;
             this.lblAdres.BackColor = System.Drawing.Color.Transparent;
             this.lblAdres.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAdres.Location = new System.Drawing.Point(337, 74);
+            this.lblAdres.Location = new System.Drawing.Point(341, 74);
             this.lblAdres.Name = "lblAdres";
             this.lblAdres.Size = new System.Drawing.Size(41, 16);
             this.lblAdres.TabIndex = 27;
@@ -250,13 +257,14 @@
             this.btnMusteriEkle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMusteriEkle.Image = global::RentACarForm.Properties.Resources.iconfinder_user_add_216490;
             this.btnMusteriEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusteriEkle.Location = new System.Drawing.Point(454, 204);
+            this.btnMusteriEkle.Location = new System.Drawing.Point(539, 244);
             this.btnMusteriEkle.Name = "btnMusteriEkle";
             this.btnMusteriEkle.Size = new System.Drawing.Size(109, 23);
             this.btnMusteriEkle.TabIndex = 41;
             this.btnMusteriEkle.Text = "Müşteri Ekle";
             this.btnMusteriEkle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMusteriEkle.UseVisualStyleBackColor = false;
+            this.btnMusteriEkle.Click += new System.EventHandler(this.btnMusteriEkle_Click);
             // 
             // btnMusteriSil
             // 
@@ -264,7 +272,7 @@
             this.btnMusteriSil.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMusteriSil.Image = global::RentACarForm.Properties.Resources.iconfinder_user_delete_216494;
             this.btnMusteriSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusteriSil.Location = new System.Drawing.Point(454, 335);
+            this.btnMusteriSil.Location = new System.Drawing.Point(176, 365);
             this.btnMusteriSil.Name = "btnMusteriSil";
             this.btnMusteriSil.Size = new System.Drawing.Size(94, 23);
             this.btnMusteriSil.TabIndex = 42;
@@ -284,12 +292,72 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // lblKullaniciAdi
+            // 
+            this.lblKullaniciAdi.AutoSize = true;
+            this.lblKullaniciAdi.BackColor = System.Drawing.Color.Transparent;
+            this.lblKullaniciAdi.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKullaniciAdi.Location = new System.Drawing.Point(46, 181);
+            this.lblKullaniciAdi.Name = "lblKullaniciAdi";
+            this.lblKullaniciAdi.Size = new System.Drawing.Size(76, 16);
+            this.lblKullaniciAdi.TabIndex = 43;
+            this.lblKullaniciAdi.Text = "Kullanıcı Adı";
+            // 
+            // txtKullaniciAdi
+            // 
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(140, 177);
+            this.txtKullaniciAdi.Name = "txtKullaniciAdi";
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(100, 20);
+            this.txtKullaniciAdi.TabIndex = 44;
+            // 
+            // lblSifre
+            // 
+            this.lblSifre.AutoSize = true;
+            this.lblSifre.BackColor = System.Drawing.Color.Transparent;
+            this.lblSifre.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSifre.Location = new System.Drawing.Point(46, 205);
+            this.lblSifre.Name = "lblSifre";
+            this.lblSifre.Size = new System.Drawing.Size(35, 16);
+            this.lblSifre.TabIndex = 45;
+            this.lblSifre.Text = "Şifre";
+            // 
+            // txtSifre
+            // 
+            this.txtSifre.Location = new System.Drawing.Point(140, 203);
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Size = new System.Drawing.Size(100, 20);
+            this.txtSifre.TabIndex = 46;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEmail.Location = new System.Drawing.Point(341, 129);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(71, 16);
+            this.lblEmail.TabIndex = 47;
+            this.lblEmail.Text = "Mail Adresi";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(448, 125);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 48;
+            // 
             // MusteriIslemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RentACarForm.Properties.Resources.wall_1851061_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.txtSifre);
+            this.Controls.Add(this.lblSifre);
+            this.Controls.Add(this.txtKullaniciAdi);
+            this.Controls.Add(this.lblKullaniciAdi);
             this.Controls.Add(this.btnMusteriSil);
             this.Controls.Add(this.btnMusteriEkle);
             this.Controls.Add(this.cmbKayitliMusteriSil);
@@ -345,5 +413,11 @@
         private System.Windows.Forms.Button btnMusteriSil;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.TextBox txtSifre;
+        private System.Windows.Forms.Label lblSifre;
+        private System.Windows.Forms.TextBox txtKullaniciAdi;
+        private System.Windows.Forms.Label lblKullaniciAdi;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
     }
 }
