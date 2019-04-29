@@ -24,24 +24,23 @@ namespace RentACarForm
             try
             {
                 bool success;
-                using (var aracSoapClient = new AracWebServiceSoapClient())
+                using (var aracSoapClient = new AracWebServis.AracWebServisSoapClient())
                 {
-                    success = aracSoapClient.AracEkle(new RentaCarAppMusteriService.Araclar()
+                    success = aracSoapClient.AracEkle(new AracWebServis.Araclar()
                     {
                         AracAdi = txtMarka.Text,
+                        AracKm = Convert.ToInt32(txtAracKm.Text),
                         AracModeli = txtModel.Text,
+                        BagajHacmi = Convert.ToInt32(txtBagajHacmi.Text),
+                        GerekenEhliyetYasi = Convert.ToInt32(txtEhliyetYasi.Text),
+                        GunlukKiraBedeli = Convert.ToInt32(txtKiraMiktari.Text),
+                        GunlukKmSiniri = Convert.ToInt32(txtKmSinir.Text),
+                        KoltukSayisi = Convert.ToInt32(txtKoltukSayisi.Text),
+                        MinimumYasSiniri = Convert.ToInt32(txtYasSiniri),
                         Plaka = txtPlaka.Text,
-                        GerekenEhliyetYasi = txtEhliyetYasi.Text,
-                        MinimumYasSiniri = txtYasSiniri.Text,
-                        GunlukKmSiniri = txtKmSinir.Text,
-                        AracKm = txtAracKm.Text,
-                        HavaYastigi = bool.Parse(cmbAirBag.Text),
-                        BagajHacmi = txtBagajHacmi.Text,
-                        KoltukSayisi = txtKoltukSayisi.Text,
-                        GunlukKiraBedeli = txtKiraMiktari.Text,
-                        YakitTipi = cmbYakıt.Text,
-                        VitesTipi = bool.Parse(cmbVites.Text),
-                        //AracResmi = txtMusteriEhliyetTipi.Text
+                        HavaYastigi = cmbAirBag.SelectedText,
+                        YakitTipi = cmbYakit.SelectedText,
+                        VitesTipi = cmbVites.SelectedText,
                     });
                 }
                 var message = success ? "done" : "failed";

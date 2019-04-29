@@ -98,6 +98,7 @@ namespace RentACarForm
                         {
                             aracServis.AracIdSil(item.AracId);
                             araclar.Remove(item);
+                            cmbPlaka.Items.Remove(item.Plaka);
                         }
                     }
 

@@ -8,10 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Commons.Concretes;
-using BankAppForm.Soap.BankAppCustomerService;
-using BankAppForm.Soap.BankAppTransactionService;
-using Customers = Bank.Models.Concretes.Customers;
-using Transactions = Bank.Models.Concretes.Transactions;
+using Models.Concretes;
 
 namespace RentACarForm
 {
@@ -19,6 +16,9 @@ namespace RentACarForm
     {
         MusteriIslemForm musteriForm = new MusteriIslemForm();
         AracGuncelleSilForm aracSilForm = new AracGuncelleSilForm();
+        KiralamaForm kiralamaForm = new KiralamaForm();
+        List<Araclar> araclar = new List<Araclar>();
+
         public IslemlerForm()
         {
             InitializeComponent();
@@ -54,13 +54,12 @@ namespace RentACarForm
 
             try
             {
-                using (var aracSoapClient = new AracWebServiceSoapClient())
+                using (var aracSoapClient = new AracWebServis.AracWebServisSoapClient())
                 {
-                    List<Arac> araclar = new List<Arac>();//Araçların LİSTESİ ÇEKİLİR
-                    foreach (var cevaplayanArac in aracSoapClient.TumAraclariSec().OrderBy(x => x.AracId)
+                    foreach (var cevaplayanArac in aracSoapClient.AracHepsiniSec().OrderBy(x => x.AracId)
                         .ToList())
                     {
-                        Arac arac = new Arac()
+                        Araclar arac = new Araclar()
                         {
                             AracId = cevaplayanArac.AracId,
                             Plaka = cevaplayanArac.Plaka,
@@ -135,6 +134,86 @@ namespace RentACarForm
             menuStrip1.BackgroundImage = RentACarForm.Properties.Resources.geometric;
             imgbtnMin.BackColor = Color.DarkOrange;
             imgbtnExit.BackColor = Color.DarkOrange;
+
+            try
+            {
+                using (var aracSoapClient = new AracWebServis.AracWebServisSoapClient())
+                {
+                    foreach (var cevaplayanArac in aracSoapClient.AracHepsiniSec().OrderBy(x => x.AracId)
+                        .ToList())
+                    {
+                        Araclar arac = new Araclar()
+                        {
+                            AracId = cevaplayanArac.AracId,
+                            Plaka = cevaplayanArac.Plaka,
+                            AracAdi = cevaplayanArac.AracAdi,
+                            AracModeli = cevaplayanArac.AracModeli,
+                            GerekenEhliyetYasi = cevaplayanArac.GerekenEhliyetYasi,
+                            MinimumYasSiniri = cevaplayanArac.MinimumYasSiniri,
+                            GunlukKmSiniri = cevaplayanArac.GunlukKmSiniri,
+                            AracKm = cevaplayanArac.AracKm,
+                            HavaYastigi = cevaplayanArac.HavaYastigi,
+                            BagajHacmi = cevaplayanArac.BagajHacmi,
+                            KoltukSayisi = cevaplayanArac.KoltukSayisi,
+                            GunlukKiraBedeli = cevaplayanArac.GunlukKiraBedeli,
+                            YakitTipi = cevaplayanArac.YakitTipi,
+                            VitesTipi = cevaplayanArac.VitesTipi,
+                        };
+                        araclar.Add(arac);
+                    }
+                    foreach (var item in araclar)
+                    {
+
+                        kiralamaForm.comboCek().Items.Add(item.Plaka);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error happened: " + ex.Message);
+            }
+
+            try
+            {
+                using (var musteriSoapClient = new MusterilerWebServis.MusterilerWebServisSoapClient())
+                {
+                    List<Musteriler> musteriler = new List<Musteriler>();//Musterilerin LİSTESİ ÇEKİLİR
+                    foreach (var cevaplayanMusteri in musteriSoapClient.MusteriHepsiniSec().OrderBy(x => x.MusteriId)
+                        .ToList())
+                    {
+                        Musteriler musteri = new Musteriler()
+                        {
+                            MusteriId = cevaplayanMusteri.MusteriId,
+                            Sifre = cevaplayanMusteri.Sifre,
+                            KullaniciAdi = cevaplayanMusteri.KullaniciAdi,
+                            EhliyetYil = cevaplayanMusteri.EhliyetYil,
+                            EhliyetTipi = cevaplayanMusteri.EhliyetTipi,
+                            TcKimlik = cevaplayanMusteri.TcKimlik,
+                            Ad = cevaplayanMusteri.Ad,
+                            Soyad = cevaplayanMusteri.Soyad,
+                            Adres = cevaplayanMusteri.Adres,
+                            Telefon = cevaplayanMusteri.Telefon,
+                            Email = cevaplayanMusteri.Email,
+                            DogumTarihi = cevaplayanMusteri.DogumTarihi,
+
+                        };
+                        musteriler.Add(musteri);
+                    }
+                    foreach (var item in musteriler)
+                    {
+
+                        kiralamaForm.comboCek1().Items.Add(item.KullaniciAdi);
+
+                    }
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error happened: " + ex.Message);
+            }
         }
 
         private void RezervelerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -181,10 +260,10 @@ namespace RentACarForm
 
             try
             {
-                using (var aracSoapClient = new AracWebServiceSoapClient())
+                using (var musteriSoapClient = new MusterilerWebServis.MusterilerWebServisSoapClient())
                 {
                     List<Musteriler> musteriler = new List<Musteriler>();//Musterilerin LİSTESİ ÇEKİLİR
-                    foreach (var cevaplayanMusteri in aracSoapClient.TumMusterileriSec().OrderBy(x => x.MusteriId)
+                    foreach (var cevaplayanMusteri in musteriSoapClient.MusteriHepsiniSec().OrderBy(x => x.MusteriId)
                         .ToList())
                     {
                         Musteriler musteri = new Musteriler()

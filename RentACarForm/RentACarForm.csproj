@@ -159,6 +159,11 @@
     <Compile Include="AracGuncelleSilForm.Designer.cs">
       <DependentUpon>AracGuncelleSilForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\AracWebServis\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\MusterilerWebServis\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -246,6 +251,22 @@
     <EmbeddedResource Include="RezervasyonForm.resx">
       <DependentUpon>RezervasyonForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\AracWebServis\AracWebServis.wsdl" />
+    <None Include="Connected Services\AracWebServis\RentACarForm.AracWebServis.AracEkleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracWebServis\RentACarForm.AracWebServis.AracGuncelleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracWebServis\RentACarForm.AracWebServis.AracHepsiniSecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracWebServis\RentACarForm.AracWebServis.AracIdSecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracWebServis\RentACarForm.AracWebServis.Araclar.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MusterilerWebServis\MusterilerWebServis.wsdl" />
     <None Include="Connected Services\MusterilerWebServis\RentACarForm.MusterilerWebServis.MusteriEkleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -456,6 +477,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AracWebServis\" />
     <WCFMetadataStorage Include="Connected Services\MusterilerWebServis\" />
   </ItemGroup>
   <ItemGroup>
@@ -469,6 +491,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\MusterilerWebServis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AracWebServis\AracWebServis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AracWebServis\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AracWebServis\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AracWebServis\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

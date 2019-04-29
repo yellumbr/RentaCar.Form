@@ -279,6 +279,7 @@
             this.btnAracKirala.Text = "Kirala";
             this.btnAracKirala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAracKirala.UseVisualStyleBackColor = false;
+            this.btnAracKirala.Click += new System.EventHandler(this.BtnAracKirala_Click);
             // 
             // pbFirmaLogo
             // 

@@ -16,5 +16,17 @@ namespace RentACarForm
         {
             InitializeComponent();
         }
+        public ComboBox comboCek()
+        {
+            return cmbAracPlakalar;
+        }
+        public ComboBox comboCek1()
+        {
+            return cmbKayitliMusteri;
+        }
+        private void BtnAracKirala_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
