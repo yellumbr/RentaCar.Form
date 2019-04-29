@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Models.Concretes;
+
 
 
 namespace RentACarForm
 {
     public partial class AracGuncelleSilForm : UserControl
     {
+        List<Araclar> araclar = new List<Araclar>();//Musterilerin LİSTESİ ÇEKİLİR
         public AracGuncelleSilForm()
         {
             InitializeComponent();
@@ -26,102 +29,78 @@ namespace RentACarForm
 
         }
 
-        private void cmbPlaka_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
         
-       
-
         private void btnAracBilgiGetir_Click(object sender, EventArgs e)
         {
-            try
+            foreach (var item in araclar)
             {
-                using (var aracSoapClient = new AracWebServiceSoapClient())
+                if(item.Plaka==cmbPlaka.Text)
                 {
-                    List<Arac> araclar = new List<Arac>();//Araçların LİSTESİ ÇEKİLİR
-                    foreach (var cevaplayanArac in aracSoapClient.TumAraclariSec().OrderBy(x => x.AracId)
-                        .ToList())
-                    {
-                        Arac arac = new Arac()
-                        {
-                            AracId = cevaplayanArac.AracId,
-                            Plaka = cevaplayanArac.Plaka,
-                            AracAdi = cevaplayanArac.AracAdi,
-                            AracModeli = cevaplayanArac.AracModeli,
-                            GerekenEhliyetYasi = cevaplayanArac.GerekenEhliyetYasi,
-                            MinimumYasSiniri = cevaplayanArac.MinimumYasSiniri,
-                            GunlukKmSiniri = cevaplayanArac.GunlukKmSiniri,
-                            AracKm = cevaplayanArac.AracKm,
-                            HavaYastigi = cevaplayanArac.HavaYastigi,
-                            BagajHacmi = cevaplayanArac.BagajHacmi,
-                            KoltukSayisi = cevaplayanArac.KoltukSayisi,
-                            GunlukKiraBedeli = cevaplayanArac.GunlukKiraBedeli,
-                            YakitTipi = cevaplayanArac.YakitTipi,
-                            VitesTipi = cevaplayanArac.VitesTipi,
-                        };
-                        araclar.Add(arac);
-                    }
-                    foreach (var item in araclar)
-                    {
-                        if(item.Plaka==cmbPlaka.Text)
-                        {
-                            txtMarka.Text = item.AracAdi;
-                            txtModel.Text = item.AracModeli;
-                            txtYasSiniri.Text = item.MinimumYasSiniri;
-                            cmbYakit.Text = item.YakitTipi;
-                            cmbVites.Text = item.VitesTipi;
-                            txtPlaka.Text = item.Plaka;
-                            txtAracKm.Text = item.AracKm;
-                            txtKoltukSayisi.Text = item.KoltukSayisi;
-                            cmbAirBag.Text = item.HavaYastigi;
-                            txtBagajHacmi.Text = item.BagajHacmi;
-                            txtKmSinir.Text = item.GunlukKmSiniri;
-                            txtKiraMiktari.Text = item.GunlukKiraBedeli;
-                            txtEhliyetYasi.Text = item.GerekenEhliyetYasi;
-
-                        }
-                    }
-
+                    txtAracKm.Text = item.AracKm.ToString();
+                    txtBagajHacmi.Text = item.BagajHacmi.ToString();
+                    txtEhliyetYasi.Text = item.GerekenEhliyetYasi.ToString();
+                    txtKiraMiktari.Text = item.GunlukKiraBedeli.ToString();
+                    txtKmSinir.Text = item.GunlukKmSiniri.ToString();
+                    txtKoltukSayisi.Text = item.KoltukSayisi.ToString();
+                    txtMarka.Text = item.AracAdi;
+                    txtModel.Text = item.AracModeli;
+                    txtPlaka.Text = item.Plaka;
+                    txtYasSiniri.Text = item.MinimumYasSiniri.ToString();
+                 
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error happened: " + ex.Message);
             }
         }
 
         private void btnAracDuzenle_Click(object sender, EventArgs e)
         {
+            using (var aracServis = new AracWebServis.AracWebServisSoapClient())
+            {
+                foreach (var item in araclar)
+                {
+                    if (cmbPlaka.Text == item.Plaka)
+                    {
+                     
+                        var araclar = new AracWebServis.Araclar()
+                        {
+                            AracId = item.AracId,
+                            AracAdi = txtMarka.Text,
+                            AracKm = Convert.ToInt32(txtAracKm.Text),
+                            AracModeli = txtModel.Text,
+                            BagajHacmi = Convert.ToInt32(txtBagajHacmi.Text),
+                            GerekenEhliyetYasi = Convert.ToInt32(txtEhliyetYasi.Text),
+                            GunlukKiraBedeli = Convert.ToInt32(txtKiraMiktari.Text),
+                            GunlukKmSiniri = Convert.ToInt32(txtKmSinir.Text),
+                            KoltukSayisi = Convert.ToInt32(txtKoltukSayisi.Text),
+                            MinimumYasSiniri = Convert.ToInt32(txtYasSiniri),
+                            Plaka = txtPlaka.Text,
+                            HavaYastigi = cmbAirBag.SelectedText,
+                            YakitTipi=cmbYakit.SelectedText,
+                            VitesTipi=cmbVites.SelectedText,
+                            
+                        };
+
+                        aracServis.AracGuncelle(araclar);
+                    }
+                }
+
+            }
+        }
+
+        private void BtnAracSil_Click(object sender, EventArgs e)
+        {
             try
             {
-                using (var aracSoapClient = new AracWebServiceSoapClient())
+                using (var aracServis = new AracWebServis.AracWebServisSoapClient())
                 {
-                    List<Arac> araclar = new List<Arac>();//Araçların LİSTESİ ÇEKİLİR
-                    foreach (var cevaplayanArac in aracSoapClient.TumAraclariSec().OrderBy(x => x.AracId)
-                        .ToList())
+                    foreach (var item in araclar)
                     {
-                        Arac arac = new Arac()
+                        if (item.Plaka == cmbPlaka.Text)
                         {
-                            AracId = cevaplayanArac.AracId,
-                            Plaka = cevaplayanArac.Plaka,
-                            AracAdi = cevaplayanArac.AracAdi,
-                            AracModeli = cevaplayanArac.AracModeli,
-                            GerekenEhliyetYasi = cevaplayanArac.GerekenEhliyetYasi,
-                            MinimumYasSiniri = cevaplayanArac.MinimumYasSiniri,
-                            GunlukKmSiniri = cevaplayanArac.GunlukKmSiniri,
-                            AracKm = cevaplayanArac.AracKm,
-                            HavaYastigi = cevaplayanArac.HavaYastigi,
-                            BagajHacmi = cevaplayanArac.BagajHacmi,
-                            KoltukSayisi = cevaplayanArac.KoltukSayisi,
-                            GunlukKiraBedeli = cevaplayanArac.GunlukKiraBedeli,
-                            YakitTipi = cevaplayanArac.YakitTipi,
-                            VitesTipi = cevaplayanArac.VitesTipi,
-                        };
-                        araclar.(arac);
+                            aracServis.AracIdSil(item.AracId);
+                            araclar.Remove(item);
+                        }
                     }
-                    
+
 
                 }
             }

@@ -129,6 +129,9 @@
             // cmbAirBag
             // 
             this.cmbAirBag.FormattingEnabled = true;
+            this.cmbAirBag.Items.AddRange(new object[] {
+            "Var",
+            "Yok"});
             this.cmbAirBag.Location = new System.Drawing.Point(580, 164);
             this.cmbAirBag.Name = "cmbAirBag";
             this.cmbAirBag.Size = new System.Drawing.Size(98, 22);
@@ -170,6 +173,7 @@
             this.btnAracSil.Text = "Aracı Sil";
             this.btnAracSil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAracSil.UseVisualStyleBackColor = false;
+            this.btnAracSil.Click += new System.EventHandler(this.BtnAracSil_Click);
             // 
             // btnAracBilgiGetir
             // 
@@ -310,6 +314,9 @@
             // cmbVites
             // 
             this.cmbVites.FormattingEnabled = true;
+            this.cmbVites.Items.AddRange(new object[] {
+            "Manuel",
+            "Otomatik"});
             this.cmbVites.Location = new System.Drawing.Point(208, 257);
             this.cmbVites.Name = "cmbVites";
             this.cmbVites.Size = new System.Drawing.Size(100, 22);
@@ -318,6 +325,10 @@
             // cmbYakit
             // 
             this.cmbYakit.FormattingEnabled = true;
+            this.cmbYakit.Items.AddRange(new object[] {
+            "Dizel",
+            "Benzin",
+            "Otogaz"});
             this.cmbYakit.Location = new System.Drawing.Point(208, 226);
             this.cmbYakit.Name = "cmbYakit";
             this.cmbYakit.Size = new System.Drawing.Size(100, 22);
@@ -438,7 +449,6 @@
             this.cmbPlaka.Name = "cmbPlaka";
             this.cmbPlaka.Size = new System.Drawing.Size(121, 22);
             this.cmbPlaka.TabIndex = 2;
-            this.cmbPlaka.SelectedIndexChanged += new System.EventHandler(this.cmbPlaka_SelectedIndexChanged);
             // 
             // lblPlakaSec
             // 
