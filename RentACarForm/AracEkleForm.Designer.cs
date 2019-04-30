@@ -40,7 +40,7 @@
             this.lblAracBilgileri = new DevExpress.XtraEditors.LabelControl();
             this.btnAracKaydet = new System.Windows.Forms.Button();
             this.cmbVites = new System.Windows.Forms.ComboBox();
-            this.cmbYakıt = new System.Windows.Forms.ComboBox();
+            this.cmbYakit = new System.Windows.Forms.ComboBox();
             this.txtKoltukSayisi = new System.Windows.Forms.MaskedTextBox();
             this.txtBagajHacmi = new System.Windows.Forms.MaskedTextBox();
             this.txtKmSinir = new System.Windows.Forms.MaskedTextBox();
@@ -88,7 +88,7 @@
             this.panel1.Controls.Add(this.lblAracBilgileri);
             this.panel1.Controls.Add(this.btnAracKaydet);
             this.panel1.Controls.Add(this.cmbVites);
-            this.panel1.Controls.Add(this.cmbYakıt);
+            this.panel1.Controls.Add(this.cmbYakit);
             this.panel1.Controls.Add(this.txtKoltukSayisi);
             this.panel1.Controls.Add(this.txtBagajHacmi);
             this.panel1.Controls.Add(this.txtKmSinir);
@@ -197,13 +197,13 @@
             this.cmbVites.Size = new System.Drawing.Size(100, 21);
             this.cmbVites.TabIndex = 5;
             // 
-            // cmbYakıt
+            // cmbYakit
             // 
-            this.cmbYakıt.FormattingEnabled = true;
-            this.cmbYakıt.Location = new System.Drawing.Point(358, 185);
-            this.cmbYakıt.Name = "cmbYakıt";
-            this.cmbYakıt.Size = new System.Drawing.Size(100, 21);
-            this.cmbYakıt.TabIndex = 4;
+            this.cmbYakit.FormattingEnabled = true;
+            this.cmbYakit.Location = new System.Drawing.Point(358, 185);
+            this.cmbYakit.Name = "cmbYakit";
+            this.cmbYakit.Size = new System.Drawing.Size(100, 21);
+            this.cmbYakit.TabIndex = 4;
             // 
             // txtKoltukSayisi
             // 
@@ -448,7 +448,7 @@
         private DevExpress.XtraEditors.LabelControl lblAracBilgileri;
         private System.Windows.Forms.Button btnAracKaydet;
         private System.Windows.Forms.ComboBox cmbVites;
-        private System.Windows.Forms.ComboBox cmbYakıt;
+        private System.Windows.Forms.ComboBox cmbYakit;
         private System.Windows.Forms.MaskedTextBox txtKoltukSayisi;
         private System.Windows.Forms.MaskedTextBox txtBagajHacmi;
         private System.Windows.Forms.MaskedTextBox txtKmSinir;

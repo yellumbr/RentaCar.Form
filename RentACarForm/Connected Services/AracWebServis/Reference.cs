@@ -41,7 +41,8 @@ namespace RentACarForm.AracWebServis {
         
         private int AracKmField;
         
-        private bool HavaYastigiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HavaYastigiField;
         
         private int BagajHacmiField;
         
@@ -53,9 +54,15 @@ namespace RentACarForm.AracWebServis {
         
         private bool KiradaField;
         
-        private int YakitTipiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YakitTipiField;
         
-        private bool VitesTipiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VitesTipiField;
+        
+        private System.DateTime KiralanmaTarihiField;
+        
+        private System.DateTime KiradanDonusTarihiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AracResmiField;
@@ -177,13 +184,13 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public bool HavaYastigi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string HavaYastigi {
             get {
                 return this.HavaYastigiField;
             }
             set {
-                if ((this.HavaYastigiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.HavaYastigiField, value) != true)) {
                     this.HavaYastigiField = value;
                     this.RaisePropertyChanged("HavaYastigi");
                 }
@@ -255,33 +262,59 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public int YakitTipi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string YakitTipi {
             get {
                 return this.YakitTipiField;
             }
             set {
-                if ((this.YakitTipiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.YakitTipiField, value) != true)) {
                     this.YakitTipiField = value;
                     this.RaisePropertyChanged("YakitTipi");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public bool VitesTipi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string VitesTipi {
             get {
                 return this.VitesTipiField;
             }
             set {
-                if ((this.VitesTipiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.VitesTipiField, value) != true)) {
                     this.VitesTipiField = value;
                     this.RaisePropertyChanged("VitesTipi");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public System.DateTime KiralanmaTarihi {
+            get {
+                return this.KiralanmaTarihiField;
+            }
+            set {
+                if ((this.KiralanmaTarihiField.Equals(value) != true)) {
+                    this.KiralanmaTarihiField = value;
+                    this.RaisePropertyChanged("KiralanmaTarihi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public System.DateTime KiradanDonusTarihi {
+            get {
+                return this.KiradanDonusTarihiField;
+            }
+            set {
+                if ((this.KiradanDonusTarihiField.Equals(value) != true)) {
+                    this.KiradanDonusTarihiField = value;
+                    this.RaisePropertyChanged("KiradanDonusTarihi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
         public string AracResmi {
             get {
                 return this.AracResmiField;
@@ -294,7 +327,7 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
         public RentACarForm.AracWebServis.Musteriler Musteri {
             get {
                 return this.MusteriField;
@@ -343,6 +376,8 @@ namespace RentACarForm.AracWebServis {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
+        
+        private System.DateTime DogumTarihiField;
         
         private int MusteriIdField;
         
@@ -451,6 +486,19 @@ namespace RentACarForm.AracWebServis {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime DogumTarihi {
+            get {
+                return this.DogumTarihiField;
+            }
+            set {
+                if ((this.DogumTarihiField.Equals(value) != true)) {
+                    this.DogumTarihiField = value;
+                    this.RaisePropertyChanged("DogumTarihi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public int MusteriId {
             get {
                 return this.MusteriIdField;
@@ -463,7 +511,7 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
         public bool KaraListe {
             get {
                 return this.KaraListeField;
@@ -476,7 +524,7 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public RentACarForm.AracWebServis.Araclar[] Araclar {
             get {
                 return this.AraclarField;
@@ -489,7 +537,7 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string Sifre {
             get {
                 return this.SifreField;
@@ -502,7 +550,7 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
         public string KullaniciAdi {
             get {
                 return this.KullaniciAdiField;
@@ -515,7 +563,7 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
         public System.DateTime EhliyetYil {
             get {
                 return this.EhliyetYilField;
@@ -528,7 +576,7 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
         public string EhliyetTipi {
             get {
                 return this.EhliyetTipiField;
@@ -561,6 +609,12 @@ namespace RentACarForm.AracWebServis {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracEkle", ReplyAction="*")]
         System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracEkleResponse> AracEkleAsync(RentACarForm.AracWebServis.AracEkleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracKiralama", ReplyAction="*")]
+        bool AracKiralama(int aracId, int musteriId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracKiralama", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> AracKiralamaAsync(int aracId, int musteriId);
         
         // CODEGEN: Generating message contract since element name entity from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracGuncelle", ReplyAction="*")]
@@ -905,6 +959,14 @@ namespace RentACarForm.AracWebServis {
             inValue.Body = new RentACarForm.AracWebServis.AracEkleRequestBody();
             inValue.Body.entity = entity;
             return ((RentACarForm.AracWebServis.AracWebServisSoap)(this)).AracEkleAsync(inValue);
+        }
+        
+        public bool AracKiralama(int aracId, int musteriId) {
+            return base.Channel.AracKiralama(aracId, musteriId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AracKiralamaAsync(int aracId, int musteriId) {
+            return base.Channel.AracKiralamaAsync(aracId, musteriId);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

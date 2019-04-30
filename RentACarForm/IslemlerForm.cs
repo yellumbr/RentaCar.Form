@@ -14,13 +14,20 @@ namespace RentACarForm
 {
     public partial class IslemlerForm : Form
     {
+       
+        
         MusteriIslemForm musteriForm = new MusteriIslemForm();
         AracGuncelleSilForm aracSilForm = new AracGuncelleSilForm();
         KiralamaForm kiralamaForm = new KiralamaForm();
-        List<Araclar> araclar = new List<Araclar>();
+        public static List<Araclar> araclar { get; set; }
+        public static  List<Musteriler> musteriler { get; set; }
+
 
         public IslemlerForm()
         {
+            
+            araclar = new List<Araclar>();
+            musteriler = new List<Musteriler>();
             InitializeComponent();
         }
 
@@ -298,6 +305,11 @@ namespace RentACarForm
             {
                 MessageBox.Show("Error happened: " + ex.Message);
             }
+        }
+
+        private void MusteriIslemForm1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

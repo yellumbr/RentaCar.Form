@@ -13,8 +13,7 @@ namespace RentACarForm
 {
     public partial class MusteriIslemForm : UserControl
     {
-        List<Musteriler> musteriler = new List<Musteriler>();//Musterilerin LİSTESİ ÇEKİLİR
-
+        
         public MusteriIslemForm()
         {
             InitializeComponent();
@@ -94,9 +93,10 @@ namespace RentACarForm
                             DogumTarihi = cevaplayanMusteri.DogumTarihi,
 
                         };
-                        musteriler.Add(musteri);
+                       
+                        IslemlerForm.musteriler.Add(musteri);
                     }
-                    foreach (var item in musteriler)
+                    foreach (var item in IslemlerForm.musteriler)
                     {
 
                         cmbKayitliMusteriSil.Items.Add(item.KullaniciAdi);
@@ -119,12 +119,12 @@ namespace RentACarForm
             {
                 using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
                 {
-                    foreach (var item in musteriler)
+                    foreach (var item in IslemlerForm.musteriler)
                     {
                         if(item.KullaniciAdi == cmbKayitliMusteriSil.Text)
                         {
                             musteriServis.MusteriIdSil(item.MusteriId);
-                            musteriler.Remove(item);
+                            IslemlerForm.musteriler.Remove(item);
                         }
                     }
                     
@@ -142,7 +142,7 @@ namespace RentACarForm
         {
             using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
             {
-                foreach (var item in musteriler)
+                foreach (var item in IslemlerForm.musteriler)
                 {
                     if(cmbKayitliMusteriSil.Text==item.KullaniciAdi)
                     {
@@ -174,7 +174,7 @@ namespace RentACarForm
 
         private void CmbKayitliMusteriSil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var item in musteriler)
+            foreach (var item in IslemlerForm.musteriler)
             {
                 if (item.KullaniciAdi==cmbKayitliMusteriSil.Text)
                 {

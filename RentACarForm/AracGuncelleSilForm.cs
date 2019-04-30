@@ -15,7 +15,6 @@ namespace RentACarForm
 {
     public partial class AracGuncelleSilForm : UserControl
     {
-        List<Araclar> araclar = new List<Araclar>();//Musterilerin LİSTESİ ÇEKİLİR
         public AracGuncelleSilForm()
         {
             InitializeComponent();
@@ -32,7 +31,7 @@ namespace RentACarForm
         
         private void btnAracBilgiGetir_Click(object sender, EventArgs e)
         {
-            foreach (var item in araclar)
+            foreach (var item in IslemlerForm.araclar)
             {
                 if(item.Plaka==cmbPlaka.Text)
                 {
@@ -55,12 +54,12 @@ namespace RentACarForm
         {
             using (var aracServis = new AracWebServis.AracWebServisSoapClient())
             {
-                foreach (var item in araclar)
+                foreach (var item in IslemlerForm.araclar)
                 {
                     if (cmbPlaka.Text == item.Plaka)
                     {
                      
-                        var araclar = new AracWebServis.Araclar()
+                        var arac = new AracWebServis.Araclar()
                         {
                             AracId = item.AracId,
                             AracAdi = txtMarka.Text,
@@ -79,7 +78,7 @@ namespace RentACarForm
                             
                         };
 
-                        aracServis.AracGuncelle(araclar);
+                        aracServis.AracGuncelle(arac);
                     }
                 }
 
@@ -92,12 +91,12 @@ namespace RentACarForm
             {
                 using (var aracServis = new AracWebServis.AracWebServisSoapClient())
                 {
-                    foreach (var item in araclar)
+                    foreach (var item in IslemlerForm.araclar)
                     {
                         if (item.Plaka == cmbPlaka.Text)
                         {
                             aracServis.AracIdSil(item.AracId);
-                            araclar.Remove(item);
+                            IslemlerForm.araclar.Remove(item);
                             cmbPlaka.Items.Remove(item.Plaka);
                         }
                     }
