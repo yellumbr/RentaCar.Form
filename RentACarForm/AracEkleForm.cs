@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Models.Concretes;
 
 namespace RentACarForm
 {
@@ -43,7 +42,6 @@ namespace RentACarForm
                         YakitTipi = cmbYakit.SelectedText,
                         VitesTipi = cmbVites.SelectedText,
                     });
-
                 }
                 var message = success ? "done" : "failed";
                 //MÜŞTERİNİN EKLENİP EKLENMEDİĞİ KONTORL EDİLİR
@@ -53,45 +51,6 @@ namespace RentACarForm
             {
                 MessageBox.Show("Error happened: " + ex.Message);
             }
-
-
-            try
-            {
-                using (var aracServis = new AracWebServis.AracWebServisSoapClient())
-                {
-                    foreach (var cevaplayanMusteri in aracServis.AracHepsiniSec().OrderBy(x => x.AracId)
-                        .ToList())
-                    {
-
-                        Araclar araclar = new Araclar()
-                        {
-                            AracAdi = txtMarka.Text,
-                            AracKm = Convert.ToInt32(txtAracKm.Text),
-                            AracModeli = txtModel.Text,
-                            BagajHacmi = Convert.ToInt32(txtBagajHacmi.Text),
-                            GerekenEhliyetYasi = Convert.ToInt32(txtEhliyetYasi.Text),
-                            GunlukKiraBedeli = Convert.ToInt32(txtKiraMiktari.Text),
-                            GunlukKmSiniri = Convert.ToInt32(txtKmSinir.Text),
-                            KoltukSayisi = Convert.ToInt32(txtKoltukSayisi.Text),
-                            MinimumYasSiniri = Convert.ToInt32(txtYasSiniri),
-                            Plaka = txtPlaka.Text,
-                            HavaYastigi = cmbAirBag.SelectedText,
-                            YakitTipi = cmbYakit.SelectedText,
-                            VitesTipi = cmbVites.SelectedText,
-
-                        };
-
-                        IslemlerForm.araclar.Add(araclar);
-                    }
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error happened: " + ex.Message);
-            }
         }
-
-
     }
 }

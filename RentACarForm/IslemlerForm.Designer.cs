@@ -221,7 +221,6 @@
             this.musteriIslemForm1.Name = "musteriIslemForm1";
             this.musteriIslemForm1.Size = new System.Drawing.Size(783, 378);
             this.musteriIslemForm1.TabIndex = 9;
-       
             // 
             // raporForm1
             // 

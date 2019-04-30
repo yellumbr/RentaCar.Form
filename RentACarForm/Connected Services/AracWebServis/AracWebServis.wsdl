@@ -19,16 +19,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="MinimumYasSiniri" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="GunlukKmSiniri" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="AracKm" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="HavaYastigi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HavaYastigi" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="BagajHacmi" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="KoltukSayisi" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="GunlukKiraBedeli" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Rezerv" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Kirada" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="YakitTipi" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="VitesTipi" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="KiralanmaTarihi" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="KiradanDonusTarihi" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="YakitTipi" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VitesTipi" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="AracResmi" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Musteri" type="tns:Musteriler" />
         </s:sequence>
@@ -41,7 +39,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="Adres" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Telefon" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DogumTarihi" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="MusteriId" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="KaraListe" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Araclar" type="tns:ArrayOfAraclar" />
@@ -60,21 +57,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="AracEkleResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AracKiralama">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="aracId" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="musteriId" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AracKiralamaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="AracKiralamaResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -138,12 +120,6 @@
   <wsdl:message name="AracEkleSoapOut">
     <wsdl:part name="parameters" element="tns:AracEkleResponse" />
   </wsdl:message>
-  <wsdl:message name="AracKiralamaSoapIn">
-    <wsdl:part name="parameters" element="tns:AracKiralama" />
-  </wsdl:message>
-  <wsdl:message name="AracKiralamaSoapOut">
-    <wsdl:part name="parameters" element="tns:AracKiralamaResponse" />
-  </wsdl:message>
   <wsdl:message name="AracGuncelleSoapIn">
     <wsdl:part name="parameters" element="tns:AracGuncelle" />
   </wsdl:message>
@@ -173,10 +149,6 @@
       <wsdl:input message="tns:AracEkleSoapIn" />
       <wsdl:output message="tns:AracEkleSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="AracKiralama">
-      <wsdl:input message="tns:AracKiralamaSoapIn" />
-      <wsdl:output message="tns:AracKiralamaSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="AracGuncelle">
       <wsdl:input message="tns:AracGuncelleSoapIn" />
       <wsdl:output message="tns:AracGuncelleSoapOut" />
@@ -198,15 +170,6 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="AracEkle">
       <soap:operation soapAction="http://tempuri.org/AracEkle" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AracKiralama">
-      <soap:operation soapAction="http://tempuri.org/AracKiralama" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -255,15 +218,6 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="AracEkle">
       <soap12:operation soapAction="http://tempuri.org/AracEkle" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AracKiralama">
-      <soap12:operation soapAction="http://tempuri.org/AracKiralama" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
