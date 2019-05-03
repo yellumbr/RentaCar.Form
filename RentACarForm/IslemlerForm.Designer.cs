@@ -36,19 +36,17 @@
             this.aracSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MusteriIslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.KiralamaIslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RezervelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RaporToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgbtnMin = new Bunifu.UI.WinForms.BunifuImageButton();
             this.imgbtnExit = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.musteriIslemForm1 = new RentACarForm.MusteriIslemForm();
-            this.raporForm1 = new RentACarForm.RaporForm();
             this.rezervasyonForm1 = new RentACarForm.RezervasyonForm();
             this.kiralamaForm1 = new RentACarForm.KiralamaForm();
             this.girisForm1 = new RentACarForm.GirisForm();
             this.aracGuncelleSilForm1 = new RentACarForm.AracGuncelleSilForm();
             this.aracEkleForm1 = new RentACarForm.AracEkleForm();
+            this.RezervelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,8 +57,7 @@
             this.aracIslemleriToolStripMenuItem,
             this.MusteriIslemleriToolStripMenuItem,
             this.KiralamaIslemleriToolStripMenuItem,
-            this.RezervelerToolStripMenuItem,
-            this.RaporToolStripMenuItem});
+            this.RezervelerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(783, 24);
@@ -114,26 +111,6 @@
             this.KiralamaIslemleriToolStripMenuItem.Size = new System.Drawing.Size(153, 20);
             this.KiralamaIslemleriToolStripMenuItem.Text = "KİRALAMA İŞLEMLERİ";
             this.KiralamaIslemleriToolStripMenuItem.Click += new System.EventHandler(this.KiralamaIslemleriToolStripMenuItem_Click);
-            // 
-            // RezervelerToolStripMenuItem
-            // 
-            this.RezervelerToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.RezervelerToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.RezervelerToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_key_298808;
-            this.RezervelerToolStripMenuItem.Name = "RezervelerToolStripMenuItem";
-            this.RezervelerToolStripMenuItem.Size = new System.Drawing.Size(179, 20);
-            this.RezervelerToolStripMenuItem.Text = "REZERVASYON İŞLEMLERİ";
-            this.RezervelerToolStripMenuItem.Click += new System.EventHandler(this.RezervelerToolStripMenuItem_Click);
-            // 
-            // RaporToolStripMenuItem
-            // 
-            this.RaporToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.RaporToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.RaporToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_12___Invoice_2102048;
-            this.RaporToolStripMenuItem.Name = "RaporToolStripMenuItem";
-            this.RaporToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.RaporToolStripMenuItem.Text = "RAPOR";
-            this.RaporToolStripMenuItem.Click += new System.EventHandler(this.RaporToolStripMenuItem_Click);
             // 
             // imgbtnMin
             // 
@@ -222,16 +199,6 @@
             this.musteriIslemForm1.Size = new System.Drawing.Size(783, 378);
             this.musteriIslemForm1.TabIndex = 9;
             // 
-            // raporForm1
-            // 
-            this.raporForm1.BackgroundImage = global::RentACarForm.Properties.Resources.steel_3419985_1280;
-            this.raporForm1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.raporForm1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.raporForm1.Location = new System.Drawing.Point(0, 24);
-            this.raporForm1.Name = "raporForm1";
-            this.raporForm1.Size = new System.Drawing.Size(783, 378);
-            this.raporForm1.TabIndex = 8;
-            // 
             // rezervasyonForm1
             // 
             this.rezervasyonForm1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rezervasyonForm1.BackgroundImage")));
@@ -279,6 +246,16 @@
             this.aracEkleForm1.Size = new System.Drawing.Size(783, 378);
             this.aracEkleForm1.TabIndex = 1;
             // 
+            // RezervelerToolStripMenuItem
+            // 
+            this.RezervelerToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RezervelerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.RezervelerToolStripMenuItem.Image = global::RentACarForm.Properties.Resources.iconfinder_12___Invoice_2102048;
+            this.RezervelerToolStripMenuItem.Name = "RezervelerToolStripMenuItem";
+            this.RezervelerToolStripMenuItem.Size = new System.Drawing.Size(179, 20);
+            this.RezervelerToolStripMenuItem.Text = "REZERVASYON İŞLEMLERİ";
+            this.RezervelerToolStripMenuItem.Click += new System.EventHandler(this.RezervelerToolStripMenuItem_Click);
+            // 
             // IslemlerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,7 +263,6 @@
             this.ClientSize = new System.Drawing.Size(783, 402);
             this.Controls.Add(this.imgbtnMin);
             this.Controls.Add(this.musteriIslemForm1);
-            this.Controls.Add(this.raporForm1);
             this.Controls.Add(this.rezervasyonForm1);
             this.Controls.Add(this.kiralamaForm1);
             this.Controls.Add(this.girisForm1);
@@ -317,14 +293,12 @@
         private Bunifu.UI.WinForms.BunifuImageButton imgbtnMin;
         private GirisForm girisForm1;
         private System.Windows.Forms.ToolStripMenuItem KiralamaIslemleriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem RezervelerToolStripMenuItem;
         private KiralamaForm kiralamaForm1;
-        private System.Windows.Forms.ToolStripMenuItem RaporToolStripMenuItem;
         private RezervasyonForm rezervasyonForm1;
         private System.Windows.Forms.ToolStripMenuItem MusteriIslemleriToolStripMenuItem;
-        private RaporForm raporForm1;
         private MusteriIslemForm musteriIslemForm1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.ToolStripMenuItem RezervelerToolStripMenuItem;
     }
 }

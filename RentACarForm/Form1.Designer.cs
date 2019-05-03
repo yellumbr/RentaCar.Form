@@ -140,6 +140,7 @@
             this.btnGirisYap.Size = new System.Drawing.Size(200, 30);
             this.btnGirisYap.TabIndex = 3;
             this.btnGirisYap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGirisYap.Click += new System.EventHandler(this.BtnGirisYap_Click);
             // 
             // txtGirisSifre
             // 

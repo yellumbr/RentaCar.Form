@@ -275,7 +275,7 @@
             this.btnMusteriSil.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMusteriSil.Image = global::RentACarForm.Properties.Resources.iconfinder_user_delete_216494;
             this.btnMusteriSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusteriSil.Location = new System.Drawing.Point(176, 362);
+            this.btnMusteriSil.Location = new System.Drawing.Point(176, 342);
             this.btnMusteriSil.Name = "btnMusteriSil";
             this.btnMusteriSil.Size = new System.Drawing.Size(94, 32);
             this.btnMusteriSil.TabIndex = 42;

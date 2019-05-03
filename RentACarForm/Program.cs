@@ -16,7 +16,7 @@ namespace RentACarForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IslemlerForm());
+            Application.Run(new Form1());
         }
     }
 }

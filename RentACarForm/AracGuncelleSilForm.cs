@@ -15,7 +15,6 @@ namespace RentACarForm
 {
     public partial class AracGuncelleSilForm : UserControl
     {
-        List<Araclar> araclar = new List<Araclar>();//Musterilerin LİSTESİ ÇEKİLİR
         public AracGuncelleSilForm()
         {
             InitializeComponent();
@@ -29,12 +28,12 @@ namespace RentACarForm
 
         }
 
-        
+
         private void btnAracBilgiGetir_Click(object sender, EventArgs e)
         {
-            foreach (var item in araclar)
+            foreach (var item in IslemlerForm.araclar)
             {
-                if(item.Plaka==cmbPlaka.Text)
+                if (item.Plaka == cmbPlaka.Text)
                 {
                     txtAracKm.Text = item.AracKm.ToString();
                     txtBagajHacmi.Text = item.BagajHacmi.ToString();
@@ -46,7 +45,10 @@ namespace RentACarForm
                     txtModel.Text = item.AracModeli;
                     txtPlaka.Text = item.Plaka;
                     txtYasSiniri.Text = item.MinimumYasSiniri.ToString();
-                 
+                    cmbAirBag.Text = item.HavaYastigi;
+                    cmbVites.Text = item.VitesTipi;
+                    cmbYakit.Text = item.YakitTipi;
+                    
                 }
             }
         }
@@ -55,12 +57,12 @@ namespace RentACarForm
         {
             using (var aracServis = new AracWebServis.AracWebServisSoapClient())
             {
-                foreach (var item in araclar)
+                foreach (var item in IslemlerForm.araclar)
                 {
                     if (cmbPlaka.Text == item.Plaka)
                     {
-                     
-                        var araclar = new AracWebServis.Araclar()
+
+                        var arac = new AracWebServis.Araclar()
                         {
                             AracId = item.AracId,
                             AracAdi = txtMarka.Text,
@@ -71,44 +73,71 @@ namespace RentACarForm
                             GunlukKiraBedeli = Convert.ToInt32(txtKiraMiktari.Text),
                             GunlukKmSiniri = Convert.ToInt32(txtKmSinir.Text),
                             KoltukSayisi = Convert.ToInt32(txtKoltukSayisi.Text),
-                            MinimumYasSiniri = Convert.ToInt32(txtYasSiniri),
+                            MinimumYasSiniri = Convert.ToInt32(txtYasSiniri.Text),
                             Plaka = txtPlaka.Text,
-                            HavaYastigi = cmbAirBag.SelectedText,
-                            YakitTipi=cmbYakit.SelectedText,
-                            VitesTipi=cmbVites.SelectedText,
-                            
+                            HavaYastigi = cmbAirBag.Text,
+                            YakitTipi = cmbYakit.Text,
+                            VitesTipi = cmbVites.Text,
+
+
                         };
 
-                        aracServis.AracGuncelle(araclar);
+                        aracServis.AracGuncelle(arac);
                     }
                 }
 
             }
+            IslemlerForm.AracListeDoldur();
         }
 
         private void BtnAracSil_Click(object sender, EventArgs e)
         {
+            bool success = false;
+            string message;
             try
             {
                 using (var aracServis = new AracWebServis.AracWebServisSoapClient())
                 {
-                    foreach (var item in araclar)
+                    foreach (var arac in IslemlerForm.araclar)
                     {
-                        if (item.Plaka == cmbPlaka.Text)
+                        if (arac.Plaka == cmbPlaka.Text)
                         {
-                            aracServis.AracIdSil(item.AracId);
-                            araclar.Remove(item);
-                            cmbPlaka.Items.Remove(item.Plaka);
+                             using (var sirketSoapClient = new SirketWebServis.SirketWebServisSoapClient())
+                            {
+                                foreach (var item in sirketSoapClient.SirketHepsiniSec())
+                                {
+                                    if (item.SirketId == Form1.yonetici.SirketId)
+                                    {
+                                        var sirket = new AracWebServis.Sirket()
+                                        {
+                                            SirketAdi = item.SirketAdi,
+                                            SirketId = item.SirketId,
+                                            Sehir = item.Sehir,
+                                            SirketPuani = item.SirketPuani,
+                                            Adres = item.Adres,
+                                            AracSayisi = item.AracSayisi -1
+                                        };
+
+                                        success = aracServis.AracIdSil(arac.AracId, sirket);
+                                            
+
+                                    }
+                                    message = success ? "done" : "failed";
+                                }
+
+                            }
+
+
                         }
                     }
-
-
                 }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error happened: " + ex.Message);
             }
+            IslemlerForm.AracListeDoldur();
         }
     }
 }

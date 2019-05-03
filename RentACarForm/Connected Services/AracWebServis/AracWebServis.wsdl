@@ -5,7 +5,8 @@
       <s:element name="AracEkle">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Araclar" />
+            <s:element minOccurs="0" maxOccurs="1" name="arac" type="tns:Araclar" />
+            <s:element minOccurs="0" maxOccurs="1" name="sirket" type="tns:Sirket" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -19,19 +20,38 @@
           <s:element minOccurs="1" maxOccurs="1" name="MinimumYasSiniri" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="GunlukKmSiniri" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="AracKm" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="HavaYastigi" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="HavaYastigi" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="BagajHacmi" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="KoltukSayisi" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="GunlukKiraBedeli" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GunlukKiraBedeli" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="Rezerv" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Kirada" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="YakitTipi" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="VitesTipi" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="YakitTipi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VitesTipi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="KiralanmaTarihi" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="KiradanDonusTarihi" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="AracResmi" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Musteri" type="tns:Musteriler" />
+          <s:element minOccurs="1" maxOccurs="1" name="MusteriId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SirketId" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="Musteriler">
+      <s:complexType name="Sirket">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SirketId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SirketAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sehir" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AracSayisi" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SirketPuani" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yoneticiler" type="tns:ArrayOfYonetici" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfYonetici">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Yonetici" nillable="true" type="tns:Yonetici" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Yonetici">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="TcKimlik" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Ad" type="s:string" />
@@ -39,24 +59,30 @@
           <s:element minOccurs="0" maxOccurs="1" name="Adres" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Telefon" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="MusteriId" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="KaraListe" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="Araclar" type="tns:ArrayOfAraclar" />
+          <s:element minOccurs="1" maxOccurs="1" name="DogumTarihi" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="YoneticiId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SirketId" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Sifre" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="KullaniciAdi" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="EhliyetYil" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="EhliyetTipi" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfAraclar">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Araclar" nillable="true" type="tns:Araclar" />
         </s:sequence>
       </s:complexType>
       <s:element name="AracEkleResponse">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="AracEkleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AracKirala">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arac" type="tns:Araclar" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AracKiralaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AracKiralaResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -78,6 +104,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sirket" type="tns:Sirket" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -98,6 +125,11 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfAraclar">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Araclar" nillable="true" type="tns:Araclar" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="AracIdSec">
         <s:complexType>
           <s:sequence>
@@ -119,6 +151,12 @@
   </wsdl:message>
   <wsdl:message name="AracEkleSoapOut">
     <wsdl:part name="parameters" element="tns:AracEkleResponse" />
+  </wsdl:message>
+  <wsdl:message name="AracKiralaSoapIn">
+    <wsdl:part name="parameters" element="tns:AracKirala" />
+  </wsdl:message>
+  <wsdl:message name="AracKiralaSoapOut">
+    <wsdl:part name="parameters" element="tns:AracKiralaResponse" />
   </wsdl:message>
   <wsdl:message name="AracGuncelleSoapIn">
     <wsdl:part name="parameters" element="tns:AracGuncelle" />
@@ -149,6 +187,10 @@
       <wsdl:input message="tns:AracEkleSoapIn" />
       <wsdl:output message="tns:AracEkleSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="AracKirala">
+      <wsdl:input message="tns:AracKiralaSoapIn" />
+      <wsdl:output message="tns:AracKiralaSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="AracGuncelle">
       <wsdl:input message="tns:AracGuncelleSoapIn" />
       <wsdl:output message="tns:AracGuncelleSoapOut" />
@@ -170,6 +212,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="AracEkle">
       <soap:operation soapAction="http://tempuri.org/AracEkle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AracKirala">
+      <soap:operation soapAction="http://tempuri.org/AracKirala" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -218,6 +269,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="AracEkle">
       <soap12:operation soapAction="http://tempuri.org/AracEkle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AracKirala">
+      <soap12:operation soapAction="http://tempuri.org/AracKirala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

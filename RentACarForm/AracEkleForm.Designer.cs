@@ -32,23 +32,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracEkleForm));
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtYasSiniri = new System.Windows.Forms.TextBox();
+            this.txtEhliyetYasi = new System.Windows.Forms.TextBox();
+            this.txtKiraMiktari = new System.Windows.Forms.TextBox();
+            this.txtKmSinir = new System.Windows.Forms.TextBox();
+            this.txtBagajHacmi = new System.Windows.Forms.TextBox();
+            this.txtKoltukSayisi = new System.Windows.Forms.TextBox();
+            this.txtAracKm = new System.Windows.Forms.TextBox();
+            this.txtPlaka = new System.Windows.Forms.TextBox();
+            this.txtYil = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
             this.cmbAirBag = new System.Windows.Forms.ComboBox();
-            this.txtYasSiniri = new System.Windows.Forms.MaskedTextBox();
             this.lblYasSiniri = new System.Windows.Forms.Label();
-            this.txtPlaka = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblAracBilgileri = new DevExpress.XtraEditors.LabelControl();
             this.btnAracKaydet = new System.Windows.Forms.Button();
             this.cmbVites = new System.Windows.Forms.ComboBox();
-            this.cmbYakıt = new System.Windows.Forms.ComboBox();
-            this.txtKoltukSayisi = new System.Windows.Forms.MaskedTextBox();
-            this.txtBagajHacmi = new System.Windows.Forms.MaskedTextBox();
-            this.txtKmSinir = new System.Windows.Forms.MaskedTextBox();
-            this.txtKiraMiktari = new System.Windows.Forms.MaskedTextBox();
-            this.txtEhliyetYasi = new System.Windows.Forms.MaskedTextBox();
-            this.txtAracKm = new System.Windows.Forms.MaskedTextBox();
-            this.txtYıl = new System.Windows.Forms.MaskedTextBox();
-            this.txtModel = new System.Windows.Forms.MaskedTextBox();
+            this.cmbYakit = new System.Windows.Forms.ComboBox();
             this.txtMarka = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -80,23 +80,23 @@
             // 
             this.panel1.BackgroundImage = global::RentACarForm.Properties.Resources._20920221;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Controls.Add(this.cmbAirBag);
             this.panel1.Controls.Add(this.txtYasSiniri);
-            this.panel1.Controls.Add(this.lblYasSiniri);
+            this.panel1.Controls.Add(this.txtEhliyetYasi);
+            this.panel1.Controls.Add(this.txtKiraMiktari);
+            this.panel1.Controls.Add(this.txtKmSinir);
+            this.panel1.Controls.Add(this.txtBagajHacmi);
+            this.panel1.Controls.Add(this.txtKoltukSayisi);
+            this.panel1.Controls.Add(this.txtAracKm);
             this.panel1.Controls.Add(this.txtPlaka);
+            this.panel1.Controls.Add(this.txtYil);
+            this.panel1.Controls.Add(this.txtModel);
+            this.panel1.Controls.Add(this.cmbAirBag);
+            this.panel1.Controls.Add(this.lblYasSiniri);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lblAracBilgileri);
             this.panel1.Controls.Add(this.btnAracKaydet);
             this.panel1.Controls.Add(this.cmbVites);
-            this.panel1.Controls.Add(this.cmbYakıt);
-            this.panel1.Controls.Add(this.txtKoltukSayisi);
-            this.panel1.Controls.Add(this.txtBagajHacmi);
-            this.panel1.Controls.Add(this.txtKmSinir);
-            this.panel1.Controls.Add(this.txtKiraMiktari);
-            this.panel1.Controls.Add(this.txtEhliyetYasi);
-            this.panel1.Controls.Add(this.txtAracKm);
-            this.panel1.Controls.Add(this.txtYıl);
-            this.panel1.Controls.Add(this.txtModel);
+            this.panel1.Controls.Add(this.cmbYakit);
             this.panel1.Controls.Add(this.txtMarka);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
@@ -118,20 +118,87 @@
             this.panel1.Size = new System.Drawing.Size(767, 375);
             this.panel1.TabIndex = 0;
             // 
+            // txtYasSiniri
+            // 
+            this.txtYasSiniri.Location = new System.Drawing.Point(619, 279);
+            this.txtYasSiniri.Name = "txtYasSiniri";
+            this.txtYasSiniri.Size = new System.Drawing.Size(100, 20);
+            this.txtYasSiniri.TabIndex = 46;
+            // 
+            // txtEhliyetYasi
+            // 
+            this.txtEhliyetYasi.Location = new System.Drawing.Point(619, 248);
+            this.txtEhliyetYasi.Name = "txtEhliyetYasi";
+            this.txtEhliyetYasi.Size = new System.Drawing.Size(100, 20);
+            this.txtEhliyetYasi.TabIndex = 45;
+            // 
+            // txtKiraMiktari
+            // 
+            this.txtKiraMiktari.Location = new System.Drawing.Point(620, 216);
+            this.txtKiraMiktari.Name = "txtKiraMiktari";
+            this.txtKiraMiktari.Size = new System.Drawing.Size(100, 20);
+            this.txtKiraMiktari.TabIndex = 44;
+            // 
+            // txtKmSinir
+            // 
+            this.txtKmSinir.Location = new System.Drawing.Point(620, 186);
+            this.txtKmSinir.Name = "txtKmSinir";
+            this.txtKmSinir.Size = new System.Drawing.Size(100, 20);
+            this.txtKmSinir.TabIndex = 43;
+            // 
+            // txtBagajHacmi
+            // 
+            this.txtBagajHacmi.Location = new System.Drawing.Point(620, 155);
+            this.txtBagajHacmi.Name = "txtBagajHacmi";
+            this.txtBagajHacmi.Size = new System.Drawing.Size(100, 20);
+            this.txtBagajHacmi.TabIndex = 42;
+            // 
+            // txtKoltukSayisi
+            // 
+            this.txtKoltukSayisi.Location = new System.Drawing.Point(620, 92);
+            this.txtKoltukSayisi.Name = "txtKoltukSayisi";
+            this.txtKoltukSayisi.Size = new System.Drawing.Size(100, 20);
+            this.txtKoltukSayisi.TabIndex = 41;
+            // 
+            // txtAracKm
+            // 
+            this.txtAracKm.Location = new System.Drawing.Point(358, 283);
+            this.txtAracKm.Name = "txtAracKm";
+            this.txtAracKm.Size = new System.Drawing.Size(100, 20);
+            this.txtAracKm.TabIndex = 40;
+            // 
+            // txtPlaka
+            // 
+            this.txtPlaka.Location = new System.Drawing.Point(358, 247);
+            this.txtPlaka.Name = "txtPlaka";
+            this.txtPlaka.Size = new System.Drawing.Size(100, 20);
+            this.txtPlaka.TabIndex = 39;
+            // 
+            // txtYil
+            // 
+            this.txtYil.Location = new System.Drawing.Point(358, 155);
+            this.txtYil.Name = "txtYil";
+            this.txtYil.Size = new System.Drawing.Size(100, 20);
+            this.txtYil.TabIndex = 38;
+            // 
+            // txtModel
+            // 
+            this.txtModel.Location = new System.Drawing.Point(358, 124);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(100, 20);
+            this.txtModel.TabIndex = 37;
+            this.txtModel.TextChanged += new System.EventHandler(this.TxtModel_TextChanged);
+            // 
             // cmbAirBag
             // 
             this.cmbAirBag.FormattingEnabled = true;
+            this.cmbAirBag.Items.AddRange(new object[] {
+            "Var",
+            "Yok"});
             this.cmbAirBag.Location = new System.Drawing.Point(620, 124);
             this.cmbAirBag.Name = "cmbAirBag";
             this.cmbAirBag.Size = new System.Drawing.Size(100, 21);
             this.cmbAirBag.TabIndex = 35;
-            // 
-            // txtYasSiniri
-            // 
-            this.txtYasSiniri.Location = new System.Drawing.Point(620, 279);
-            this.txtYasSiniri.Name = "txtYasSiniri";
-            this.txtYasSiniri.Size = new System.Drawing.Size(100, 20);
-            this.txtYasSiniri.TabIndex = 34;
             // 
             // lblYasSiniri
             // 
@@ -143,13 +210,6 @@
             this.lblYasSiniri.Size = new System.Drawing.Size(105, 14);
             this.lblYasSiniri.TabIndex = 33;
             this.lblYasSiniri.Text = "Minimum Yaş Sınırı";
-            // 
-            // txtPlaka
-            // 
-            this.txtPlaka.Location = new System.Drawing.Point(358, 250);
-            this.txtPlaka.Name = "txtPlaka";
-            this.txtPlaka.Size = new System.Drawing.Size(100, 20);
-            this.txtPlaka.TabIndex = 6;
             // 
             // label7
             // 
@@ -192,74 +252,25 @@
             // cmbVites
             // 
             this.cmbVites.FormattingEnabled = true;
+            this.cmbVites.Items.AddRange(new object[] {
+            "Otomatik",
+            "Manuel"});
             this.cmbVites.Location = new System.Drawing.Point(358, 216);
             this.cmbVites.Name = "cmbVites";
             this.cmbVites.Size = new System.Drawing.Size(100, 21);
             this.cmbVites.TabIndex = 5;
             // 
-            // cmbYakıt
+            // cmbYakit
             // 
-            this.cmbYakıt.FormattingEnabled = true;
-            this.cmbYakıt.Location = new System.Drawing.Point(358, 185);
-            this.cmbYakıt.Name = "cmbYakıt";
-            this.cmbYakıt.Size = new System.Drawing.Size(100, 21);
-            this.cmbYakıt.TabIndex = 4;
-            // 
-            // txtKoltukSayisi
-            // 
-            this.txtKoltukSayisi.Location = new System.Drawing.Point(620, 92);
-            this.txtKoltukSayisi.Name = "txtKoltukSayisi";
-            this.txtKoltukSayisi.Size = new System.Drawing.Size(100, 20);
-            this.txtKoltukSayisi.TabIndex = 8;
-            // 
-            // txtBagajHacmi
-            // 
-            this.txtBagajHacmi.Location = new System.Drawing.Point(620, 155);
-            this.txtBagajHacmi.Name = "txtBagajHacmi";
-            this.txtBagajHacmi.Size = new System.Drawing.Size(100, 20);
-            this.txtBagajHacmi.TabIndex = 11;
-            // 
-            // txtKmSinir
-            // 
-            this.txtKmSinir.Location = new System.Drawing.Point(620, 185);
-            this.txtKmSinir.Name = "txtKmSinir";
-            this.txtKmSinir.Size = new System.Drawing.Size(100, 20);
-            this.txtKmSinir.TabIndex = 12;
-            // 
-            // txtKiraMiktari
-            // 
-            this.txtKiraMiktari.Location = new System.Drawing.Point(620, 216);
-            this.txtKiraMiktari.Name = "txtKiraMiktari";
-            this.txtKiraMiktari.Size = new System.Drawing.Size(100, 20);
-            this.txtKiraMiktari.TabIndex = 13;
-            // 
-            // txtEhliyetYasi
-            // 
-            this.txtEhliyetYasi.Location = new System.Drawing.Point(620, 247);
-            this.txtEhliyetYasi.Name = "txtEhliyetYasi";
-            this.txtEhliyetYasi.Size = new System.Drawing.Size(100, 20);
-            this.txtEhliyetYasi.TabIndex = 14;
-            // 
-            // txtAracKm
-            // 
-            this.txtAracKm.Location = new System.Drawing.Point(358, 282);
-            this.txtAracKm.Name = "txtAracKm";
-            this.txtAracKm.Size = new System.Drawing.Size(100, 20);
-            this.txtAracKm.TabIndex = 7;
-            // 
-            // txtYıl
-            // 
-            this.txtYıl.Location = new System.Drawing.Point(358, 154);
-            this.txtYıl.Name = "txtYıl";
-            this.txtYıl.Size = new System.Drawing.Size(100, 20);
-            this.txtYıl.TabIndex = 3;
-            // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(358, 123);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(100, 20);
-            this.txtModel.TabIndex = 2;
+            this.cmbYakit.FormattingEnabled = true;
+            this.cmbYakit.Items.AddRange(new object[] {
+            "Dizel",
+            "Benzin",
+            "Gaz"});
+            this.cmbYakit.Location = new System.Drawing.Point(358, 185);
+            this.cmbYakit.Name = "cmbYakit";
+            this.cmbYakit.Size = new System.Drawing.Size(100, 21);
+            this.cmbYakit.TabIndex = 4;
             // 
             // txtMarka
             // 
@@ -412,6 +423,7 @@
             this.btnResimSec.TabIndex = 15;
             this.btnResimSec.Text = "Resim Seç";
             this.btnResimSec.UseVisualStyleBackColor = true;
+            this.btnResimSec.Click += new System.EventHandler(this.BtnResimSec_Click);
             // 
             // picboxAraba
             // 
@@ -448,15 +460,7 @@
         private DevExpress.XtraEditors.LabelControl lblAracBilgileri;
         private System.Windows.Forms.Button btnAracKaydet;
         private System.Windows.Forms.ComboBox cmbVites;
-        private System.Windows.Forms.ComboBox cmbYakıt;
-        private System.Windows.Forms.MaskedTextBox txtKoltukSayisi;
-        private System.Windows.Forms.MaskedTextBox txtBagajHacmi;
-        private System.Windows.Forms.MaskedTextBox txtKmSinir;
-        private System.Windows.Forms.MaskedTextBox txtKiraMiktari;
-        private System.Windows.Forms.MaskedTextBox txtEhliyetYasi;
-        private System.Windows.Forms.MaskedTextBox txtAracKm;
-        private System.Windows.Forms.MaskedTextBox txtYıl;
-        private System.Windows.Forms.MaskedTextBox txtModel;
+        private System.Windows.Forms.ComboBox cmbYakit;
         private System.Windows.Forms.TextBox txtMarka;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -470,12 +474,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txtPlaka;
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.MaskedTextBox txtYasSiniri;
         private System.Windows.Forms.Label lblYasSiniri;
         private System.Windows.Forms.ComboBox cmbAirBag;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.TextBox txtYasSiniri;
+        private System.Windows.Forms.TextBox txtEhliyetYasi;
+        private System.Windows.Forms.TextBox txtKiraMiktari;
+        private System.Windows.Forms.TextBox txtKmSinir;
+        private System.Windows.Forms.TextBox txtBagajHacmi;
+        private System.Windows.Forms.TextBox txtKoltukSayisi;
+        private System.Windows.Forms.TextBox txtAracKm;
+        private System.Windows.Forms.TextBox txtPlaka;
+        private System.Windows.Forms.TextBox txtYil;
     }
 }

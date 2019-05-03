@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="OdemeEkle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Odemeler" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Odemeler">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Musteri" type="tns:Musteriler" />
+          <s:element minOccurs="1" maxOccurs="1" name="OdemeID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OdemeMiktari" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OdemeBasarili" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OdemeTarihi" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Musteriler">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MusteriId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TcKimlik" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Soyad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DogumTarihi" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KullaniciAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sifre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EhliyetTipi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EhliyetYil" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="KaraListe" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Araclar" type="tns:ArrayOfAraclar" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAraclar">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Araclar" nillable="true" type="tns:Araclar" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Araclar">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AracId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Plaka" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AracAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AracModeli" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GerekenEhliyetYasi" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinimumYasSiniri" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GunlukKmSiniri" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AracKm" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HavaYastigi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BagajHacmi" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="KoltukSayisi" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GunlukKiraBedeli" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rezerv" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Kirada" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="YakitTipi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VitesTipi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="KiralanmaTarihi" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="KiradanDonusTarihi" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AracResmi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Musteri" type="tns:Musteriler" />
+          <s:element minOccurs="1" maxOccurs="1" name="SirketId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OdemeEkleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OdemeEkleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdemelerGuncelle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Odemeler" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdemelerGuncelleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OdemelerGuncelleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdemelerIdSil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdemelerIdSilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OdemelerIdSilResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdemelerHepsiniSec">
+        <s:complexType />
+      </s:element>
+      <s:element name="OdemelerHepsiniSecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdemelerHepsiniSecResult" type="tns:ArrayOfOdemeler" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOdemeler">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Odemeler" nillable="true" type="tns:Odemeler" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OdemelerIdSec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdemelerIdSecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdemelerIdSecResult" type="tns:Odemeler" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OdemeEkleSoapIn">
+    <wsdl:part name="parameters" element="tns:OdemeEkle" />
+  </wsdl:message>
+  <wsdl:message name="OdemeEkleSoapOut">
+    <wsdl:part name="parameters" element="tns:OdemeEkleResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdemelerGuncelleSoapIn">
+    <wsdl:part name="parameters" element="tns:OdemelerGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="OdemelerGuncelleSoapOut">
+    <wsdl:part name="parameters" element="tns:OdemelerGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdemelerIdSilSoapIn">
+    <wsdl:part name="parameters" element="tns:OdemelerIdSil" />
+  </wsdl:message>
+  <wsdl:message name="OdemelerIdSilSoapOut">
+    <wsdl:part name="parameters" element="tns:OdemelerIdSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdemelerHepsiniSecSoapIn">
+    <wsdl:part name="parameters" element="tns:OdemelerHepsiniSec" />
+  </wsdl:message>
+  <wsdl:message name="OdemelerHepsiniSecSoapOut">
+    <wsdl:part name="parameters" element="tns:OdemelerHepsiniSecResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdemelerIdSecSoapIn">
+    <wsdl:part name="parameters" element="tns:OdemelerIdSec" />
+  </wsdl:message>
+  <wsdl:message name="OdemelerIdSecSoapOut">
+    <wsdl:part name="parameters" element="tns:OdemelerIdSecResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OdemelerWebServisSoap">
+    <wsdl:operation name="OdemeEkle">
+      <wsdl:input message="tns:OdemeEkleSoapIn" />
+      <wsdl:output message="tns:OdemeEkleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerGuncelle">
+      <wsdl:input message="tns:OdemelerGuncelleSoapIn" />
+      <wsdl:output message="tns:OdemelerGuncelleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerIdSil">
+      <wsdl:input message="tns:OdemelerIdSilSoapIn" />
+      <wsdl:output message="tns:OdemelerIdSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerHepsiniSec">
+      <wsdl:input message="tns:OdemelerHepsiniSecSoapIn" />
+      <wsdl:output message="tns:OdemelerHepsiniSecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerIdSec">
+      <wsdl:input message="tns:OdemelerIdSecSoapIn" />
+      <wsdl:output message="tns:OdemelerIdSecSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OdemelerWebServisSoap" type="tns:OdemelerWebServisSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OdemeEkle">
+      <soap:operation soapAction="http://tempuri.org/OdemeEkle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerGuncelle">
+      <soap:operation soapAction="http://tempuri.org/OdemelerGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerIdSil">
+      <soap:operation soapAction="http://tempuri.org/OdemelerIdSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerHepsiniSec">
+      <soap:operation soapAction="http://tempuri.org/OdemelerHepsiniSec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerIdSec">
+      <soap:operation soapAction="http://tempuri.org/OdemelerIdSec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OdemelerWebServisSoap12" type="tns:OdemelerWebServisSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OdemeEkle">
+      <soap12:operation soapAction="http://tempuri.org/OdemeEkle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerGuncelle">
+      <soap12:operation soapAction="http://tempuri.org/OdemelerGuncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerIdSil">
+      <soap12:operation soapAction="http://tempuri.org/OdemelerIdSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerHepsiniSec">
+      <soap12:operation soapAction="http://tempuri.org/OdemelerHepsiniSec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdemelerIdSec">
+      <soap12:operation soapAction="http://tempuri.org/OdemelerIdSec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OdemelerWebServis">
+    <wsdl:port name="OdemelerWebServisSoap" binding="tns:OdemelerWebServisSoap">
+      <soap:address location="http://localhost:52012/OdemelerWebServis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OdemelerWebServisSoap12" binding="tns:OdemelerWebServisSoap12">
+      <soap12:address location="http://localhost:52012/OdemelerWebServis.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

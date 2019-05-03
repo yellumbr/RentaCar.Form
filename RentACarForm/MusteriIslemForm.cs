@@ -13,7 +13,6 @@ namespace RentACarForm
 {
     public partial class MusteriIslemForm : UserControl
     {
-        List<Musteriler> musteriler = new List<Musteriler>();//Musterilerin LİSTESİ ÇEKİLİR
 
         public MusteriIslemForm()
         {
@@ -40,6 +39,7 @@ namespace RentACarForm
         }
         private void btnMusteriEkle_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 bool success;
@@ -47,17 +47,17 @@ namespace RentACarForm
                 {
                     success = musteri.MusteriEkle(new MusterilerWebServis.Musteriler()
                     {
-                        
+
                         Ad = txtMusteriAd.Text,
                         Soyad = txtMusteriSoyad.Text,
                         TcKimlik = txtMusteriTc.Text,
                         Adres = txtMusteriAdres.Text,
                         Telefon = txtMusteriTel.Text,
                         Email = txtEmail.Text,
-                        DogumTarihi = dtpMusteriDogumTarihi.Value,
+                        DogumTarihi = dtpMusteriDogumTarihi.Value.Date,
                         KullaniciAdi = txtKullaniciAdi.Text,
                         Sifre = txtSifre.Text,
-                        EhliyetYil = dtMusteriEhliyetTarihi.Value,
+                        EhliyetYil = dtMusteriEhliyetTarihi.Value.Date,
                         EhliyetTipi = txtMusteriEhliyetTipi.Text
                     });
                 }
@@ -75,15 +75,15 @@ namespace RentACarForm
             {
                 using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
                 {
-                    foreach (var cevaplayanMusteri in musteriServis.MusteriHepsiniSec().OrderBy(x => x.MusteriId)
-                        .ToList())
+                    
+                    foreach (var cevaplayanMusteri in musteriServis.MusteriHepsiniSec())
                     {
                         Musteriler musteri = new Musteriler()
                         {
                             MusteriId = cevaplayanMusteri.MusteriId,
                             Sifre = cevaplayanMusteri.Sifre,
                             KullaniciAdi = cevaplayanMusteri.KullaniciAdi,
-                            EhliyetYil = cevaplayanMusteri.EhliyetYil,
+                            EhliyetYil = cevaplayanMusteri.EhliyetYil.Date,
                             EhliyetTipi = cevaplayanMusteri.EhliyetTipi,
                             TcKimlik = cevaplayanMusteri.TcKimlik,
                             Ad = cevaplayanMusteri.Ad,
@@ -91,12 +91,13 @@ namespace RentACarForm
                             Adres = cevaplayanMusteri.Adres,
                             Telefon = cevaplayanMusteri.Telefon,
                             Email = cevaplayanMusteri.Email,
-                            DogumTarihi = cevaplayanMusteri.DogumTarihi,
+                            DogumTarihi = cevaplayanMusteri.DogumTarihi.Date,
 
                         };
-                        musteriler.Add(musteri);
+
+                        IslemlerForm.musteriler.Add(musteri);
                     }
-                    foreach (var item in musteriler)
+                    foreach (var item in IslemlerForm.musteriler)
                     {
 
                         cmbKayitliMusteriSil.Items.Add(item.KullaniciAdi);
@@ -119,15 +120,15 @@ namespace RentACarForm
             {
                 using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
                 {
-                    foreach (var item in musteriler)
+                    foreach (var item in IslemlerForm.musteriler)
                     {
-                        if(item.KullaniciAdi == cmbKayitliMusteriSil.Text)
+                        if (item.KullaniciAdi == cmbKayitliMusteriSil.Text)
                         {
                             musteriServis.MusteriIdSil(item.MusteriId);
-                            musteriler.Remove(item);
+                            IslemlerForm.musteriler.Remove(item);
                         }
                     }
-                    
+
 
                 }
             }
@@ -142,41 +143,41 @@ namespace RentACarForm
         {
             using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
             {
-                foreach (var item in musteriler)
+                foreach (var item in IslemlerForm.musteriler)
                 {
-                    if(cmbKayitliMusteriSil.Text==item.KullaniciAdi)
+                    if (cmbKayitliMusteriSil.Text == item.KullaniciAdi)
                     {
                         var musteri = new MusterilerWebServis.Musteriler()
                         {
                             MusteriId = item.MusteriId,
                             Sifre = txtSifre.Text,
                             KullaniciAdi = txtKullaniciAdi.Text,
-                            EhliyetYil = dtMusteriEhliyetTarihi.Value,
+                            EhliyetYil = dtMusteriEhliyetTarihi.Value.Date,
                             EhliyetTipi = txtMusteriEhliyetTipi.Text,
                             TcKimlik = txtMusteriTc.Text,
                             Ad = txtMusteriAd.Text,
                             Soyad = txtMusteriSoyad.Text,
                             Adres = txtMusteriAdres.Text,
                             Telefon = txtMusteriTel.Text,
-                            Email =txtEmail.Text,
-                            DogumTarihi = dtpMusteriDogumTarihi.Value
+                            Email = txtEmail.Text,
+                            DogumTarihi = dtpMusteriDogumTarihi.Value.Date
 
                         };
-                        
-                        musteriServis.MusteriGuncelle(musteri); 
+
+                        musteriServis.MusteriGuncelle(musteri);
                     }
                 }
-               
+
             }
 
-           
+
         }
 
         private void CmbKayitliMusteriSil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var item in musteriler)
+            foreach (var item in IslemlerForm.musteriler)
             {
-                if (item.KullaniciAdi==cmbKayitliMusteriSil.Text)
+                if (item.KullaniciAdi == cmbKayitliMusteriSil.Text)
                 {
                     txtMusteriAd.Text = item.Ad;
                     txtMusteriSoyad.Text = item.Soyad;
@@ -187,9 +188,9 @@ namespace RentACarForm
                     txtMusteriTc.Text = item.TcKimlik;
                     txtMusteriTel.Text = item.Telefon;
                     txtSifre.Text = item.Sifre;
-                    dtMusteriEhliyetTarihi.Value= item.EhliyetYil;
-                    dtpMusteriDogumTarihi.Value = item.DogumTarihi;
- 
+                    dtMusteriEhliyetTarihi.Value = item.EhliyetYil.Date;
+                    dtpMusteriDogumTarihi.Value = item.DogumTarihi.Date;
+
                 }
             }
         }

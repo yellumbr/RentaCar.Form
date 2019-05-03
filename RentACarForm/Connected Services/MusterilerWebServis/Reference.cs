@@ -22,6 +22,8 @@ namespace RentACarForm.MusterilerWebServis {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private int MusteriIdField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TcKimlikField;
         
@@ -30,6 +32,8 @@ namespace RentACarForm.MusterilerWebServis {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SoyadField;
+        
+        private System.DateTime DogumTarihiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AdresField;
@@ -40,25 +44,21 @@ namespace RentACarForm.MusterilerWebServis {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
-        private System.DateTime DogumTarihiField;
-        
-        private int MusteriIdField;
-        
-        private bool KaraListeField;
-        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private RentACarForm.MusterilerWebServis.Araclar[] AraclarField;
+        private string KullaniciAdiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SifreField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string KullaniciAdiField;
+        private string EhliyetTipiField;
         
         private System.DateTime EhliyetYilField;
         
+        private bool KaraListeField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EhliyetTipiField;
+        private RentACarForm.MusterilerWebServis.Araclar[] AraclarField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -67,6 +67,19 @@ namespace RentACarForm.MusterilerWebServis {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int MusteriId {
+            get {
+                return this.MusteriIdField;
+            }
+            set {
+                if ((this.MusteriIdField.Equals(value) != true)) {
+                    this.MusteriIdField = value;
+                    this.RaisePropertyChanged("MusteriId");
+                }
             }
         }
         
@@ -83,7 +96,7 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string Ad {
             get {
                 return this.AdField;
@@ -96,7 +109,7 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Soyad {
             get {
                 return this.SoyadField;
@@ -109,46 +122,7 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Adres {
-            get {
-                return this.AdresField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdresField, value) != true)) {
-                    this.AdresField = value;
-                    this.RaisePropertyChanged("Adres");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Telefon {
-            get {
-                return this.TelefonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TelefonField, value) != true)) {
-                    this.TelefonField = value;
-                    this.RaisePropertyChanged("Telefon");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
         public System.DateTime DogumTarihi {
             get {
                 return this.DogumTarihiField;
@@ -161,59 +135,46 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int MusteriId {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Adres {
             get {
-                return this.MusteriIdField;
+                return this.AdresField;
             }
             set {
-                if ((this.MusteriIdField.Equals(value) != true)) {
-                    this.MusteriIdField = value;
-                    this.RaisePropertyChanged("MusteriId");
+                if ((object.ReferenceEquals(this.AdresField, value) != true)) {
+                    this.AdresField = value;
+                    this.RaisePropertyChanged("Adres");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public bool KaraListe {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Telefon {
             get {
-                return this.KaraListeField;
+                return this.TelefonField;
             }
             set {
-                if ((this.KaraListeField.Equals(value) != true)) {
-                    this.KaraListeField = value;
-                    this.RaisePropertyChanged("KaraListe");
+                if ((object.ReferenceEquals(this.TelefonField, value) != true)) {
+                    this.TelefonField = value;
+                    this.RaisePropertyChanged("Telefon");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public RentACarForm.MusterilerWebServis.Araclar[] Araclar {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Email {
             get {
-                return this.AraclarField;
+                return this.EmailField;
             }
             set {
-                if ((object.ReferenceEquals(this.AraclarField, value) != true)) {
-                    this.AraclarField = value;
-                    this.RaisePropertyChanged("Araclar");
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string Sifre {
-            get {
-                return this.SifreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SifreField, value) != true)) {
-                    this.SifreField = value;
-                    this.RaisePropertyChanged("Sifre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string KullaniciAdi {
             get {
                 return this.KullaniciAdiField;
@@ -226,7 +187,33 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string Sifre {
+            get {
+                return this.SifreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SifreField, value) != true)) {
+                    this.SifreField = value;
+                    this.RaisePropertyChanged("Sifre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string EhliyetTipi {
+            get {
+                return this.EhliyetTipiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EhliyetTipiField, value) != true)) {
+                    this.EhliyetTipiField = value;
+                    this.RaisePropertyChanged("EhliyetTipi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public System.DateTime EhliyetYil {
             get {
                 return this.EhliyetYilField;
@@ -239,15 +226,28 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
-        public string EhliyetTipi {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public bool KaraListe {
             get {
-                return this.EhliyetTipiField;
+                return this.KaraListeField;
             }
             set {
-                if ((object.ReferenceEquals(this.EhliyetTipiField, value) != true)) {
-                    this.EhliyetTipiField = value;
-                    this.RaisePropertyChanged("EhliyetTipi");
+                if ((this.KaraListeField.Equals(value) != true)) {
+                    this.KaraListeField = value;
+                    this.RaisePropertyChanged("KaraListe");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public RentACarForm.MusterilerWebServis.Araclar[] Araclar {
+            get {
+                return this.AraclarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AraclarField, value) != true)) {
+                    this.AraclarField = value;
+                    this.RaisePropertyChanged("Araclar");
                 }
             }
         }
@@ -290,7 +290,8 @@ namespace RentACarForm.MusterilerWebServis {
         
         private int AracKmField;
         
-        private bool HavaYastigiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HavaYastigiField;
         
         private int BagajHacmiField;
         
@@ -302,15 +303,23 @@ namespace RentACarForm.MusterilerWebServis {
         
         private bool KiradaField;
         
-        private byte YakitTipiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YakitTipiField;
         
-        private bool VitesTipiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VitesTipiField;
+        
+        private System.DateTime KiralanmaTarihiField;
+        
+        private System.DateTime KiradanDonusTarihiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AracResmiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private RentACarForm.MusterilerWebServis.Musteriler MusteriField;
+        
+        private int SirketIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -426,13 +435,13 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public bool HavaYastigi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string HavaYastigi {
             get {
                 return this.HavaYastigiField;
             }
             set {
-                if ((this.HavaYastigiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.HavaYastigiField, value) != true)) {
                     this.HavaYastigiField = value;
                     this.RaisePropertyChanged("HavaYastigi");
                 }
@@ -504,33 +513,59 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public byte YakitTipi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string YakitTipi {
             get {
                 return this.YakitTipiField;
             }
             set {
-                if ((this.YakitTipiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.YakitTipiField, value) != true)) {
                     this.YakitTipiField = value;
                     this.RaisePropertyChanged("YakitTipi");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public bool VitesTipi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string VitesTipi {
             get {
                 return this.VitesTipiField;
             }
             set {
-                if ((this.VitesTipiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.VitesTipiField, value) != true)) {
                     this.VitesTipiField = value;
                     this.RaisePropertyChanged("VitesTipi");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public System.DateTime KiralanmaTarihi {
+            get {
+                return this.KiralanmaTarihiField;
+            }
+            set {
+                if ((this.KiralanmaTarihiField.Equals(value) != true)) {
+                    this.KiralanmaTarihiField = value;
+                    this.RaisePropertyChanged("KiralanmaTarihi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public System.DateTime KiradanDonusTarihi {
+            get {
+                return this.KiradanDonusTarihiField;
+            }
+            set {
+                if ((this.KiradanDonusTarihiField.Equals(value) != true)) {
+                    this.KiradanDonusTarihiField = value;
+                    this.RaisePropertyChanged("KiradanDonusTarihi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
         public string AracResmi {
             get {
                 return this.AracResmiField;
@@ -543,7 +578,7 @@ namespace RentACarForm.MusterilerWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
         public RentACarForm.MusterilerWebServis.Musteriler Musteri {
             get {
                 return this.MusteriField;
@@ -552,6 +587,19 @@ namespace RentACarForm.MusterilerWebServis {
                 if ((object.ReferenceEquals(this.MusteriField, value) != true)) {
                     this.MusteriField = value;
                     this.RaisePropertyChanged("Musteri");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public int SirketId {
+            get {
+                return this.SirketIdField;
+            }
+            set {
+                if ((this.SirketIdField.Equals(value) != true)) {
+                    this.SirketIdField = value;
+                    this.RaisePropertyChanged("SirketId");
                 }
             }
         }

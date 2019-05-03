@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="YoneticiEkle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Yonetici" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Yonetici">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TcKimlik" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Soyad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DogumTarihi" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="YoneticiId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SirketId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sifre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="YoneticiEkleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="YoneticiEkleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YoneticiGuncelle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Yonetici" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YoneticiGuncelleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="YoneticiGuncelleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YoneticiIdSil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YoneticiIdSilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="YoneticiIdSilResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YoneticiHepsiniSec">
+        <s:complexType />
+      </s:element>
+      <s:element name="YoneticiHepsiniSecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YoneticiHepsiniSecResult" type="tns:ArrayOfYonetici" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYonetici">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Yonetici" nillable="true" type="tns:Yonetici" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="YoneticiIdSec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YoneticiIdSecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YoneticiIdSecResult" type="tns:Yonetici" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GirisYap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TcKimlik" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sifre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GirisYapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GirisYapResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="YoneticiEkleSoapIn">
+    <wsdl:part name="parameters" element="tns:YoneticiEkle" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiEkleSoapOut">
+    <wsdl:part name="parameters" element="tns:YoneticiEkleResponse" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiGuncelleSoapIn">
+    <wsdl:part name="parameters" element="tns:YoneticiGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiGuncelleSoapOut">
+    <wsdl:part name="parameters" element="tns:YoneticiGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiIdSilSoapIn">
+    <wsdl:part name="parameters" element="tns:YoneticiIdSil" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiIdSilSoapOut">
+    <wsdl:part name="parameters" element="tns:YoneticiIdSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiHepsiniSecSoapIn">
+    <wsdl:part name="parameters" element="tns:YoneticiHepsiniSec" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiHepsiniSecSoapOut">
+    <wsdl:part name="parameters" element="tns:YoneticiHepsiniSecResponse" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiIdSecSoapIn">
+    <wsdl:part name="parameters" element="tns:YoneticiIdSec" />
+  </wsdl:message>
+  <wsdl:message name="YoneticiIdSecSoapOut">
+    <wsdl:part name="parameters" element="tns:YoneticiIdSecResponse" />
+  </wsdl:message>
+  <wsdl:message name="GirisYapSoapIn">
+    <wsdl:part name="parameters" element="tns:GirisYap" />
+  </wsdl:message>
+  <wsdl:message name="GirisYapSoapOut">
+    <wsdl:part name="parameters" element="tns:GirisYapResponse" />
+  </wsdl:message>
+  <wsdl:portType name="YoneticiWebServisSoap">
+    <wsdl:operation name="YoneticiEkle">
+      <wsdl:input message="tns:YoneticiEkleSoapIn" />
+      <wsdl:output message="tns:YoneticiEkleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiGuncelle">
+      <wsdl:input message="tns:YoneticiGuncelleSoapIn" />
+      <wsdl:output message="tns:YoneticiGuncelleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiIdSil">
+      <wsdl:input message="tns:YoneticiIdSilSoapIn" />
+      <wsdl:output message="tns:YoneticiIdSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiHepsiniSec">
+      <wsdl:input message="tns:YoneticiHepsiniSecSoapIn" />
+      <wsdl:output message="tns:YoneticiHepsiniSecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiIdSec">
+      <wsdl:input message="tns:YoneticiIdSecSoapIn" />
+      <wsdl:output message="tns:YoneticiIdSecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GirisYap">
+      <wsdl:input message="tns:GirisYapSoapIn" />
+      <wsdl:output message="tns:GirisYapSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="YoneticiWebServisSoap" type="tns:YoneticiWebServisSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="YoneticiEkle">
+      <soap:operation soapAction="http://tempuri.org/YoneticiEkle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiGuncelle">
+      <soap:operation soapAction="http://tempuri.org/YoneticiGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiIdSil">
+      <soap:operation soapAction="http://tempuri.org/YoneticiIdSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiHepsiniSec">
+      <soap:operation soapAction="http://tempuri.org/YoneticiHepsiniSec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiIdSec">
+      <soap:operation soapAction="http://tempuri.org/YoneticiIdSec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GirisYap">
+      <soap:operation soapAction="http://tempuri.org/GirisYap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YoneticiWebServisSoap12" type="tns:YoneticiWebServisSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="YoneticiEkle">
+      <soap12:operation soapAction="http://tempuri.org/YoneticiEkle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiGuncelle">
+      <soap12:operation soapAction="http://tempuri.org/YoneticiGuncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiIdSil">
+      <soap12:operation soapAction="http://tempuri.org/YoneticiIdSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiHepsiniSec">
+      <soap12:operation soapAction="http://tempuri.org/YoneticiHepsiniSec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YoneticiIdSec">
+      <soap12:operation soapAction="http://tempuri.org/YoneticiIdSec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GirisYap">
+      <soap12:operation soapAction="http://tempuri.org/GirisYap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YoneticiWebServis">
+    <wsdl:port name="YoneticiWebServisSoap" binding="tns:YoneticiWebServisSoap">
+      <soap:address location="http://localhost:52012/YoneticiWebServis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="YoneticiWebServisSoap12" binding="tns:YoneticiWebServisSoap12">
+      <soap12:address location="http://localhost:52012/YoneticiWebServis.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

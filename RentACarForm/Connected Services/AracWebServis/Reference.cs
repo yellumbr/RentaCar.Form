@@ -41,27 +41,35 @@ namespace RentACarForm.AracWebServis {
         
         private int AracKmField;
         
-        private bool HavaYastigiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HavaYastigiField;
         
         private int BagajHacmiField;
         
         private int KoltukSayisiField;
         
-        private int GunlukKiraBedeliField;
+        private decimal GunlukKiraBedeliField;
         
         private bool RezervField;
         
         private bool KiradaField;
         
-        private int YakitTipiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YakitTipiField;
         
-        private bool VitesTipiField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VitesTipiField;
+        
+        private System.DateTime KiralanmaTarihiField;
+        
+        private System.DateTime KiradanDonusTarihiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AracResmiField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private RentACarForm.AracWebServis.Musteriler MusteriField;
+        private int MusteriIdField;
+        
+        private int SirketIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -177,13 +185,13 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public bool HavaYastigi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string HavaYastigi {
             get {
                 return this.HavaYastigiField;
             }
             set {
-                if ((this.HavaYastigiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.HavaYastigiField, value) != true)) {
                     this.HavaYastigiField = value;
                     this.RaisePropertyChanged("HavaYastigi");
                 }
@@ -217,7 +225,7 @@ namespace RentACarForm.AracWebServis {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public int GunlukKiraBedeli {
+        public decimal GunlukKiraBedeli {
             get {
                 return this.GunlukKiraBedeliField;
             }
@@ -255,33 +263,59 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public int YakitTipi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string YakitTipi {
             get {
                 return this.YakitTipiField;
             }
             set {
-                if ((this.YakitTipiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.YakitTipiField, value) != true)) {
                     this.YakitTipiField = value;
                     this.RaisePropertyChanged("YakitTipi");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public bool VitesTipi {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string VitesTipi {
             get {
                 return this.VitesTipiField;
             }
             set {
-                if ((this.VitesTipiField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.VitesTipiField, value) != true)) {
                     this.VitesTipiField = value;
                     this.RaisePropertyChanged("VitesTipi");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public System.DateTime KiralanmaTarihi {
+            get {
+                return this.KiralanmaTarihiField;
+            }
+            set {
+                if ((this.KiralanmaTarihiField.Equals(value) != true)) {
+                    this.KiralanmaTarihiField = value;
+                    this.RaisePropertyChanged("KiralanmaTarihi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public System.DateTime KiradanDonusTarihi {
+            get {
+                return this.KiradanDonusTarihiField;
+            }
+            set {
+                if ((this.KiradanDonusTarihiField.Equals(value) != true)) {
+                    this.KiradanDonusTarihiField = value;
+                    this.RaisePropertyChanged("KiradanDonusTarihi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
         public string AracResmi {
             get {
                 return this.AracResmiField;
@@ -294,15 +328,28 @@ namespace RentACarForm.AracWebServis {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
-        public RentACarForm.AracWebServis.Musteriler Musteri {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        public int MusteriId {
             get {
-                return this.MusteriField;
+                return this.MusteriIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.MusteriField, value) != true)) {
-                    this.MusteriField = value;
-                    this.RaisePropertyChanged("Musteri");
+                if ((this.MusteriIdField.Equals(value) != true)) {
+                    this.MusteriIdField = value;
+                    this.RaisePropertyChanged("MusteriId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public int SirketId {
+            get {
+                return this.SirketIdField;
+            }
+            set {
+                if ((this.SirketIdField.Equals(value) != true)) {
+                    this.SirketIdField = value;
+                    this.RaisePropertyChanged("SirketId");
                 }
             }
         }
@@ -319,9 +366,147 @@ namespace RentACarForm.AracWebServis {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Musteriler", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sirket", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class Musteriler : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Sirket : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int SirketIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SirketAdiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SehirField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AdresField;
+        
+        private int AracSayisiField;
+        
+        private float SirketPuaniField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private RentACarForm.AracWebServis.Yonetici[] YoneticilerField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int SirketId {
+            get {
+                return this.SirketIdField;
+            }
+            set {
+                if ((this.SirketIdField.Equals(value) != true)) {
+                    this.SirketIdField = value;
+                    this.RaisePropertyChanged("SirketId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string SirketAdi {
+            get {
+                return this.SirketAdiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SirketAdiField, value) != true)) {
+                    this.SirketAdiField = value;
+                    this.RaisePropertyChanged("SirketAdi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Sehir {
+            get {
+                return this.SehirField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SehirField, value) != true)) {
+                    this.SehirField = value;
+                    this.RaisePropertyChanged("Sehir");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Adres {
+            get {
+                return this.AdresField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdresField, value) != true)) {
+                    this.AdresField = value;
+                    this.RaisePropertyChanged("Adres");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int AracSayisi {
+            get {
+                return this.AracSayisiField;
+            }
+            set {
+                if ((this.AracSayisiField.Equals(value) != true)) {
+                    this.AracSayisiField = value;
+                    this.RaisePropertyChanged("AracSayisi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public float SirketPuani {
+            get {
+                return this.SirketPuaniField;
+            }
+            set {
+                if ((this.SirketPuaniField.Equals(value) != true)) {
+                    this.SirketPuaniField = value;
+                    this.RaisePropertyChanged("SirketPuani");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public RentACarForm.AracWebServis.Yonetici[] Yoneticiler {
+            get {
+                return this.YoneticilerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.YoneticilerField, value) != true)) {
+                    this.YoneticilerField = value;
+                    this.RaisePropertyChanged("Yoneticiler");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Yonetici", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Yonetici : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -344,23 +529,14 @@ namespace RentACarForm.AracWebServis {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
-        private int MusteriIdField;
+        private System.DateTime DogumTarihiField;
         
-        private bool KaraListeField;
+        private int YoneticiIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private RentACarForm.AracWebServis.Araclar[] AraclarField;
+        private int SirketIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SifreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string KullaniciAdiField;
-        
-        private System.DateTime EhliyetYilField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EhliyetTipiField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -451,40 +627,40 @@ namespace RentACarForm.AracWebServis {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int MusteriId {
+        public System.DateTime DogumTarihi {
             get {
-                return this.MusteriIdField;
+                return this.DogumTarihiField;
             }
             set {
-                if ((this.MusteriIdField.Equals(value) != true)) {
-                    this.MusteriIdField = value;
-                    this.RaisePropertyChanged("MusteriId");
+                if ((this.DogumTarihiField.Equals(value) != true)) {
+                    this.DogumTarihiField = value;
+                    this.RaisePropertyChanged("DogumTarihi");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public bool KaraListe {
+        public int YoneticiId {
             get {
-                return this.KaraListeField;
+                return this.YoneticiIdField;
             }
             set {
-                if ((this.KaraListeField.Equals(value) != true)) {
-                    this.KaraListeField = value;
-                    this.RaisePropertyChanged("KaraListe");
+                if ((this.YoneticiIdField.Equals(value) != true)) {
+                    this.YoneticiIdField = value;
+                    this.RaisePropertyChanged("YoneticiId");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public RentACarForm.AracWebServis.Araclar[] Araclar {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public int SirketId {
             get {
-                return this.AraclarField;
+                return this.SirketIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.AraclarField, value) != true)) {
-                    this.AraclarField = value;
-                    this.RaisePropertyChanged("Araclar");
+                if ((this.SirketIdField.Equals(value) != true)) {
+                    this.SirketIdField = value;
+                    this.RaisePropertyChanged("SirketId");
                 }
             }
         }
@@ -498,45 +674,6 @@ namespace RentACarForm.AracWebServis {
                 if ((object.ReferenceEquals(this.SifreField, value) != true)) {
                     this.SifreField = value;
                     this.RaisePropertyChanged("Sifre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string KullaniciAdi {
-            get {
-                return this.KullaniciAdiField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KullaniciAdiField, value) != true)) {
-                    this.KullaniciAdiField = value;
-                    this.RaisePropertyChanged("KullaniciAdi");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public System.DateTime EhliyetYil {
-            get {
-                return this.EhliyetYilField;
-            }
-            set {
-                if ((this.EhliyetYilField.Equals(value) != true)) {
-                    this.EhliyetYilField = value;
-                    this.RaisePropertyChanged("EhliyetYil");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public string EhliyetTipi {
-            get {
-                return this.EhliyetTipiField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EhliyetTipiField, value) != true)) {
-                    this.EhliyetTipiField = value;
-                    this.RaisePropertyChanged("EhliyetTipi");
                 }
             }
         }
@@ -555,12 +692,19 @@ namespace RentACarForm.AracWebServis {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AracWebServis.AracWebServisSoap")]
     public interface AracWebServisSoap {
         
-        // CODEGEN: Generating message contract since element name entity from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name arac from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracEkle", ReplyAction="*")]
         RentACarForm.AracWebServis.AracEkleResponse AracEkle(RentACarForm.AracWebServis.AracEkleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracEkle", ReplyAction="*")]
         System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracEkleResponse> AracEkleAsync(RentACarForm.AracWebServis.AracEkleRequest request);
+        
+        // CODEGEN: Generating message contract since element name arac from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracKirala", ReplyAction="*")]
+        RentACarForm.AracWebServis.AracKiralaResponse AracKirala(RentACarForm.AracWebServis.AracKiralaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracKirala", ReplyAction="*")]
+        System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracKiralaResponse> AracKiralaAsync(RentACarForm.AracWebServis.AracKiralaRequest request);
         
         // CODEGEN: Generating message contract since element name entity from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracGuncelle", ReplyAction="*")]
@@ -569,11 +713,12 @@ namespace RentACarForm.AracWebServis {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracGuncelle", ReplyAction="*")]
         System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracGuncelleResponse> AracGuncelleAsync(RentACarForm.AracWebServis.AracGuncelleRequest request);
         
+        // CODEGEN: Generating message contract since element name sirket from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracIdSil", ReplyAction="*")]
-        bool AracIdSil(int id);
+        RentACarForm.AracWebServis.AracIdSilResponse AracIdSil(RentACarForm.AracWebServis.AracIdSilRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracIdSil", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> AracIdSilAsync(int id);
+        System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracIdSilResponse> AracIdSilAsync(RentACarForm.AracWebServis.AracIdSilRequest request);
         
         // CODEGEN: Generating message contract since element name AracHepsiniSecResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AracHepsiniSec", ReplyAction="*")]
@@ -614,13 +759,17 @@ namespace RentACarForm.AracWebServis {
     public partial class AracEkleRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public RentACarForm.AracWebServis.Araclar entity;
+        public RentACarForm.AracWebServis.Araclar arac;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public RentACarForm.AracWebServis.Sirket sirket;
         
         public AracEkleRequestBody() {
         }
         
-        public AracEkleRequestBody(RentACarForm.AracWebServis.Araclar entity) {
-            this.entity = entity;
+        public AracEkleRequestBody(RentACarForm.AracWebServis.Araclar arac, RentACarForm.AracWebServis.Sirket sirket) {
+            this.arac = arac;
+            this.sirket = sirket;
         }
     }
     
@@ -655,6 +804,74 @@ namespace RentACarForm.AracWebServis {
         
         public AracEkleResponseBody(bool AracEkleResult) {
             this.AracEkleResult = AracEkleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AracKiralaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AracKirala", Namespace="http://tempuri.org/", Order=0)]
+        public RentACarForm.AracWebServis.AracKiralaRequestBody Body;
+        
+        public AracKiralaRequest() {
+        }
+        
+        public AracKiralaRequest(RentACarForm.AracWebServis.AracKiralaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AracKiralaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public RentACarForm.AracWebServis.Araclar arac;
+        
+        public AracKiralaRequestBody() {
+        }
+        
+        public AracKiralaRequestBody(RentACarForm.AracWebServis.Araclar arac) {
+            this.arac = arac;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AracKiralaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AracKiralaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public RentACarForm.AracWebServis.AracKiralaResponseBody Body;
+        
+        public AracKiralaResponse() {
+        }
+        
+        public AracKiralaResponse(RentACarForm.AracWebServis.AracKiralaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AracKiralaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AracKiralaResult;
+        
+        public AracKiralaResponseBody() {
+        }
+        
+        public AracKiralaResponseBody(bool AracKiralaResult) {
+            this.AracKiralaResult = AracKiralaResult;
         }
     }
     
@@ -723,6 +940,78 @@ namespace RentACarForm.AracWebServis {
         
         public AracGuncelleResponseBody(bool AracGuncelleResult) {
             this.AracGuncelleResult = AracGuncelleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AracIdSilRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AracIdSil", Namespace="http://tempuri.org/", Order=0)]
+        public RentACarForm.AracWebServis.AracIdSilRequestBody Body;
+        
+        public AracIdSilRequest() {
+        }
+        
+        public AracIdSilRequest(RentACarForm.AracWebServis.AracIdSilRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AracIdSilRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public RentACarForm.AracWebServis.Sirket sirket;
+        
+        public AracIdSilRequestBody() {
+        }
+        
+        public AracIdSilRequestBody(int id, RentACarForm.AracWebServis.Sirket sirket) {
+            this.id = id;
+            this.sirket = sirket;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AracIdSilResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AracIdSilResponse", Namespace="http://tempuri.org/", Order=0)]
+        public RentACarForm.AracWebServis.AracIdSilResponseBody Body;
+        
+        public AracIdSilResponse() {
+        }
+        
+        public AracIdSilResponse(RentACarForm.AracWebServis.AracIdSilResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AracIdSilResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AracIdSilResult;
+        
+        public AracIdSilResponseBody() {
+        }
+        
+        public AracIdSilResponseBody(bool AracIdSilResult) {
+            this.AracIdSilResult = AracIdSilResult;
         }
     }
     
@@ -887,10 +1176,11 @@ namespace RentACarForm.AracWebServis {
             return base.Channel.AracEkle(request);
         }
         
-        public bool AracEkle(RentACarForm.AracWebServis.Araclar entity) {
+        public bool AracEkle(RentACarForm.AracWebServis.Araclar arac, RentACarForm.AracWebServis.Sirket sirket) {
             RentACarForm.AracWebServis.AracEkleRequest inValue = new RentACarForm.AracWebServis.AracEkleRequest();
             inValue.Body = new RentACarForm.AracWebServis.AracEkleRequestBody();
-            inValue.Body.entity = entity;
+            inValue.Body.arac = arac;
+            inValue.Body.sirket = sirket;
             RentACarForm.AracWebServis.AracEkleResponse retVal = ((RentACarForm.AracWebServis.AracWebServisSoap)(this)).AracEkle(inValue);
             return retVal.Body.AracEkleResult;
         }
@@ -900,11 +1190,37 @@ namespace RentACarForm.AracWebServis {
             return base.Channel.AracEkleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracEkleResponse> AracEkleAsync(RentACarForm.AracWebServis.Araclar entity) {
+        public System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracEkleResponse> AracEkleAsync(RentACarForm.AracWebServis.Araclar arac, RentACarForm.AracWebServis.Sirket sirket) {
             RentACarForm.AracWebServis.AracEkleRequest inValue = new RentACarForm.AracWebServis.AracEkleRequest();
             inValue.Body = new RentACarForm.AracWebServis.AracEkleRequestBody();
-            inValue.Body.entity = entity;
+            inValue.Body.arac = arac;
+            inValue.Body.sirket = sirket;
             return ((RentACarForm.AracWebServis.AracWebServisSoap)(this)).AracEkleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        RentACarForm.AracWebServis.AracKiralaResponse RentACarForm.AracWebServis.AracWebServisSoap.AracKirala(RentACarForm.AracWebServis.AracKiralaRequest request) {
+            return base.Channel.AracKirala(request);
+        }
+        
+        public bool AracKirala(RentACarForm.AracWebServis.Araclar arac) {
+            RentACarForm.AracWebServis.AracKiralaRequest inValue = new RentACarForm.AracWebServis.AracKiralaRequest();
+            inValue.Body = new RentACarForm.AracWebServis.AracKiralaRequestBody();
+            inValue.Body.arac = arac;
+            RentACarForm.AracWebServis.AracKiralaResponse retVal = ((RentACarForm.AracWebServis.AracWebServisSoap)(this)).AracKirala(inValue);
+            return retVal.Body.AracKiralaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracKiralaResponse> RentACarForm.AracWebServis.AracWebServisSoap.AracKiralaAsync(RentACarForm.AracWebServis.AracKiralaRequest request) {
+            return base.Channel.AracKiralaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracKiralaResponse> AracKiralaAsync(RentACarForm.AracWebServis.Araclar arac) {
+            RentACarForm.AracWebServis.AracKiralaRequest inValue = new RentACarForm.AracWebServis.AracKiralaRequest();
+            inValue.Body = new RentACarForm.AracWebServis.AracKiralaRequestBody();
+            inValue.Body.arac = arac;
+            return ((RentACarForm.AracWebServis.AracWebServisSoap)(this)).AracKiralaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -932,12 +1248,31 @@ namespace RentACarForm.AracWebServis {
             return ((RentACarForm.AracWebServis.AracWebServisSoap)(this)).AracGuncelleAsync(inValue);
         }
         
-        public bool AracIdSil(int id) {
-            return base.Channel.AracIdSil(id);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        RentACarForm.AracWebServis.AracIdSilResponse RentACarForm.AracWebServis.AracWebServisSoap.AracIdSil(RentACarForm.AracWebServis.AracIdSilRequest request) {
+            return base.Channel.AracIdSil(request);
         }
         
-        public System.Threading.Tasks.Task<bool> AracIdSilAsync(int id) {
-            return base.Channel.AracIdSilAsync(id);
+        public bool AracIdSil(int id, RentACarForm.AracWebServis.Sirket sirket) {
+            RentACarForm.AracWebServis.AracIdSilRequest inValue = new RentACarForm.AracWebServis.AracIdSilRequest();
+            inValue.Body = new RentACarForm.AracWebServis.AracIdSilRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.sirket = sirket;
+            RentACarForm.AracWebServis.AracIdSilResponse retVal = ((RentACarForm.AracWebServis.AracWebServisSoap)(this)).AracIdSil(inValue);
+            return retVal.Body.AracIdSilResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracIdSilResponse> RentACarForm.AracWebServis.AracWebServisSoap.AracIdSilAsync(RentACarForm.AracWebServis.AracIdSilRequest request) {
+            return base.Channel.AracIdSilAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<RentACarForm.AracWebServis.AracIdSilResponse> AracIdSilAsync(int id, RentACarForm.AracWebServis.Sirket sirket) {
+            RentACarForm.AracWebServis.AracIdSilRequest inValue = new RentACarForm.AracWebServis.AracIdSilRequest();
+            inValue.Body = new RentACarForm.AracWebServis.AracIdSilRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.sirket = sirket;
+            return ((RentACarForm.AracWebServis.AracWebServisSoap)(this)).AracIdSilAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
