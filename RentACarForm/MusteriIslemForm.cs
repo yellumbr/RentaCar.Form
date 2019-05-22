@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models.Concretes;
-
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 namespace RentACarForm
 {
     public partial class MusteriIslemForm : UserControl
@@ -37,162 +39,85 @@ namespace RentACarForm
         {
             return cmbKayitliMusteriSil;
         }
-        private void btnMusteriEkle_Click(object sender, EventArgs e)
+        private async void btnMusteriEkle_Click(object sender, EventArgs e)
         {
+
+            bool success = false;
+           
             
-            try
+
+
+            using (var client = new HttpClient())
             {
-                bool success;
-                using (var musteri = new MusterilerWebServis.MusterilerWebServisSoapClient())
+                // Setup basics
+                client.BaseAddress = new Uri("http://localhost:54205/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // Create post body object
+                Kullanici kullanici = new Kullanici()
                 {
-                    success = musteri.MusteriEkle(new MusterilerWebServis.Musteriler()
-                    {
-
-                        Ad = txtMusteriAd.Text,
-                        Soyad = txtMusteriSoyad.Text,
-                        TcKimlik = txtMusteriTc.Text,
-                        Adres = txtMusteriAdres.Text,
-                        Telefon = txtMusteriTel.Text,
-                        Email = txtEmail.Text,
-                        DogumTarihi = dtpMusteriDogumTarihi.Value.Date,
-                        KullaniciAdi = txtKullaniciAdi.Text,
-                        Sifre = txtSifre.Text,
-                        EhliyetYil = dtMusteriEhliyetTarihi.Value.Date,
-                        EhliyetTipi = txtMusteriEhliyetTipi.Text
-                    });
-                }
-                var message = success ? "done" : "failed";
-                //MÜŞTERİNİN EKLENİP EKLENMEDİĞİ KONTORL EDİLİR
-                MessageBox.Show("Operation " + message);
-            }
-            catch (Exception ex)//BAŞARISIZ OLURSA MESAJ DÖNER
-            {
-                MessageBox.Show("Error happened: " + ex.Message);
-            }
-
-
-            try
-            {
-                using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
-                {
+                    Ad = txtMusteriAd.Text,
+                    Soyad = txtMusteriSoyad.Text,
+                    TcKimlik = txtMusteriTc.Text,
+                    Adres = txtMusteriAdres.Text,
+                    Telefon = txtMusteriTel.Text,
+                    Email = txtEmail.Text,
+                    DogumTarihi = dtpMusteriDogumTarihi.Value.Date,
+                    KullaniciAdi = txtKullaniciAdi.Text,
+                    Parola = txtSifre.Text,
+                    KullaniciTipi = "M"
                     
-                    foreach (var cevaplayanMusteri in musteriServis.MusteriHepsiniSec())
-                    {
-                        Musteriler musteri = new Musteriler()
-                        {
-                            MusteriId = cevaplayanMusteri.MusteriId,
-                            Sifre = cevaplayanMusteri.Sifre,
-                            KullaniciAdi = cevaplayanMusteri.KullaniciAdi,
-                            EhliyetYil = cevaplayanMusteri.EhliyetYil.Date,
-                            EhliyetTipi = cevaplayanMusteri.EhliyetTipi,
-                            TcKimlik = cevaplayanMusteri.TcKimlik,
-                            Ad = cevaplayanMusteri.Ad,
-                            Soyad = cevaplayanMusteri.Soyad,
-                            Adres = cevaplayanMusteri.Adres,
-                            Telefon = cevaplayanMusteri.Telefon,
-                            Email = cevaplayanMusteri.Email,
-                            DogumTarihi = cevaplayanMusteri.DogumTarihi.Date,
 
-                        };
+                };
 
-                        IslemlerForm.musteriler.Add(musteri);
-                    }
-                    foreach (var item in IslemlerForm.musteriler)
-                    {
+                Musteri musteri = new Musteri()
+                {
+                    KaraListe = false,
+                    Ceza = 0,
+                    EhliyetTipi = txtMusteriEhliyetTipi.Text,
+                    EhliyetTarihi = dtMusteriEhliyetTarihi.Value.Date
+                };
 
-                        cmbKayitliMusteriSil.Items.Add(item.KullaniciAdi);
-                    }
+                // Serialize C# object to Json Object
+                var donusturulmusKullanici = JsonConvert.SerializeObject(kullanici);
+                var donusturulmusMusteri = JsonConvert.SerializeObject(musteri);
+                // Json object to System.Net.Http content type
+                var Kullanici = new StringContent(donusturulmusKullanici, Encoding.UTF8, "application/json");
+                var Musteri = new StringContent(donusturulmusMusteri, Encoding.UTF8, "application/json");
 
+                // Post Request to the URI
+                var resultKullanici = await client.PostAsync("api/Kullanici", Kullanici);
+
+                var resultMusteri = await client.PostAsync("api/Musteri", Musteri);
+                // Check for result
+                if (resultKullanici.IsSuccessStatusCode && resultMusteri.IsSuccessStatusCode)
+                {
+                    success = true;
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error happened: " + ex.Message);
-            }
-
-
+            var message = success ? "done" : "failed";
+            // Inform user
+            MessageBox.Show("Operation " + message);
         }
 
         private void btnMusteriSil_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
-                {
-                    foreach (var item in IslemlerForm.musteriler)
-                    {
-                        if (item.KullaniciAdi == cmbKayitliMusteriSil.Text)
-                        {
-                            musteriServis.MusteriIdSil(item.MusteriId);
-                            IslemlerForm.musteriler.Remove(item);
-                        }
-                    }
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error happened: " + ex.Message);
-            }
+          
 
         }
 
         private void BtnMusteriGuncelle_Click(object sender, EventArgs e)
         {
-            using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
-            {
-                foreach (var item in IslemlerForm.musteriler)
-                {
-                    if (cmbKayitliMusteriSil.Text == item.KullaniciAdi)
-                    {
-                        var musteri = new MusterilerWebServis.Musteriler()
-                        {
-                            MusteriId = item.MusteriId,
-                            Sifre = txtSifre.Text,
-                            KullaniciAdi = txtKullaniciAdi.Text,
-                            EhliyetYil = dtMusteriEhliyetTarihi.Value.Date,
-                            EhliyetTipi = txtMusteriEhliyetTipi.Text,
-                            TcKimlik = txtMusteriTc.Text,
-                            Ad = txtMusteriAd.Text,
-                            Soyad = txtMusteriSoyad.Text,
-                            Adres = txtMusteriAdres.Text,
-                            Telefon = txtMusteriTel.Text,
-                            Email = txtEmail.Text,
-                            DogumTarihi = dtpMusteriDogumTarihi.Value.Date
-
-                        };
-
-                        musteriServis.MusteriGuncelle(musteri);
-                    }
-                }
-
-            }
+            
 
 
         }
 
         private void CmbKayitliMusteriSil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var item in IslemlerForm.musteriler)
-            {
-                if (item.KullaniciAdi == cmbKayitliMusteriSil.Text)
-                {
-                    txtMusteriAd.Text = item.Ad;
-                    txtMusteriSoyad.Text = item.Soyad;
-                    txtEmail.Text = item.Email;
-                    txtKullaniciAdi.Text = item.KullaniciAdi;
-                    txtMusteriAdres.Text = item.Adres;
-                    txtMusteriEhliyetTipi.Text = item.EhliyetTipi;
-                    txtMusteriTc.Text = item.TcKimlik;
-                    txtMusteriTel.Text = item.Telefon;
-                    txtSifre.Text = item.Sifre;
-                    dtMusteriEhliyetTarihi.Value = item.EhliyetYil.Date;
-                    dtpMusteriDogumTarihi.Value = item.DogumTarihi.Date;
-
-                }
-            }
         }
     }
 }

@@ -308,7 +308,6 @@ Y:\RentaCar.Form\RentACarForm\bin\Debug\DataAccesLayer.dll
 Y:\RentaCar.Form\RentACarForm\bin\Debug\Business.pdb
 Y:\RentaCar.Form\RentACarForm\bin\Debug\DataAccesLayer.pdb
 Y:\RentaCar.Form\RentACarForm\obj\Debug\RentACarForm.csprojAssemblyReference.cache
-\\Mac\SoaOdev\RentaCar.Form\RentACarForm\obj\Debug\RentACarForm.csprojAssemblyReference.cache
 \\Mac\SoaOdev\RentaCar.Form\RentACarForm\obj\Debug\RentACarForm.AracEkleForm.resources
 \\Mac\SoaOdev\RentaCar.Form\RentACarForm\obj\Debug\RentACarForm.AracGuncelleSilForm.resources
 \\Mac\SoaOdev\RentaCar.Form\RentACarForm\obj\Debug\RentACarForm.Form1.resources
@@ -340,3 +339,5 @@ Y:\RentaCar.Form\RentACarForm\obj\Debug\RentACarForm.csprojAssemblyReference.cac
 \\Mac\SoaOdev\RentaCar.Form\RentACarForm\bin\Debug\RentaCarWebServis.pdb
 \\Mac\SoaOdev\RentaCar.Form\RentACarForm\bin\Debug\RentaCarWebServis.dll.config
 \\Mac\SoaOdev\RentaCar.Form\RentACarForm\obj\Debug\RentACarForm.csproj.CopyComplete
+\\Mac\SoaOdev\RentaCar.Form\RentACarForm\bin\Debug\Newtonsoft.Json.dll
+\\Mac\SoaOdev\RentaCar.Form\RentACarForm\obj\Debug\RentACarForm.csprojAssemblyReference.cache

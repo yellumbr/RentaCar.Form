@@ -33,32 +33,7 @@ namespace RentACarForm
 
         private void BtnRezerveKirala_Click(object sender, EventArgs e)
         {
-            IslemlerForm.AracListeDoldur();
-
-            using (var aracServis = new AracWebServis.AracWebServisSoapClient())
-            {
-                using (var sirketSoapClient = new SirketWebServis.SirketWebServisSoapClient())
-                {
-                    foreach (var item in sirketSoapClient.SirketHepsiniSec())
-                    {
-                        if (item.SirketId == Form1.yonetici.SirketId)
-                        {
-                            var sirket = new AracWebServis.Sirket()
-                            {
-                                SirketAdi = item.SirketAdi,
-                                SirketId = item.SirketId,
-                                Sehir = item.Sehir,
-                                SirketPuani = item.SirketPuani,
-                                Adres = item.Adres,
-                                AracSayisi = item.AracSayisi - 1
-                            };
-                            aracServis.AracIdSil(selectedId, sirket);
-                        }
-                    }
-
-                }
-                lstRezervasyon.Items.Remove(lstRezervasyon.SelectedItems[0]);
-            }
+           
            
         }
         private void LstRezervasyon_SelectedIndexChanged(object sender, EventArgs e)

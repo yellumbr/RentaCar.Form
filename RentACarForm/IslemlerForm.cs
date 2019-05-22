@@ -15,99 +15,23 @@ namespace RentACarForm
     public partial class IslemlerForm : Form
     {
         public static ListViewItem listviewItem { get; set; }
-        public static List<Araclar> araclar { get; set; }
-        public static List<Musteriler> musteriler { get; set; }
+        public static List<Arac> araclar { get; set; }
+        public static List<Musteri> musteriler { get; set; }
         public static List<Sirket> sirketler { get; set; }
         public static List<Yonetici> yoneticiler { get; set; }
-        public static List<Odemeler> odemeler { get; set; }
+        public static List<Odeme> odemeler { get; set; }
         public IslemlerForm()
         {
             yoneticiler = new List<Yonetici>();
-            odemeler = new List<Odemeler>();
+            odemeler = new List<Odeme>();
             sirketler = new List<Sirket>();
-            araclar = new List<Araclar>();
-            musteriler = new List<Musteriler>();
+            araclar = new List<Arac>();
+            musteriler = new List<Musteri>();
             InitializeComponent();
         }
 
-        public static void MusteriListeDoldur()
-        {
-            musteriler.Clear();
-            try
-            {
-                using (var musteriSoapClient = new MusterilerWebServis.MusterilerWebServisSoapClient())
-                {
-                    foreach (var cevaplayanMusteri in musteriSoapClient.MusteriHepsiniSec())
-                    {
-                        Musteriler musteri = new Musteriler()
-                        {
-                            MusteriId = cevaplayanMusteri.MusteriId,
-                            Sifre = cevaplayanMusteri.Sifre,
-                            KullaniciAdi = cevaplayanMusteri.KullaniciAdi,
-                            EhliyetYil = cevaplayanMusteri.EhliyetYil.Date,
-                            EhliyetTipi = cevaplayanMusteri.EhliyetTipi,
-                            TcKimlik = cevaplayanMusteri.TcKimlik,
-                            Ad = cevaplayanMusteri.Ad,
-                            Soyad = cevaplayanMusteri.Soyad,
-                            Adres = cevaplayanMusteri.Adres,
-                            Telefon = cevaplayanMusteri.Telefon,
-                            Email = cevaplayanMusteri.Email,
-                            DogumTarihi = cevaplayanMusteri.DogumTarihi.Date,
-                            KaraListe = cevaplayanMusteri.KaraListe
-                        };
-                        musteriler.Add(musteri);
-                    }
-                    
-                }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error happened: " + ex.Message);
-            }
-        }
-        public static void AracListeDoldur()
-        {
-            araclar.Clear();
-            try
-            {
-                using (var aracSoapClient = new AracWebServis.AracWebServisSoapClient())
-                {
-                    foreach (var cevaplayanArac in aracSoapClient.AracHepsiniSec())
-                    {
-                        Araclar arac = new Araclar()
-                        {
-                            AracAdi = cevaplayanArac.AracAdi,
-                            AracKm = cevaplayanArac.AracKm,
-                            AracModeli = cevaplayanArac.AracModeli,
-                            BagajHacmi = cevaplayanArac.BagajHacmi,
-                            GerekenEhliyetYasi = cevaplayanArac.GerekenEhliyetYasi,
-                            GunlukKiraBedeli = cevaplayanArac.GunlukKiraBedeli,
-                            GunlukKmSiniri = cevaplayanArac.GunlukKmSiniri,
-                            KoltukSayisi = cevaplayanArac.KoltukSayisi,
-                            MinimumYasSiniri = cevaplayanArac.MinimumYasSiniri,
-                            Plaka = cevaplayanArac.Plaka,
-                            HavaYastigi = cevaplayanArac.HavaYastigi,
-                            YakitTipi = cevaplayanArac.YakitTipi,
-                            VitesTipi = cevaplayanArac.VitesTipi,
-                            AracResmi = cevaplayanArac.AracResmi,
-                            AracId = cevaplayanArac.AracId,
-                            Kirada = cevaplayanArac.Kirada,
-                            KiradanDonusTarihi = cevaplayanArac.KiradanDonusTarihi,
-                            KiralanmaTarihi = cevaplayanArac.KiralanmaTarihi,
-                            Rezerv = cevaplayanArac.Rezerv,
-                            MusteriId = cevaplayanArac.MusteriId
-                        };
-
-                        araclar.Add(arac);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error happened: " + ex.Message);
-            }
-        }
+        
+        
         private void yeniAracEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             aracEkleForm1.Show();
@@ -135,7 +59,6 @@ namespace RentACarForm
             imgbtnExit.BackColor = Color.Khaki;
 
             
-            AracListeDoldur();
             aracGuncelleSilForm1.comboCek().Items.Clear();
             foreach (var item in araclar)
             {
@@ -171,7 +94,7 @@ namespace RentACarForm
             imgbtnExit.BackColor = Color.MediumVioletRed;
 
             
-            AracListeDoldur();
+            
             kiralamaForm1.comboCek().Items.Clear();
             foreach (var item in araclar)
             {
@@ -179,13 +102,9 @@ namespace RentACarForm
                     kiralamaForm1.comboCek().Items.Add(item.Plaka);
             }
 
-            MusteriListeDoldur();
+            
             kiralamaForm1.comboCek1().Items.Clear();
-            foreach (var item in musteriler)
-            {
-                if(!item.KaraListe)
-                    kiralamaForm1.comboCek1().Items.Add(item.KullaniciAdi);
-            }
+           
 
 
         }
@@ -219,34 +138,34 @@ namespace RentACarForm
             imgbtnMin.BackColor = Color.Navy;
             imgbtnExit.BackColor = Color.Navy;
 
-            IslemlerForm.AracListeDoldur();
+            //IslemlerForm.AracListeDoldur();
 
-            using (var aracServis = new AracWebServis.AracWebServisSoapClient())
-            {
-                using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
-                {
-                    foreach (var arac in aracServis.AracHepsiniSec())
-                    {
-                        foreach (var musteri in musteriServis.MusteriHepsiniSec())
-                        {
-                            if(arac.SirketId == Form1.yonetici.SirketId && arac.Rezerv == true)
-                            {
-                                listviewItem = new ListViewItem(musteri.MusteriId.ToString());
-                                listviewItem.SubItems.Add(musteri.KullaniciAdi);
-                                listviewItem.SubItems.Add(musteri.Ad);
-                                listviewItem.SubItems.Add(musteri.Soyad);
-                                listviewItem.SubItems.Add(arac.Plaka);
-                                listviewItem.SubItems.Add(arac.KiralanmaTarihi.Date.ToString());
-                                listviewItem.SubItems.Add(arac.KiradanDonusTarihi.Date.ToString());
-                            }
-                        }
-                    }
+            //using (var aracServis = new AracWebServis.AracWebServisSoapClient())
+            //{
+            //    using (var musteriServis = new MusterilerWebServis.MusterilerWebServisSoapClient())
+            //    {
+            //        foreach (var arac in aracServis.AracHepsiniSec())
+            //        {
+            //            foreach (var musteri in musteriServis.MusteriHepsiniSec())
+            //            {
+            //                if(arac.SirketId == Form1.yonetici.SirketId && arac.Rezerv == true)
+            //                {
+            //                    listviewItem = new ListViewItem(musteri.MusteriId.ToString());
+            //                    listviewItem.SubItems.Add(musteri.KullaniciAdi);
+            //                    listviewItem.SubItems.Add(musteri.Ad);
+            //                    listviewItem.SubItems.Add(musteri.Soyad);
+            //                    listviewItem.SubItems.Add(arac.Plaka);
+            //                    listviewItem.SubItems.Add(arac.KiralanmaTarihi.Date.ToString());
+            //                    listviewItem.SubItems.Add(arac.KiradanDonusTarihi.Date.ToString());
+            //                }
+            //            }
+            //        }
 
-                }
+            //    }
                 
-            }
+            //}
 
-            rezervasyonForm1.listCek().Items.Add(IslemlerForm.listviewItem);
+            //rezervasyonForm1.listCek().Items.Add(IslemlerForm.listviewItem);
         }
 
 
@@ -264,12 +183,7 @@ namespace RentACarForm
             imgbtnExit.BackColor = Color.Salmon;
 
 
-            MusteriListeDoldur();
-            musteriIslemForm1.comboCek().Items.Clear();
-            foreach (var item in musteriler)
-            {
-                musteriIslemForm1.comboCek().Items.Add(item.KullaniciAdi);
-            }
+           
         }
 
         private void MusteriIslemForm1_Load(object sender, EventArgs e)
